@@ -1,128 +1,187 @@
-import { MessageCircle, Mail, Phone, Clock, Globe, Shield } from 'lucide-react';
+import { MessageCircle, Mail, Phone, Clock, Zap, CheckCircle2, ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function FAQCTA() {
   return (
     <>
-      <section className="py-24 px-6 bg-gradient-to-b from-slate-950 via-purple-950/30 to-slate-950 relative overflow-hidden">
+      {/* Main Support Section with Card Grid */}
+      <section className="py-24 px-6 bg-gradient-to-b from-slate-950 via-blue-950/40 to-slate-950 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] bg-fuchsia-600/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-1/3 left-1/4 w-[700px] h-[700px] bg-[#0066ff]/20 rounded-full blur-[140px] animate-pulse"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-[700px] h-[700px] bg-[#00ccff]/15 rounded-full blur-[140px] animate-pulse" style={{ animationDelay: '1.5s' }}></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative">
+          {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 glass-magenta border border-fuchsia-500/30 rounded-full shadow-lg shadow-fuchsia-500/20 mb-6 animate-glow">
-              <MessageCircle className="w-4 h-4 text-fuchsia-400 mr-2 animate-pulse" />
-              <span className="text-fuchsia-300 font-semibold text-sm tracking-wide">24/7 Support Available</span>
+            <div className="inline-flex items-center px-6 py-3 glass-blue backdrop-blur-2xl border border-[#0080ff]/40 rounded-full shadow-[0_0_30px_rgba(0,102,255,0.3)] mb-8">
+              <Zap className="w-5 h-5 text-[#00ccff] mr-2 animate-pulse" />
+              <span className="text-[#00ccff] font-bold text-sm tracking-wide">24/7 SUPPORT AVAILABLE</span>
             </div>
 
-            <h2 className="text-3xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-500 mb-6 animate-gradient">
+            <h2 className="text-4xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0066ff] via-[#0080ff] to-[#00ccff] mb-6 animate-gradient">
               Still have questions?
             </h2>
-            <p className="text-xl text-purple-300 max-w-3xl mx-auto leading-relaxed">
-              Can't find the answer you're looking for? Our dedicated support team is here to help you every step of the way with personalized assistance.
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              Our dedicated support team is here to help you every step of the way with personalized assistance
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div className="glass-purple backdrop-blur-md border-2 border-purple-500/50 rounded-3xl p-8 text-center hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all duration-300 hover:scale-105 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          {/* Support Methods in Diagonal Grid */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Live Chat Card */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-br from-[#0066ff] via-[#0080ff] to-[#00ccff] rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500 animate-glow"></div>
+              <div className="relative glass-blue backdrop-blur-2xl border-2 border-[#0080ff]/40 rounded-3xl p-8 text-center shadow-[0_8px_32px_rgba(0,102,255,0.2)] hover:border-[#0080ff]/60 transition-all duration-300 group-hover:scale-105 h-full flex flex-col">
+                <div className="absolute top-4 right-4">
+                  <div className="flex items-center gap-1.5 glass-blue backdrop-blur-xl border border-[#00ccff]/30 rounded-full px-3 py-1.5">
+                    <div className="w-2 h-2 bg-[#00ccff] rounded-full animate-pulse"></div>
+                    <span className="text-[#00ccff] text-xs font-bold">ONLINE</span>
+                  </div>
+                </div>
 
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-fuchsia-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all animate-glow relative">
-                <MessageCircle className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 bg-gradient-to-br from-[#0066ff] to-[#0080ff] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_8px_32px_rgba(0,102,255,0.5)] group-hover:scale-110 group-hover:rotate-6 transition-all">
+                  <MessageCircle className="w-10 h-10 text-white" />
+                </div>
+
+                <h3 className="text-2xl font-black text-white mb-3 group-hover:text-[#00ccff] transition-colors">Live Chat</h3>
+                <p className="text-slate-300 mb-6 leading-relaxed flex-1">
+                  Get instant answers from our expert support team through live chat
+                </p>
+
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center justify-center gap-2 text-[#00ccff] text-sm font-semibold">
+                    <Clock className="w-4 h-4" />
+                    <span>Average 30s response</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-[#0080ff] text-sm font-semibold">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Available 24/7</span>
+                  </div>
+                </div>
+
+                <button className="px-6 py-3 bg-gradient-to-r from-[#0066ff] to-[#0080ff] text-white rounded-xl hover:shadow-[0_8px_32px_rgba(0,102,255,0.5)] transition-all font-bold w-full group-hover:scale-105 flex items-center justify-center gap-2">
+                  <span>Start Chat Now</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
-
-              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">Live Chat</h3>
-              <p className="text-purple-300 mb-6 leading-relaxed">
-                Get instant answers from our expert support team through live chat. Average response time under 30 seconds.
-              </p>
-
-              <div className="flex items-center justify-center gap-2 text-fuchsia-400 text-sm font-semibold mb-6">
-                <Clock className="w-4 h-4" />
-                <span>Available 24/7</span>
-              </div>
-
-              <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white rounded-xl hover:shadow-lg hover:shadow-purple-500/50 transition-all font-semibold w-full group-hover:scale-105 animate-glow">
-                Start Chat Now
-              </button>
             </div>
 
-            <div className="glass-magenta backdrop-blur-md border-2 border-fuchsia-500/50 rounded-3xl p-8 text-center hover:shadow-[0_0_40px_rgba(217,70,239,0.4)] transition-all duration-300 hover:scale-105 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            {/* Email Support Card */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-br from-[#0080ff] via-[#00ccff] to-[#0080ff] rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500 animate-glow"></div>
+              <div className="relative glass-blue backdrop-blur-2xl border-2 border-[#0080ff]/40 rounded-3xl p-8 text-center shadow-[0_8px_32px_rgba(0,102,255,0.2)] hover:border-[#0080ff]/60 transition-all duration-300 group-hover:scale-105 h-full flex flex-col">
+                <div className="absolute top-4 right-4">
+                  <div className="glass-blue backdrop-blur-xl border border-[#0080ff]/30 rounded-full px-3 py-1.5">
+                    <span className="text-[#0080ff] text-xs font-bold">2H REPLY</span>
+                  </div>
+                </div>
 
-              <div className="w-20 h-20 bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-fuchsia-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all animate-glow relative">
-                <Mail className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 bg-gradient-to-br from-[#0080ff] to-[#00ccff] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_8px_32px_rgba(0,128,255,0.5)] group-hover:scale-110 group-hover:rotate-6 transition-all">
+                  <Mail className="w-10 h-10 text-white" />
+                </div>
+
+                <h3 className="text-2xl font-black text-white mb-3 group-hover:text-[#00ccff] transition-colors">Email Support</h3>
+                <p className="text-slate-300 mb-6 leading-relaxed flex-1">
+                  Send detailed messages and receive comprehensive responses guaranteed
+                </p>
+
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center justify-center gap-2 text-[#00ccff] text-sm font-semibold">
+                    <Clock className="w-4 h-4" />
+                    <span>2 hour guarantee</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-[#0080ff] text-sm font-semibold">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Detailed responses</span>
+                  </div>
+                </div>
+
+                <a
+                  href="mailto:support@marketsignaltrades.com"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#0080ff] to-[#00ccff] text-white rounded-xl hover:shadow-[0_8px_32px_rgba(0,128,255,0.5)] transition-all font-bold w-full group-hover:scale-105"
+                >
+                  <span>Send Email</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
-
-              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-fuchsia-300 transition-colors">Email Support</h3>
-              <p className="text-fuchsia-300 mb-6 leading-relaxed">
-                Send us a detailed message and receive comprehensive responses within 2 hours guaranteed.
-              </p>
-
-              <div className="flex items-center justify-center gap-2 text-pink-400 text-sm font-semibold mb-6">
-                <Clock className="w-4 h-4" />
-                <span>Response in 2 hours</span>
-              </div>
-
-              <a
-                href="mailto:support@marketsignaltrades.com"
-                className="inline-block px-8 py-3 bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white rounded-xl hover:shadow-lg hover:shadow-fuchsia-500/50 transition-all font-semibold w-full group-hover:scale-105 animate-glow"
-              >
-                Send Email
-              </a>
             </div>
 
-            <div className="glass-purple backdrop-blur-md border-2 border-pink-500/50 rounded-3xl p-8 text-center hover:shadow-[0_0_40px_rgba(236,72,153,0.4)] transition-all duration-300 hover:scale-105 group relative overflow-hidden md:col-span-2 lg:col-span-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            {/* Phone Support Card */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-br from-[#00ccff] via-[#0080ff] to-[#0066ff] rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500 animate-glow"></div>
+              <div className="relative glass-blue backdrop-blur-2xl border-2 border-[#0080ff]/40 rounded-3xl p-8 text-center shadow-[0_8px_32px_rgba(0,102,255,0.2)] hover:border-[#0080ff]/60 transition-all duration-300 group-hover:scale-105 h-full flex flex-col">
+                <div className="absolute top-4 right-4">
+                  <div className="glass-blue backdrop-blur-xl border border-[#00ccff]/30 rounded-full px-3 py-1.5">
+                    <span className="text-[#00ccff] text-xs font-bold">URGENT</span>
+                  </div>
+                </div>
 
-              <div className="w-20 h-20 bg-gradient-to-br from-pink-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-pink-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all animate-glow relative">
-                <Phone className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 bg-gradient-to-br from-[#00ccff] to-[#0066ff] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_8px_32px_rgba(0,204,255,0.5)] group-hover:scale-110 group-hover:rotate-6 transition-all">
+                  <Phone className="w-10 h-10 text-white" />
+                </div>
+
+                <h3 className="text-2xl font-black text-white mb-3 group-hover:text-[#00ccff] transition-colors">Phone Support</h3>
+                <p className="text-slate-300 mb-6 leading-relaxed flex-1">
+                  Speak directly with specialists for urgent matters and personalized guidance
+                </p>
+
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center justify-center gap-2 text-[#00ccff] text-sm font-semibold">
+                    <Clock className="w-4 h-4" />
+                    <span>Immediate connection</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-[#0080ff] text-sm font-semibold">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Global coverage</span>
+                  </div>
+                </div>
+
+                <a
+                  href="tel:+442012345678"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#00ccff] to-[#0066ff] text-white rounded-xl hover:shadow-[0_8px_32px_rgba(0,204,255,0.5)] transition-all font-bold w-full group-hover:scale-105"
+                >
+                  <span>Call Now</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
-
-              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-pink-300 transition-colors">Phone Support</h3>
-              <p className="text-pink-300 mb-6 leading-relaxed">
-                Speak directly with our specialists for urgent matters and personalized guidance.
-              </p>
-
-              <div className="flex items-center justify-center gap-2 text-purple-400 text-sm font-semibold mb-6">
-                <Globe className="w-4 h-4" />
-                <span>Global Coverage</span>
-              </div>
-
-              <a
-                href="tel:+442012345678"
-                className="inline-block px-8 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:shadow-pink-500/50 transition-all font-semibold w-full group-hover:scale-105 animate-glow"
-              >
-                Call Now
-              </a>
             </div>
           </div>
 
-          <div className="glass-magenta backdrop-blur-md border border-fuchsia-500/30 rounded-3xl p-10 mb-16 shadow-[0_0_50px_rgba(217,70,239,0.3)]">
-            <div className="flex items-start gap-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-fuchsia-500/30 animate-glow">
-                <Shield className="w-8 h-8 text-white" />
-              </div>
+          {/* Premium Support Banner */}
+          <div className="relative group mb-16">
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#0066ff] via-[#0080ff] to-[#00ccff] rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500 animate-glow"></div>
+            <div className="relative glass-blue backdrop-blur-2xl border-2 border-[#0080ff]/40 rounded-3xl p-10 shadow-[0_8px_32px_rgba(0,102,255,0.25)]">
+              <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
+                <div>
+                  <div className="inline-flex items-center gap-2 glass-blue backdrop-blur-xl border border-[#00ccff]/30 rounded-full px-4 py-2 mb-4">
+                    <Zap className="w-4 h-4 text-[#00ccff]" />
+                    <span className="text-[#00ccff] text-sm font-bold">PREMIUM MEMBERS</span>
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-black text-white mb-3">Priority Support Access</h3>
+                  <p className="text-slate-300 leading-relaxed mb-6">
+                    Diamond and Platinum tier members receive priority support with dedicated account managers, direct phone lines, and guaranteed response times. Enjoy white-glove service for all your investment needs.
+                  </p>
 
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-white mb-3">Priority Support for Premium Members</h3>
-                <p className="text-purple-300 leading-relaxed mb-6">
-                  Diamond and Platinum tier members receive priority support with dedicated account managers, direct phone lines, and guaranteed response times. Enjoy white-glove service with personal assistance for all your investment needs.
-                </p>
+                  <div className="grid sm:grid-cols-3 gap-4">
+                    <div className="glass-blue backdrop-blur-xl border border-[#0066ff]/30 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0066ff] to-[#00ccff] mb-1">Diamond</div>
+                      <div className="text-slate-400 text-xs">Dedicated Manager</div>
+                    </div>
+                    <div className="glass-blue backdrop-blur-xl border border-[#0080ff]/30 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0080ff] to-[#00ccff] mb-1">Platinum</div>
+                      <div className="text-slate-400 text-xs">Personal Team</div>
+                    </div>
+                    <div className="glass-blue backdrop-blur-xl border border-[#00ccff]/30 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#0066ff] mb-1">24/7</div>
+                      <div className="text-slate-400 text-xs">Direct Access</div>
+                    </div>
+                  </div>
+                </div>
 
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="glass-purple backdrop-blur-sm border border-purple-700/50 rounded-xl p-4">
-                    <div className="text-fuchsia-400 font-bold text-lg mb-1">Diamond</div>
-                    <div className="text-purple-300 text-sm">Dedicated Manager</div>
-                  </div>
-                  <div className="glass-purple backdrop-blur-sm border border-purple-700/50 rounded-xl p-4">
-                    <div className="text-fuchsia-400 font-bold text-lg mb-1">Platinum</div>
-                    <div className="text-purple-300 text-sm">Personal Wealth Team</div>
-                  </div>
-                  <div className="glass-purple backdrop-blur-sm border border-purple-700/50 rounded-xl p-4">
-                    <div className="text-fuchsia-400 font-bold text-lg mb-1">24/7</div>
-                    <div className="text-purple-300 text-sm">Direct Access Line</div>
-                  </div>
+                <div className="text-center md:text-right">
+                  <button className="px-8 py-4 bg-gradient-to-r from-[#0066ff] via-[#0080ff] to-[#00ccff] text-white rounded-xl hover:shadow-[0_8px_32px_rgba(0,102,255,0.5)] transition-all font-bold hover:scale-105 whitespace-nowrap">
+                    Upgrade Account
+                  </button>
                 </div>
               </div>
             </div>
@@ -130,75 +189,65 @@ export default function FAQCTA() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-gradient-to-b from-slate-950 via-purple-950/20 to-slate-950 relative overflow-hidden">
+      {/* Resources Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-slate-950 via-blue-950/20 to-slate-950 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-600/10 rounded-full blur-[100px]"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#0080ff]/10 rounded-full blur-[120px]"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-500 mb-4 animate-gradient">
+            <h3 className="text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0066ff] to-[#00ccff] mb-4 animate-gradient">
               Explore More Resources
             </h3>
-            <p className="text-purple-300 text-lg mb-8">
+            <p className="text-slate-300 text-lg">
               Discover everything you need to know about investing with Market Signal Trades
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <a
-              href="/about"
-              className="glass-purple backdrop-blur-md border-2 border-purple-800/50 hover:border-purple-500/50 rounded-2xl p-6 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all group hover:scale-105"
-            >
-              <div className="text-2xl mb-3">🏢</div>
-              <h4 className="text-white font-bold text-lg mb-2 group-hover:text-purple-300 transition-colors">About Us</h4>
-              <p className="text-purple-400 text-sm">Learn about our history and mission</p>
-            </a>
-
-            <a
-              href="/pricing"
-              className="glass-purple backdrop-blur-md border-2 border-fuchsia-800/50 hover:border-fuchsia-500/50 rounded-2xl p-6 hover:shadow-[0_0_30px_rgba(217,70,239,0.3)] transition-all group hover:scale-105"
-            >
-              <div className="text-2xl mb-3">💎</div>
-              <h4 className="text-white font-bold text-lg mb-2 group-hover:text-fuchsia-300 transition-colors">Investment Plans</h4>
-              <p className="text-fuchsia-400 text-sm">Compare tiers and choose your plan</p>
-            </a>
-
-            <a
-              href="/security"
-              className="glass-purple backdrop-blur-md border-2 border-pink-800/50 hover:border-pink-500/50 rounded-2xl p-6 hover:shadow-[0_0_30px_rgba(236,72,153,0.3)] transition-all group hover:scale-105"
-            >
-              <div className="text-2xl mb-3">🔒</div>
-              <h4 className="text-white font-bold text-lg mb-2 group-hover:text-pink-300 transition-colors">Security</h4>
-              <p className="text-pink-400 text-sm">How we protect your investments</p>
-            </a>
-
-            <a
-              href="/contact"
-              className="glass-purple backdrop-blur-md border-2 border-purple-800/50 hover:border-purple-500/50 rounded-2xl p-6 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all group hover:scale-105"
-            >
-              <div className="text-2xl mb-3">📞</div>
-              <h4 className="text-white font-bold text-lg mb-2 group-hover:text-purple-300 transition-colors">Contact</h4>
-              <p className="text-purple-400 text-sm">Get in touch with our team</p>
-            </a>
+          {/* Resource Cards */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              { emoji: '🏢', title: 'About Us', desc: 'Our history and mission', href: '/about' },
+              { emoji: '💎', title: 'Investment Plans', desc: 'Compare tiers and pricing', href: '/pricing' },
+              { emoji: '🔒', title: 'Security', desc: 'How we protect you', href: '/security' },
+              { emoji: '📞', title: 'Contact', desc: 'Get in touch with us', href: '/contact' }
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={item.href}
+                className="group relative"
+              >
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-[#0066ff]/30 to-[#00ccff]/30 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div className="relative glass-blue backdrop-blur-2xl border border-[#0080ff]/30 hover:border-[#0080ff]/50 rounded-2xl p-6 shadow-[0_8px_32px_rgba(0,102,255,0.1)] transition-all group-hover:scale-105">
+                  <div className="text-3xl mb-4">{item.emoji}</div>
+                  <h4 className="text-white font-bold text-lg mb-2 group-hover:text-[#00ccff] transition-colors flex items-center gap-2">
+                    {item.title}
+                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </h4>
+                  <p className="text-slate-400 text-sm">{item.desc}</p>
+                </div>
+              </a>
+            ))}
           </div>
 
+          {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
               href="/knowledge-base"
-              className="px-8 py-4 glass-purple backdrop-blur-md border-2 border-purple-800/50 hover:border-purple-500/50 text-white rounded-xl hover:shadow-lg hover:shadow-purple-500/30 transition-all font-semibold hover:scale-105"
+              className="px-8 py-4 glass-blue backdrop-blur-2xl border-2 border-[#0080ff]/40 hover:border-[#0080ff]/60 text-white rounded-xl hover:shadow-[0_8px_32px_rgba(0,102,255,0.3)] transition-all font-bold hover:scale-105"
             >
               Knowledge Base
             </a>
             <a
               href="/tutorials"
-              className="px-8 py-4 glass-purple backdrop-blur-md border-2 border-fuchsia-800/50 hover:border-fuchsia-500/50 text-white rounded-xl hover:shadow-lg hover:shadow-fuchsia-500/30 transition-all font-semibold hover:scale-105"
+              className="px-8 py-4 glass-blue backdrop-blur-2xl border-2 border-[#0080ff]/40 hover:border-[#0080ff]/60 text-white rounded-xl hover:shadow-[0_8px_32px_rgba(0,102,255,0.3)] transition-all font-bold hover:scale-105"
             >
               Video Tutorials
             </a>
             <a
               href="/contact"
-              className="px-8 py-4 bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 text-white rounded-xl hover:shadow-lg hover:shadow-purple-500/50 transition-all font-semibold hover:scale-105 animate-glow"
+              className="px-8 py-4 bg-gradient-to-r from-[#0066ff] via-[#0080ff] to-[#00ccff] text-white rounded-xl hover:shadow-[0_8px_32px_rgba(0,102,255,0.5)] transition-all font-bold hover:scale-105"
             >
               Contact Support
             </a>
@@ -207,6 +256,11 @@ export default function FAQCTA() {
       </section>
 
       <style>{`
+        .glass-blue {
+          background: rgba(0, 102, 255, 0.05);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+        }
         @keyframes gradient {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
@@ -216,8 +270,8 @@ export default function FAQCTA() {
           animation: gradient 5s ease infinite;
         }
         @keyframes glow {
-          0%, 100% { opacity: 0.7; }
-          50% { opacity: 1; }
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.5; }
         }
         .animate-glow {
           animation: glow 3s ease-in-out infinite;

@@ -1,4 +1,4 @@
-import { Star, ChevronDown, Filter, Check } from 'lucide-react';
+import { Star, ChevronDown, Filter, Check, TrendingUp, Award } from 'lucide-react';
 import { useState } from 'react';
 
 type Category = 'all' | 'beginner' | 'professional' | 'crypto';
@@ -203,7 +203,7 @@ const testimonials: Testimonial[] = [
 ];
 
 export default function TestimonialGrid() {
-  const [selectedCategory, setSelectedCategory] = useState<Category>('beginner');
+  const [selectedCategory, setSelectedCategory] = useState<Category>('all');
   const [showRatingFilter, setShowRatingFilter] = useState(false);
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
 
@@ -226,28 +226,47 @@ export default function TestimonialGrid() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-slate-950 via-purple-950/20 to-slate-950">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Real Stories from <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-500">Real Traders</span>
+    <section className="py-32 px-6 bg-gradient-to-b from-slate-950 via-blue-950/20 to-slate-950 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#0066ff]/10 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#00ccff]/10 rounded-full blur-[120px]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl lg:text-6xl font-black mb-6">
+            <span className="text-white">Success Stories From </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066ff] via-[#0080ff] to-[#00ccff]">
+              Our Community
+            </span>
           </h2>
-          <p className="text-lg text-purple-300 max-w-3xl mx-auto">
-            Join thousands of successful traders who have transformed their financial future with Market Signal Trades. Read authentic experiences from our global trading community.
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            Authentic experiences from traders worldwide who chose to invest in their future
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 mb-8">
-          <div className="flex flex-wrap items-center gap-3">
+        {/* Filters */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             {categories.map(cat => (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all ${
+                className={`px-6 py-3 rounded-2xl font-bold text-sm transition-all duration-300 ${
                   selectedCategory === cat.id
-                    ? 'bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white shadow-lg shadow-purple-600/30 animate-glow'
-                    : 'glass-purple border border-purple-500/20 text-purple-300 hover:border-purple-500/40'
+                    ? 'text-white shadow-lg'
+                    : 'text-slate-300 hover:text-white'
                 }`}
+                style={selectedCategory === cat.id ? {
+                  background: 'linear-gradient(135deg, #0066ff 0%, #00ccff 100%)',
+                  boxShadow: '0 8px 32px 0 rgba(0, 102, 255, 0.4)'
+                } : {
+                  background: 'rgba(0, 102, 255, 0.05)',
+                  backdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(0, 128, 255, 0.2)'
+                }}
               >
                 {cat.label} ({cat.count})
               </button>
@@ -257,26 +276,35 @@ export default function TestimonialGrid() {
           <div className="relative">
             <button
               onClick={() => setShowRatingFilter(!showRatingFilter)}
-              className="flex items-center space-x-2 px-5 py-2.5 glass-purple border border-purple-500/20 rounded-lg hover:border-purple-500/40 transition-all"
+              className="flex items-center space-x-2 px-6 py-3 rounded-2xl font-semibold transition-all"
+              style={{
+                background: 'rgba(0, 102, 255, 0.05)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(0, 128, 255, 0.2)'
+              }}
             >
-              <Filter className="w-4 h-4 text-purple-400" />
-              <span className="text-sm font-medium text-purple-300">
+              <Filter className="w-4 h-4 text-[#00ccff]" />
+              <span className="text-sm text-slate-300">
                 {selectedRating ? `${selectedRating} Stars` : 'All Ratings'}
               </span>
-              <ChevronDown className="w-4 h-4 text-purple-400" />
+              <ChevronDown className="w-4 h-4 text-[#00ccff]" />
             </button>
 
             {showRatingFilter && (
-              <div className="absolute right-0 mt-2 w-48 glass-purple border border-purple-500/30 rounded-lg shadow-xl z-10">
+              <div className="absolute right-0 mt-2 w-48 rounded-2xl shadow-xl z-10" style={{
+                background: 'rgba(0, 102, 255, 0.08)',
+                backdropFilter: 'blur(30px)',
+                border: '1px solid rgba(0, 128, 255, 0.3)'
+              }}>
                 <button
                   onClick={() => {
                     setSelectedRating(null);
                     setShowRatingFilter(false);
                   }}
-                  className="w-full px-4 py-2.5 text-left text-sm hover:bg-purple-500/10 flex items-center justify-between text-purple-300"
+                  className="w-full px-4 py-3 text-left text-sm hover:bg-[#0066ff]/10 flex items-center justify-between text-slate-300 rounded-t-2xl transition-colors"
                 >
                   <span>All Ratings</span>
-                  {!selectedRating && <Check className="w-4 h-4 text-fuchsia-400" />}
+                  {!selectedRating && <Check className="w-4 h-4 text-[#00ccff]" />}
                 </button>
                 {[5, 4].map(rating => (
                   <button
@@ -285,14 +313,14 @@ export default function TestimonialGrid() {
                       setSelectedRating(rating);
                       setShowRatingFilter(false);
                     }}
-                    className="w-full px-4 py-2.5 text-left text-sm hover:bg-purple-500/10 flex items-center justify-between"
+                    className="w-full px-4 py-3 text-left text-sm hover:bg-[#0066ff]/10 flex items-center justify-between transition-colors"
                   >
                     <div className="flex items-center space-x-1">
                       {[...Array(rating)].map((_, i) => (
                         <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    {selectedRating === rating && <Check className="w-4 h-4 text-fuchsia-400" />}
+                    {selectedRating === rating && <Check className="w-4 h-4 text-[#00ccff]" />}
                   </button>
                 ))}
               </div>
@@ -300,65 +328,96 @@ export default function TestimonialGrid() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Masonry-Style Grid */}
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           {filteredTestimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="glass-purple border border-purple-500/20 rounded-2xl p-6 hover:border-purple-500/40 hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] transition-all duration-300 animate-glow"
+              className="break-inside-avoid group relative rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+              style={{
+                background: 'rgba(0, 102, 255, 0.04)',
+                backdropFilter: 'blur(30px)',
+                border: '1px solid rgba(0, 128, 255, 0.15)',
+                boxShadow: '0 8px 32px 0 rgba(0, 102, 255, 0.1), inset 0 0 40px rgba(0, 204, 255, 0.05)'
+              }}
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center space-x-3">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-purple-500/30"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-white text-sm">{testimonial.name}</h4>
-                    <p className="text-xs text-purple-300">{testimonial.role}</p>
-                    <p className="text-xs text-purple-400">{testimonial.location}</p>
+              {/* Hover Glow */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{
+                background: 'radial-gradient(circle at 50% 50%, rgba(0, 204, 255, 0.15), transparent 70%)'
+              }}></div>
+
+              <div className="relative z-10">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex items-center space-x-3">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-14 h-14 rounded-2xl object-cover" style={{
+                        border: '2px solid rgba(0, 204, 255, 0.3)'
+                      }}
+                    />
+                    <div>
+                      <h4 className="font-black text-white text-base">{testimonial.name}</h4>
+                      <p className="text-xs text-[#00ccff] font-semibold">{testimonial.role}</p>
+                      <p className="text-xs text-slate-400">{testimonial.location}</p>
+                    </div>
+                  </div>
+                  {testimonial.verified && (
+                    <div className="flex items-center space-x-1 px-3 py-1 rounded-full" style={{
+                      background: 'rgba(0, 204, 255, 0.15)',
+                      border: '1px solid rgba(0, 204, 255, 0.3)'
+                    }}>
+                      <Check className="w-3 h-3 text-[#00ccff]" />
+                      <span className="text-xs font-bold text-[#00ccff]">Verified</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Rating & Date */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <span className="text-xs text-slate-500 font-medium">Joined {testimonial.joinedDate}</span>
+                </div>
+
+                {/* Quote */}
+                <p className="text-sm text-slate-300 leading-relaxed mb-6 italic">
+                  "{testimonial.quote}"
+                </p>
+
+                {/* Stats Grid */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-xl p-4 text-center group/card transition-all" style={{
+                    background: 'rgba(0, 128, 255, 0.08)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(0, 204, 255, 0.2)'
+                  }}>
+                    <TrendingUp className="w-5 h-5 text-[#00ccff] mx-auto mb-2" />
+                    <div className="text-2xl font-black text-[#00ccff]">{testimonial.profitPercent}</div>
+                    <div className="text-xs text-slate-400 font-semibold">{testimonial.profitPeriod}</div>
+                  </div>
+                  <div className="rounded-xl p-4 text-center group/card transition-all" style={{
+                    background: 'rgba(0, 102, 255, 0.08)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(0, 128, 255, 0.2)'
+                  }}>
+                    <Award className="w-5 h-5 text-[#0080ff] mx-auto mb-2" />
+                    <div className="text-2xl font-black text-[#0080ff]">{testimonial.tradesCount}</div>
+                    <div className="text-xs text-slate-400 font-semibold">Trades</div>
                   </div>
                 </div>
-                {testimonial.verified && (
-                  <div className="flex items-center space-x-1 px-2 py-1 bg-fuchsia-500/20 border border-fuchsia-500/30 rounded-full">
-                    <Check className="w-3 h-3 text-fuchsia-400" />
-                    <span className="text-xs font-medium text-fuchsia-300">Verified</span>
-                  </div>
-                )}
-              </div>
 
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <span className="text-xs text-purple-400">Joined {testimonial.joinedDate}</span>
-              </div>
-
-              <p className="text-sm text-purple-200 leading-relaxed mb-4 italic">
-                "{testimonial.quote}"
-              </p>
-
-              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-purple-500/20">
-                <div className="glass-magenta border border-fuchsia-500/20 rounded-lg p-3 text-center">
-                  <div className="text-xl font-bold text-fuchsia-400">{testimonial.profitPercent}</div>
-                  <div className="text-xs text-purple-300">Profit</div>
-                </div>
-                <div className="glass-purple border border-purple-500/20 rounded-lg p-3 text-center">
-                  <div className="text-xl font-bold text-purple-400">{testimonial.profitPeriod}</div>
-                  <div className="text-xs text-purple-300">Period</div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 mt-3">
-                <div className="glass border border-purple-500/10 rounded-lg p-3 text-center">
-                  <div className="text-base font-bold text-white">{testimonial.tradesCount}</div>
-                  <div className="text-xs text-purple-400">Trades</div>
-                </div>
-                <div className="glass border border-pink-500/10 rounded-lg p-3 text-center">
-                  <div className="text-base font-bold text-pink-400">{testimonial.startedWith}</div>
-                  <div className="text-xs text-purple-400">Started with</div>
+                {/* Started With */}
+                <div className="mt-3 text-center py-2 px-4 rounded-xl" style={{
+                  background: 'rgba(0, 204, 255, 0.05)',
+                  border: '1px solid rgba(0, 204, 255, 0.1)'
+                }}>
+                  <span className="text-xs text-slate-500 font-medium">Started with </span>
+                  <span className="text-sm text-white font-bold">{testimonial.startedWith}</span>
                 </div>
               </div>
             </div>

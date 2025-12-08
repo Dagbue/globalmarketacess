@@ -1,4 +1,4 @@
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { ChevronDown, HelpCircle, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 import {useNavigate} from "react-router-dom";
 
@@ -48,23 +48,23 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-32 px-6 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative overflow-hidden">
+    <section className="py-32 px-6 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-40 left-40 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-40 right-40 w-96 h-96 bg-fuchsia-500/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-40 left-40 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-40 right-40 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="max-w-5xl mx-auto relative">
         <div className="text-center mb-16">
-          <div className="inline-block px-6 py-2.5 glass-purple border border-purple-500/30 rounded-full mb-6 animate-glow">
-            <span className="text-purple-400 font-bold text-sm flex items-center space-x-2">
+          <div className="inline-block px-6 py-2.5 glass-strong border border-blue-500/30 rounded-full mb-6 animate-glow">
+            <span className="text-cyan-400 font-bold text-sm flex items-center space-x-2">
               <HelpCircle className="w-4 h-4" />
               <span>HELP CENTER</span>
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
             Frequently Asked
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 animate-glow">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 animate-glow">
               Questions
             </span>
           </h2>
@@ -73,30 +73,31 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="space-y-4 mb-16">
+        {/* Different accordion design - side-by-side on desktop */}
+        <div className="grid lg:grid-cols-2 gap-6 mb-16">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="glass-magenta rounded-2xl border-2 border-purple-500/20 overflow-hidden transition-all duration-300 hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-500/20 animate-float"
+              className="glass-strong rounded-2xl border border-blue-500/30 overflow-hidden transition-all duration-300 hover:border-cyan-500/40 hover:shadow-[0_15px_50px_-10px_rgba(0,102,255,0.4)] animate-float backdrop-blur-xl"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-purple-500/5 transition-colors group"
+                className="w-full px-6 py-5 flex items-start justify-between text-left hover:bg-blue-500/5 transition-colors group"
               >
-                <span className="font-bold text-white text-base lg:text-lg pr-8 group-hover:text-purple-400 transition-colors">
-                  {faq.question}
-                </span>
-                <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                <div className="flex-1 pr-4">
+                  <span className="font-bold text-white text-base group-hover:text-cyan-400 transition-colors">
+                    {faq.question}
+                  </span>
+                </div>
+                <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   openIndex === index
-                    ? 'bg-gradient-to-br from-purple-600 to-fuchsia-400 rotate-180 animate-glow'
-                    : 'glass-purple border border-purple-500/20 group-hover:border-purple-500/40'
+                    ? 'bg-gradient-to-br from-blue-500 to-cyan-600 rotate-180 animate-glow'
+                    : 'glass-card border border-blue-500/20 group-hover:border-cyan-500/40'
                 }`}>
-                  {openIndex === index ? (
-                    <Minus className="w-5 h-5 text-white" />
-                  ) : (
-                    <Plus className="w-5 h-5 text-purple-400 group-hover:text-purple-300" />
-                  )}
+                  <ChevronDown className={`w-5 h-5 transition-colors ${
+                    openIndex === index ? 'text-white' : 'text-cyan-400'
+                  }`} />
                 </div>
               </button>
 
@@ -105,9 +106,9 @@ export default function FAQ() {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="px-8 pb-6">
-                  <div className="pt-4 border-t border-purple-500/20">
-                    <p className="text-slate-300 leading-relaxed text-base">{faq.answer}</p>
+                <div className="px-6 pb-5">
+                  <div className="pt-2 border-t border-blue-500/20">
+                    <p className="text-slate-300 leading-relaxed text-sm">{faq.answer}</p>
                   </div>
                 </div>
               </div>
@@ -115,26 +116,39 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="glass-magenta rounded-3xl p-12 lg:p-16 text-center shadow-2xl relative overflow-hidden border border-purple-500/20 animate-float">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
-          </div>
+        {/* New contact CTA design */}
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-3xl blur-3xl animate-glow"></div>
 
-          <div className="relative">
-            <HelpCircle className="w-16 h-16 text-purple-400 mx-auto mb-6 animate-glow" />
-            <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-              Still Have Questions?
-            </h3>
-            <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-              Our support team is available 24/7 to help answer any questions you may have
-            </p>
-            <div
-                onSubmit={handleBack}
-                className="flex flex-wrap gap-4 justify-center">
-              <button className="px-10 py-5 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all font-bold text-base hover:scale-105 animate-glow">
-                Contact Support
-              </button>
+          <div className="relative glass-strong rounded-3xl p-12 lg:p-16 shadow-2xl overflow-hidden border border-blue-500/30 backdrop-blur-xl">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
+            </div>
 
+            <div className="relative grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30 animate-glow">
+                  <MessageCircle className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                  Still Have Questions?
+                </h3>
+                <p className="text-lg text-slate-300 leading-relaxed">
+                  Our support team is available 24/7 to help answer any questions you may have
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <button
+                  onClick={handleBack}
+                  className="px-10 py-5 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all font-bold text-base hover:scale-105 animate-glow"
+                >
+                  Contact Support
+                </button>
+                <div className="text-center text-slate-400 text-sm">
+                  Average response time: Under 2 hours
+                </div>
+              </div>
             </div>
           </div>
         </div>
