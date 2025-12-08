@@ -1,77 +1,134 @@
-import { Scale, Shield } from 'lucide-react';
-import {Advanced} from "../../assets";
+import { Shield, Lock, FileCheck, Eye, CheckCircle, ShieldCheck } from 'lucide-react';
 
 export default function SecuritySection() {
+  const securityFeatures = [
+    {
+      icon: Lock,
+      title: 'Bank-Grade Encryption',
+      description: '256-bit SSL encryption protects all your data and transactions with military-grade security.'
+    },
+    {
+      icon: Shield,
+      title: 'Two-Factor Authentication',
+      description: 'Additional security layer ensuring only you can access your trading account.'
+    },
+    {
+      icon: FileCheck,
+      title: 'Regulatory Compliance',
+      description: 'Licensed and regulated across multiple jurisdictions including FCA, CySEC, and ASIC.'
+    },
+    {
+      icon: Eye,
+      title: 'Fund Segregation',
+      description: 'Client funds held in segregated accounts with tier-1 banks for maximum protection.'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Regular Audits',
+      description: 'Independent third-party audits ensure transparency and compliance at all times.'
+    },
+    {
+      icon: CheckCircle,
+      title: 'Insurance Protection',
+      description: 'Additional insurance coverage protecting client funds up to regulated limits.'
+    }
+  ];
+
   return (
-    <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-blue-200 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-20 left-20 w-[500px] h-[500px] bg-cyan-200 rounded-full blur-[100px]"></div>
-      </div>
+    <section className="relative py-32 px-6 bg-[#0a0e27] overflow-hidden">
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a08_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+
+      {/* Gentle Glow Effects */}
+      <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-blue-600/8 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-20 left-20 w-[500px] h-[500px] bg-blue-800/6 rounded-full blur-[100px]"></div>
 
       <div className="max-w-7xl mx-auto relative">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 bg-white border border-blue-100 rounded-full mb-6 shadow-lg">
-            <Shield className="w-4 h-4 text-blue-600 mr-2" />
-            <span className="text-blue-600 font-bold text-sm tracking-wide">SECURITY FIRST</span>
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-950/40 backdrop-blur-sm border border-blue-800/30 rounded-full mb-8">
+            <Shield className="w-4 h-4 text-blue-400" />
+            <span className="text-blue-300 text-sm font-medium">Security First</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">
-            There's a time and a place
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">
-                for risk
-              </span>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
+            Your Security Is Our
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">
+              Top Priority
+            </span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Your funds and data are always secure. With Market Signal Trades you're protected by industry-leading protocols.
+
+          <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            Trade with confidence knowing your funds and data are protected by industry-leading security protocols and regulatory compliance.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <div className="group bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-slate-200 hover:border-blue-300 hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.3)] transition-all duration-500">
-              <h3 className="text-3xl font-black text-slate-900 mb-3">
+        {/* Mission Cards */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-20">
+          <div className="relative group">
+            <div className="absolute inset-0 bg-blue-600/5 rounded-xl blur-xl"></div>
+            <div className="relative bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-10 group-hover:border-blue-800/50 transition-all">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 Setting New Standards in Global Finance Technology
               </h3>
-              <p className="text-slate-600 leading-relaxed text-lg">
-                Market Signal Trades is set on a mission to provide a fair, secure, and easy-to-use platform with the highest class of financial technologies globally.
+              <p className="text-slate-400 leading-relaxed text-lg">
+                Globalmarketacess is on a mission to provide a fair, secure, and easy-to-use platform with the highest class of financial technologies globally.
               </p>
-            </div>
-
-            <div className="group bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-slate-200 hover:border-cyan-300 hover:shadow-[0_20px_60px_-15px_rgba(6,182,212,0.3)] transition-all duration-500">
-              <h3 className="text-3xl font-black text-slate-900 mb-3">
-                Simplifying Complex Systems for Everyone
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-lg">
-                We strongly believe that everyone should be able to enjoy equal and unrestricted wealth-building opportunities no matter who you are and where you live.
-              </p>
-            </div>
-
-            <div className="group flex items-start space-x-4 p-8 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-3xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.3)] transition-all duration-500">
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/20 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
-                <Scale className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h4 className="font-black text-slate-900 text-xl mb-2">Multiple regulatory licenses</h4>
-                <p className="text-slate-600 leading-relaxed">
-                  Regulated and authorized across multiple jurisdictions to ensure compliance and security.
-                </p>
-              </div>
             </div>
           </div>
 
-          <div className="relative">
-            <div
-                className="absolute -inset-8 bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-500 rounded-3xl blur-3xl opacity-20 animate-pulse"></div>
+          <div className="relative group">
+            <div className="absolute inset-0 bg-blue-600/5 rounded-xl blur-xl"></div>
+            <div className="relative bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-10 group-hover:border-blue-800/50 transition-all">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Democratizing Wealth-Building Opportunities
+              </h3>
+              <p className="text-slate-400 leading-relaxed text-lg">
+                We believe everyone should have equal access to financial markets, regardless of their background or location.
+              </p>
+            </div>
+          </div>
+        </div>
 
-            <div className="relative flex items-center justify-center">
-              <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-auto rounded-2xl shadow-2xl object-cover"
-                  src={Advanced}
-              ></video>
+        {/* Security Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {securityFeatures.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div key={index} className="relative group">
+                <div className="absolute inset-0 bg-blue-600/5 rounded-xl blur-xl group-hover:bg-blue-600/10 transition-all"></div>
+                <div className="relative bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 group-hover:border-blue-800/50 transition-all h-full">
+                  <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <h4 className="text-lg font-bold text-white mb-2">{feature.title}</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">{feature.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-20 text-center">
+          <div className="inline-flex flex-wrap items-center justify-center gap-4 px-8 py-6 bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-blue-400" />
+              <span className="text-slate-300 font-medium">FCA Regulated</span>
+            </div>
+            <div className="hidden sm:block w-px h-6 bg-slate-700"></div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-blue-400" />
+              <span className="text-slate-300 font-medium">SSL Secured</span>
+            </div>
+            <div className="hidden sm:block w-px h-6 bg-slate-700"></div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-blue-400" />
+              <span className="text-slate-300 font-medium">ISO Certified</span>
+            </div>
+            <div className="hidden sm:block w-px h-6 bg-slate-700"></div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-blue-400" />
+              <span className="text-slate-300 font-medium">Funds Insured</span>
             </div>
           </div>
         </div>
