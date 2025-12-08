@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply antialiased bg-slate-950;
+    @apply antialiased bg-gray-950;
   }
 
   html {
@@ -28,22 +28,23 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar for dark theme */
+/* Custom scrollbar for emerald/green theme */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #030712;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 6px;
+  background: linear-gradient(to bottom, #10b981, #14b8a6);
+  border-radius: 8px;
+  border: 2px solid #030712;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: linear-gradient(to bottom, #14b8a6, #10b981);
 }
 
 /* Chrome, Safari, Edge, Opera */

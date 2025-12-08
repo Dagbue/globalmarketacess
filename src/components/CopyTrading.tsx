@@ -1,4 +1,4 @@
-import { Users, Copy, BarChart2, TrendingUp, Shield, Zap } from 'lucide-react';
+import { Users2, Copy, LineChart, TrendingUp, Shield, Zap } from 'lucide-react';
 import {useNavigate} from "react-router-dom";
 
 const topTraders = [
@@ -42,130 +42,129 @@ export default function CopyTrading() {
     navigate('/register');
   };
   return (
-    <section className="py-32 px-6 bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
+    <section className="py-36 px-6 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 right-1/3 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b08_1px,transparent_1px),linear-gradient(to_bottom,#1e293b08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+        <div className="absolute top-1/3 right-1/3 w-[700px] h-[700px] bg-emerald-500/15 rounded-full blur-[140px]"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-[700px] h-[700px] bg-lime-500/10 rounded-full blur-[140px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b98108_1px,transparent_1px),linear-gradient(to_bottom,#10b98108_1px,transparent_1px)] bg-[size:72px_72px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <div className="inline-block px-6 py-3 bg-slate-800/40 backdrop-blur-xl border border-cyan-500/20 rounded-full shadow-lg shadow-cyan-500/10">
-              <span className="text-cyan-400 font-bold text-sm flex items-center space-x-2">
-                <Copy className="w-4 h-4" />
-                <span>SOCIAL TRADING PLATFORM</span>
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="space-y-8">
+            <div className="inline-block px-7 py-3.5 bg-gray-800/60 backdrop-blur-2xl border border-emerald-500/30 rounded-2xl shadow-2xl shadow-emerald-500/20">
+              <span className="text-emerald-400 font-black text-sm flex items-center space-x-2 tracking-wide uppercase">
+                <Copy className="w-5 h-5" />
+                <span>Copy Trading Network</span>
               </span>
             </div>
 
-            <h2 className="text-4xl lg:text-6xl font-black text-white leading-[1.1]">
-              Replicate Success
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400">
-                Automatically
+            <h2 className="text-5xl lg:text-7xl font-black text-white leading-[0.95] tracking-tighter">
+              Mirror Elite
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-lime-400 mt-2">
+                Strategies
               </span>
             </h2>
 
-            <p className="text-xl text-slate-400 leading-relaxed">
-              Connect with elite traders and mirror their strategies in real-time. Our sophisticated copy trading system
-              executes trades proportionally to your portfolio size with <span className="text-cyan-400 font-semibold">complete transparency</span> and verified performance metrics.
+            <p className="text-xl lg:text-2xl text-gray-400 leading-relaxed">
+              Connect with top-performing traders and automatically replicate their proven strategies. Advanced algorithms execute trades proportionally with <span className="text-emerald-400 font-bold">zero latency</span> and complete transparency.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
-              <div className="bg-slate-900/40 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/10 hover:border-cyan-500/30 hover:shadow-[0_10px_40px_-10px_rgba(6,182,212,0.3)] transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/20">
-                  <Users className="w-6 h-6 text-white" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+              <div className="bg-gray-900/60 backdrop-blur-2xl rounded-3xl p-8 border border-emerald-500/20 hover:border-emerald-500/40 hover:shadow-[0_15px_50px_-10px_rgba(16,185,129,0.4)] transition-all">
+                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 via-teal-500 to-green-500 rounded-2xl flex items-center justify-center mb-5 shadow-2xl shadow-emerald-500/30">
+                  <Users2 className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  Verified Professionals
+                <h3 className="text-xl font-black text-white mb-3">
+                  Verified Experts
                 </h3>
-                <p className="text-slate-400 text-sm">
-                  Thoroughly vetted traders with audited track records and transparent statistics
+                <p className="text-gray-400 text-base">
+                  Audited performance history with transparent metrics and risk profiles
                 </p>
               </div>
 
-              <div className="bg-slate-900/40 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/10 hover:border-cyan-500/30 hover:shadow-[0_10px_40px_-10px_rgba(6,182,212,0.3)] transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-blue-500/20">
-                  <Zap className="w-6 h-6 text-white" />
+              <div className="bg-gray-900/60 backdrop-blur-2xl rounded-3xl p-8 border border-emerald-500/20 hover:border-emerald-500/40 hover:shadow-[0_15px_50px_-10px_rgba(16,185,129,0.4)] transition-all">
+                <div className="w-14 h-14 bg-gradient-to-br from-teal-500 via-lime-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-5 shadow-2xl shadow-teal-500/30">
+                  <Zap className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  Instant Execution
+                <h3 className="text-xl font-black text-white mb-3">
+                  Real-Time Sync
                 </h3>
-                <p className="text-slate-400 text-sm">
-                  Zero-delay synchronization ensures you never miss opportunities
+                <p className="text-gray-400 text-base">
+                  Instant trade replication with microsecond execution precision
                 </p>
               </div>
 
-              <div className="bg-slate-900/40 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/10 hover:border-cyan-500/30 hover:shadow-[0_10px_40px_-10px_rgba(6,182,212,0.3)] transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-teal-500/20">
-                  <BarChart2 className="w-6 h-6 text-white" />
+              <div className="bg-gray-900/60 backdrop-blur-2xl rounded-3xl p-8 border border-emerald-500/20 hover:border-emerald-500/40 hover:shadow-[0_15px_50px_-10px_rgba(16,185,129,0.4)] transition-all">
+                <div className="w-14 h-14 bg-gradient-to-br from-green-500 via-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-5 shadow-2xl shadow-green-500/30">
+                  <LineChart className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  Deep Analytics
+                <h3 className="text-xl font-black text-white mb-3">
+                  Advanced Analytics
                 </h3>
-                <p className="text-slate-400 text-sm">
-                  Comprehensive metrics and performance dashboards for informed decisions
+                <p className="text-gray-400 text-base">
+                  Detailed performance tracking with comprehensive risk assessment
                 </p>
               </div>
 
-              <div className="bg-slate-900/40 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/10 hover:border-cyan-500/30 hover:shadow-[0_10px_40px_-10px_rgba(6,182,212,0.3)] transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-green-500/20">
-                  <Shield className="w-6 h-6 text-white" />
+              <div className="bg-gray-900/60 backdrop-blur-2xl rounded-3xl p-8 border border-emerald-500/20 hover:border-emerald-500/40 hover:shadow-[0_15px_50px_-10px_rgba(16,185,129,0.4)] transition-all">
+                <div className="w-14 h-14 bg-gradient-to-br from-lime-500 via-teal-500 to-green-500 rounded-2xl flex items-center justify-center mb-5 shadow-2xl shadow-lime-500/30">
+                  <Shield className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  Risk Protection
+                <h3 className="text-xl font-black text-white mb-3">
+                  Risk Controls
                 </h3>
-                <p className="text-slate-400 text-sm">
-                  Customizable stop-loss and position limits for capital preservation
+                <p className="text-gray-400 text-base">
+                  Customizable limits and automated stop-loss protection
                 </p>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl blur-3xl"></div>
+            <div className="absolute -inset-6 bg-gradient-to-br from-emerald-500/25 via-teal-500/20 to-lime-500/25 rounded-[3rem] blur-[80px]"></div>
 
-            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6">
               {topTraders.map((trader, i) => (
-                <div key={i} className="bg-slate-900/60 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-cyan-500/20 hover:border-cyan-500/40 hover:shadow-[0_20px_70px_-15px_rgba(6,182,212,0.4)] transition-all duration-500 group hover:-translate-y-2">
-                  <div className="flex items-center space-x-4 mb-5">
+                <div key={i} className="bg-gray-900/70 backdrop-blur-2xl rounded-[2rem] p-7 shadow-2xl border border-emerald-500/30 hover:border-emerald-500/50 hover:shadow-[0_25px_80px_-15px_rgba(16,185,129,0.5)] transition-all duration-500 group hover:-translate-y-3">
+                  <div className="flex items-center space-x-4 mb-6">
                     <div className="relative">
                       <img
                         src={trader.image}
                         alt={trader.name}
-                        className="w-16 h-16 rounded-2xl object-cover ring-4 ring-cyan-500/20 group-hover:ring-cyan-500/40 transition-all"
+                        className="w-18 h-18 rounded-2xl object-cover ring-4 ring-emerald-500/30 group-hover:ring-emerald-500/50 transition-all"
                       />
-                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full border-2 border-slate-900 flex items-center justify-center">
-                        <TrendingUp className="w-3 h-3 text-white" />
+                      <div className="absolute -bottom-1 -right-1 w-7 h-7 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full border-2 border-gray-900 flex items-center justify-center shadow-lg">
+                        <TrendingUp className="w-4 h-4 text-white" />
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-white text-lg leading-tight">{trader.name}</h3>
-                      <p className="text-slate-400 text-sm">{trader.followers} followers</p>
+                      <h3 className="font-black text-white text-xl leading-tight">{trader.name}</h3>
+                      <p className="text-gray-400 text-sm font-medium">{trader.followers} followers</p>
                     </div>
                   </div>
 
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between p-3 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl border border-green-500/20 backdrop-blur-xl">
-                      <span className="text-slate-300 text-sm font-medium">Return</span>
-                      <span className="font-black text-green-400 text-xl">{trader.return}</span>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-emerald-500/15 to-green-500/15 rounded-2xl border border-emerald-500/30 backdrop-blur-xl">
+                      <span className="text-gray-300 text-sm font-bold">Total Return</span>
+                      <span className="font-black text-emerald-400 text-2xl">{trader.return}</span>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="p-3 bg-slate-800/60 backdrop-blur-xl rounded-lg border border-cyan-500/10">
-                        <div className="text-xs text-slate-400 mb-1">Win Rate</div>
-                        <div className="font-bold text-white">{trader.winRate}</div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="p-4 bg-gray-800/60 backdrop-blur-xl rounded-2xl border border-emerald-500/20">
+                        <div className="text-xs text-gray-400 mb-1 font-medium">Win Rate</div>
+                        <div className="font-black text-white text-lg">{trader.winRate}</div>
                       </div>
-                      <div className="p-3 bg-slate-800/60 backdrop-blur-xl rounded-lg border border-cyan-500/10">
-                        <div className="text-xs text-slate-400 mb-1">Trades</div>
-                        <div className="font-bold text-white">{trader.trades}</div>
+                      <div className="p-4 bg-gray-800/60 backdrop-blur-xl rounded-2xl border border-emerald-500/20">
+                        <div className="text-xs text-gray-400 mb-1 font-medium">Total Trades</div>
+                        <div className="font-black text-white text-lg">{trader.trades}</div>
                       </div>
                     </div>
 
                     <button
                         onClick={handleBack}
-                        className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:shadow-lg hover:shadow-cyan-500/50 transition-all font-bold text-sm group-hover:scale-105">
-                      Copy Trader
+                        className="w-full py-4 bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500 text-white rounded-2xl hover:shadow-xl hover:shadow-emerald-500/50 transition-all font-black text-base group-hover:scale-105">
+                      Start Copying
                     </button>
                   </div>
                 </div>

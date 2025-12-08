@@ -1,4 +1,4 @@
-import { Check, Sparkles, Crown, Gem, Award } from 'lucide-react';
+import { Check, Sparkles, Crown, Gem, Trophy } from 'lucide-react';
 import {useNavigate} from "react-router-dom";
 
 const plans = [
@@ -10,14 +10,14 @@ const plans = [
     minimum: '$5,000',
     daily: '1.2%',
     features: [
-      'Bank-Grade Security',
+      'Bank-Level Security',
       '1.2% Daily Returns',
-      'Verified ROI Tracking',
-      '24/7 Customer Support',
-      'Fast Withdrawals',
+      'Real-Time ROI Tracking',
+      '24/7 Support Access',
+      'Fast Withdrawal Processing',
     ],
-    gradient: 'from-slate-400 to-gray-600',
-    bgGradient: 'from-slate-800/40 to-slate-900/40',
+    gradient: 'from-gray-400 to-gray-600',
+    bgGradient: 'from-gray-800/30 to-gray-900/30',
   },
   {
     name: 'Professional',
@@ -27,16 +27,16 @@ const plans = [
     minimum: '$25,000',
     daily: '1.4%',
     features: [
-      'Military-Grade Security',
+      'Advanced Security',
       '1.4% Daily Returns',
-      'Portfolio Analytics',
+      'Portfolio Analytics Dashboard',
       '24/7 Priority Support',
       'Instant Withdrawals',
       'Dedicated Account Manager',
     ],
     popular: true,
-    gradient: 'from-cyan-500 to-blue-600',
-    bgGradient: 'from-cyan-500/10 to-blue-500/10',
+    gradient: 'from-emerald-500 via-teal-500 to-green-500',
+    bgGradient: 'from-emerald-500/15 to-teal-500/15',
   },
   {
     name: 'Elite',
@@ -48,18 +48,18 @@ const plans = [
     features: [
       'Maximum Security Protocol',
       '1.6% Daily Returns',
-      'Advanced Market Insights',
-      '24/7 VIP Support',
-      'Priority Withdrawals',
-      'Personal Trading Advisor',
-      'Exclusive Research Reports',
+      'Advanced Market Intelligence',
+      '24/7 VIP Support Line',
+      'Priority Withdrawal Processing',
+      'Personal Trading Consultant',
+      'Exclusive Research Access',
     ],
-    gradient: 'from-blue-500 to-teal-600',
-    bgGradient: 'from-blue-500/10 to-teal-500/10',
+    gradient: 'from-teal-500 via-lime-500 to-emerald-500',
+    bgGradient: 'from-teal-500/15 to-emerald-500/15',
   },
   {
     name: 'Institution',
-    icon: Award,
+    icon: Trophy,
     percentage: '20',
     duration: '24 Months',
     minimum: '$250,000',
@@ -67,15 +67,15 @@ const plans = [
     features: [
       'Enterprise Security Suite',
       '1.8% Daily Returns',
-      'Custom Trading Strategies',
+      'Custom Strategy Development',
       '24/7 Concierge Service',
-      'Premium Withdrawals',
+      'Premium Withdrawal Priority',
       'Dedicated Management Team',
-      'Private Events Access',
-      'Institutional Research',
+      'Exclusive Event Access',
+      'Institutional Research Portal',
     ],
-    gradient: 'from-teal-500 to-cyan-600',
-    bgGradient: 'from-teal-500/10 to-cyan-500/10',
+    gradient: 'from-lime-500 via-emerald-500 to-teal-500',
+    bgGradient: 'from-lime-500/15 to-teal-500/15',
   },
 ];
 
@@ -85,90 +85,93 @@ export default function InvestmentPlans() {
     navigate('/register');
   };
   return (
-    <section className="py-32 px-6 bg-slate-950 relative overflow-hidden">
+    <section className="py-36 px-6 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-cyan-500/10 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-blue-500/10 rounded-full blur-[120px]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b08_1px,transparent_1px),linear-gradient(to_bottom,#1e293b08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-emerald-500/15 rounded-full blur-[140px]"></div>
+        <div className="absolute bottom-0 right-1/4 w-[800px] h-[800px] bg-lime-500/10 rounded-full blur-[140px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b98110_1px,transparent_1px),linear-gradient(to_bottom,#10b98110_1px,transparent_1px)] bg-[size:72px_72px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        <div className="text-center mb-20">
-          <div className="inline-block px-6 py-3 bg-slate-800/40 backdrop-blur-xl border border-cyan-500/20 rounded-full mb-8 shadow-lg shadow-cyan-500/10">
-            <span className="text-cyan-400 font-bold text-sm tracking-wide">INVESTMENT TIERS</span>
+        <div className="text-center mb-24">
+          <div className="inline-block px-7 py-3.5 bg-gray-800/60 backdrop-blur-2xl border border-emerald-500/30 rounded-2xl mb-10 shadow-2xl shadow-emerald-500/20">
+            <span className="text-emerald-400 font-black text-sm tracking-widest uppercase">Investment Plans</span>
           </div>
-          <h2 className="text-4xl lg:text-6xl font-black text-white mb-6 leading-tight">
-            Scale Your
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400">
-              Investment Portfolio
+          <h2 className="text-5xl lg:text-7xl font-black text-white mb-8 leading-[1.05] tracking-tighter">
+            Scale Your Wealth
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-lime-400 mt-2">
+              With Confidence
             </span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Choose the tier that aligns with your financial goals and access premium trading benefits
+          <p className="text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Select the investment tier that matches your goals and unlock premium benefits
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {plans.map((plan) => {
             const Icon = plan.icon;
             return (
               <div
                 key={plan.name}
                 className={`relative group ${
-                  plan.popular ? 'lg:scale-105 lg:-mt-4' : ''
+                  plan.popular ? 'lg:scale-110 lg:-mt-8' : ''
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
-                    <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2.5 rounded-full text-xs font-black shadow-2xl shadow-cyan-500/30 border-2 border-slate-900">
-                      MOST POPULAR
+                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-10">
+                    <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500 text-white px-6 py-3 rounded-2xl text-xs font-black shadow-2xl shadow-emerald-500/40 border-2 border-gray-900">
+                      BEST VALUE
                     </div>
                   </div>
                 )}
 
-                <div className={`relative bg-slate-900/40 backdrop-blur-xl rounded-3xl p-8 border transition-all duration-500 h-full ${
+                <div className={`relative bg-gray-900/60 backdrop-blur-2xl rounded-[2rem] p-10 border transition-all duration-500 h-full ${
                   plan.popular
-                    ? 'border-cyan-500/30 shadow-2xl shadow-cyan-500/20'
-                    : 'border-cyan-500/10 hover:border-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-500/10'
+                    ? 'border-emerald-500/40 shadow-2xl shadow-emerald-500/30'
+                    : 'border-emerald-500/20 hover:border-emerald-500/40 hover:shadow-2xl hover:shadow-emerald-500/20'
                 }`}>
-                  <div className={`absolute inset-0 bg-gradient-to-br ${plan.bgGradient} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${plan.bgGradient} rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 
                   <div className="relative">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${plan.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-
-                    <h3 className="text-3xl font-black text-white mb-2">{plan.name}</h3>
-                    <div className="mb-6">
-                      <div className="flex items-end">
-                        <span className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">{plan.percentage}</span>
-                        <span className="text-3xl text-cyan-400 font-bold mb-2">%</span>
+                    <div className="relative mb-8">
+                      <div className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} rounded-2xl blur-2xl opacity-40 group-hover:opacity-70 transition-opacity`}></div>
+                      <div className={`relative w-20 h-20 bg-gradient-to-br ${plan.gradient} rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                        <Icon className="w-10 h-10 text-white" />
                       </div>
-                      <p className="text-slate-400 font-bold text-lg">{plan.duration}</p>
                     </div>
 
-                    <div className="mb-6 p-4 bg-slate-800/60 backdrop-blur-xl rounded-xl border border-cyan-500/20">
-                      <div className="text-sm text-slate-400 font-semibold mb-1">Minimum Investment</div>
-                      <div className="text-2xl font-black text-white">{plan.minimum}</div>
+                    <h3 className="text-3xl font-black text-white mb-3">{plan.name}</h3>
+                    <div className="mb-8">
+                      <div className="flex items-end">
+                        <span className={`text-6xl font-black ${plan.popular ? 'text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400' : 'text-white'}`}>{plan.percentage}</span>
+                        <span className={`text-3xl font-bold mb-2 ${plan.popular ? 'text-emerald-400' : 'text-gray-400'}`}>%</span>
+                      </div>
+                      <p className="text-gray-400 font-bold text-lg">{plan.duration}</p>
+                    </div>
+
+                    <div className="mb-8 p-5 bg-gray-800/60 backdrop-blur-xl rounded-2xl border border-emerald-500/30">
+                      <div className="text-sm text-gray-400 font-bold mb-2">Minimum Investment</div>
+                      <div className="text-3xl font-black text-white">{plan.minimum}</div>
                     </div>
 
                     <button
                         onClick={handleBack}
-                        className={`w-full py-4 rounded-xl font-bold text-base mb-6 transition-all duration-300 ${
+                        className={`w-full py-5 rounded-2xl font-black text-lg mb-8 transition-all duration-300 ${
                       plan.popular
-                        ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:shadow-2xl hover:shadow-cyan-500/50 hover:scale-105'
-                        : 'bg-slate-800/60 backdrop-blur-xl text-white border border-cyan-500/20 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:border-transparent hover:shadow-xl hover:shadow-cyan-500/30'
+                        ? 'bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500 text-white hover:shadow-2xl hover:shadow-emerald-500/50 hover:scale-105'
+                        : 'bg-gray-800/60 backdrop-blur-xl text-white border border-emerald-500/30 hover:bg-gradient-to-r hover:from-emerald-500 hover:via-teal-500 hover:to-green-500 hover:border-transparent hover:shadow-xl hover:shadow-emerald-500/40'
                     }`}>
-                      Select Plan
+                      Get Started
                     </button>
 
-                    <div className="space-y-4">
+                    <div className="space-y-5">
                       {plan.features.map((feature, i) => (
                         <div key={i} className="flex items-start space-x-3">
-                          <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                          <div className={`flex-shrink-0 w-7 h-7 bg-gradient-to-br ${plan.gradient} rounded-full flex items-center justify-center mt-0.5 shadow-lg`}>
                             <Check className="w-4 h-4 text-white font-bold" />
                           </div>
-                          <span className="text-slate-300 font-medium text-sm leading-relaxed">
+                          <span className="text-gray-300 font-medium text-base leading-relaxed">
                             {feature}
                           </span>
                         </div>

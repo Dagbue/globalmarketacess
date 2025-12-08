@@ -1,24 +1,24 @@
-import { UserPlus, CreditCard, TrendingUp } from 'lucide-react';
+import { UserCheck, Wallet, Rocket } from 'lucide-react';
 import {useNavigate} from "react-router-dom";
 
 const steps = [
   {
     number: '1',
-    icon: UserPlus,
-    title: 'Create Your Account',
-    description: 'Register in under 3 minutes with our streamlined onboarding. Completely free with no minimum deposit required to get started.',
+    icon: UserCheck,
+    title: 'Create Account',
+    description: 'Quick 2-minute registration with instant verification. No hidden fees, no minimum balance requirements, completely free to start.',
   },
   {
     number: '2',
-    icon: CreditCard,
-    title: 'Fund Your Wallet',
-    description: 'Add funds instantly via multiple payment methods including bank transfer, debit card, or cryptocurrency. Flexible deposit options starting from any amount.',
+    icon: Wallet,
+    title: 'Deposit Funds',
+    description: 'Add capital through secure payment channels including bank wire, credit cards, or digital assets. Multiple currencies supported.',
   },
   {
     number: '3',
-    icon: TrendingUp,
-    title: 'Begin Trading',
-    description: 'Access thousands of instruments across global markets. Execute orders with institutional-grade tools and real-time data feeds.',
+    icon: Rocket,
+    title: 'Start Trading',
+    description: 'Execute trades across thousands of global instruments with professional-grade tools and real-time market intelligence.',
   },
 ];
 
@@ -28,45 +28,45 @@ export default function GetStarted() {
     navigate('/register');
   };
   return (
-    <section className="py-32 px-6 bg-slate-950 relative overflow-hidden">
+    <section className="py-36 px-6 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[120px]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b08_1px,transparent_1px),linear-gradient(to_bottom,#1e293b08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-emerald-500/15 rounded-full blur-[140px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b98110_1px,transparent_1px),linear-gradient(to_bottom,#10b98110_1px,transparent_1px)] bg-[size:72px_72px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl lg:text-6xl font-black text-white mb-6 leading-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400">
-              Three Simple Steps
+        <div className="text-center mb-28">
+          <h2 className="text-5xl lg:text-7xl font-black text-white mb-8 leading-[1.05] tracking-tighter">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-lime-400">
+              Launch in Minutes
             </span>
-            <span className="block mt-2">To Start Trading</span>
+            <span className="block mt-2">Three Quick Steps</span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            Get started in minutes and join a global community of successful traders
+          <p className="text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto">
+            Join a community of professional traders executing millions in daily volume
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-20">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <div key={index} className="text-center group">
-                <div className="relative inline-block mb-8">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-                  <div className="relative w-28 h-28 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-cyan-500/30 group-hover:scale-110 transition-all duration-300">
-                    <span className="text-5xl font-black text-white">{step.number}</span>
+                <div className="relative inline-block mb-10">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-teal-500 to-green-500 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity"></div>
+                  <div className="relative w-32 h-32 bg-gradient-to-br from-emerald-500 via-teal-500 to-green-600 rounded-[2rem] flex items-center justify-center shadow-2xl shadow-emerald-500/40 group-hover:scale-110 transition-all duration-500">
+                    <span className="text-6xl font-black text-white">{step.number}</span>
                   </div>
-                  <div className="absolute -bottom-3 -right-3 w-14 h-14 bg-slate-900 backdrop-blur-xl rounded-2xl shadow-lg flex items-center justify-center border-2 border-cyan-500/30">
-                    <Icon className="w-7 h-7 text-cyan-400" />
+                  <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gray-900/80 backdrop-blur-2xl rounded-2xl shadow-2xl flex items-center justify-center border-2 border-emerald-500/40">
+                    <Icon className="w-8 h-8 text-emerald-400" />
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-3xl font-black text-white mb-5 group-hover:text-emerald-400 transition-colors">
                   {step.title}
                 </h3>
 
-                <p className="text-slate-400 leading-relaxed max-w-sm mx-auto">
+                <p className="text-gray-400 text-lg leading-relaxed max-w-sm mx-auto">
                   {step.description}
                 </p>
               </div>
@@ -77,8 +77,8 @@ export default function GetStarted() {
         <div className="text-center">
           <button
               onClick={handleBack}
-              className="px-12 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:shadow-2xl hover:shadow-cyan-500/50 transition-all font-bold text-lg hover:scale-105">
-            Create Account
+              className="px-14 py-6 bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500 text-white rounded-2xl hover:shadow-[0_0_80px_rgba(16,185,129,0.7)] transition-all font-black text-xl hover:scale-105">
+            Begin Your Journey
           </button>
         </div>
       </div>
