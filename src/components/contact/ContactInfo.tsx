@@ -1,102 +1,130 @@
-import { Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Mail, MapPin, Clock, MessageCircle, Phone, Headphones } from 'lucide-react';
 
 export default function ContactInfo() {
+  const contactMethods = [
+    {
+      icon: Mail,
+      title: 'Email Us',
+      description: 'Send us a detailed message and we\'ll respond within 2 hours during business hours.',
+      action: { type: 'link', text: 'support@marketsignaltrades.com', href: 'mailto:support@marketsignaltrades.com' }
+    },
+    {
+      icon: MessageCircle,
+      title: 'Live Chat',
+      description: 'Get instant answers from our support team through our live chat feature.',
+      action: { type: 'button', text: 'Start chatting now' }
+    },
+    {
+      icon: MapPin,
+      title: 'Visit Our Office',
+      description: 'Meet us in person at our London headquarters. Schedule your visit in advance.',
+      action: { type: 'text', text: '75 Uxbridge Rd, London W5 5SL, England UK' }
+    },
+    {
+      icon: Clock,
+      title: 'Office Hours',
+      description: null,
+      action: { type: 'hours' }
+    },
+  ];
+
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-white via-gray-50 to-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-24 px-6 bg-[#0a0e27]">
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a08_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+
+      <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-14">
-          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-            Multiple ways to reach us
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Multiple Ways to
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">
+              Reach Us
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-400 max-w-3xl mx-auto">
             Choose the communication method that works best for you. We're here to help however you prefer.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 hover:border-blue-300 hover:shadow-xl transition-all">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-              <Mail className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Email Us</h3>
-            <p className="text-gray-600 mb-6">
-              Send us a detailed message and we'll respond within 2 hours during business hours.
-            </p>
-            <a
-              href="mailto:support@marketsignaltrades.com"
-              className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center space-x-2"
-            >
-              <span>support@marketsignaltrades.com</span>
-            </a>
-          </div>
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {contactMethods.map((method, i) => {
+            const Icon = method.icon;
+            return (
+              <div key={i} className="relative group">
+                <div className="absolute inset-0 bg-blue-600/5 rounded-xl blur-xl"></div>
+                <div className="relative bg-slate-900/40 backdrop-blur-sm rounded-xl p-8 border border-slate-800/50 group-hover:border-blue-800/50 transition-all h-full">
+                  <div className="w-16 h-16 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6">
+                    <Icon className="w-8 h-8 text-blue-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{method.title}</h3>
 
-          <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 hover:border-blue-300 hover:shadow-xl transition-all">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
-              <MessageCircle className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Live Chat</h3>
-            <p className="text-gray-600 mb-6">
-              Get instant answers from our support team through our live chat feature.
-            </p>
-            <button className="text-purple-600 hover:text-purple-700 font-semibold inline-flex items-center space-x-2">
-              <span>Start chatting now</span>
-            </button>
-          </div>
+                  {method.description && (
+                    <p className="text-slate-400 mb-6">
+                      {method.description}
+                    </p>
+                  )}
 
-          <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 hover:border-blue-300 hover:shadow-xl transition-all">
-            <div className="w-16 h-16 bg-gradient-to-br from-orange-600 to-red-500 rounded-2xl flex items-center justify-center mb-6">
-              <MapPin className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Visit Our Office</h3>
-            <p className="text-gray-600 mb-6">
-              Meet us in person at our London headquarters. Schedule your visit in advance.
-            </p>
-            <div className="text-gray-700 font-semibold">
-              75 Uxbridge Rd, London W5 5SL, England UK
-            </div>
-          </div>
+                  {method.action.type === 'link' && (
+                    <a
+                      href={method.action.href}
+                      className="text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+                    >
+                      {method.action.text}
+                    </a>
+                  )}
 
-          <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 hover:border-blue-300 hover:shadow-xl transition-all">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-              <Clock className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Office Hours</h3>
-            <div className="space-y-3 text-gray-600">
-              <div className="flex justify-between">
-                <span className="font-medium">Monday - Friday:</span>
-                <span className="font-semibold text-gray-900">9:00 AM - 6:00 PM</span>
+                  {method.action.type === 'button' && (
+                    <button className="text-blue-400 hover:text-blue-300 font-semibold transition-colors">
+                      {method.action.text}
+                    </button>
+                  )}
+
+                  {method.action.type === 'text' && (
+                    <div className="text-white font-semibold">
+                      {method.action.text}
+                    </div>
+                  )}
+
+                  {method.action.type === 'hours' && (
+                    <div className="space-y-3 text-slate-400">
+                      <div className="flex justify-between">
+                        <span>Monday - Friday:</span>
+                        <span className="font-semibold text-white">9:00 AM - 6:00 PM</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Saturday - Sunday:</span>
+                        <span className="font-semibold text-white">Closed</span>
+                      </div>
+                      <div className="mt-4 pt-4 border-t border-slate-700/50">
+                        <div className="flex items-center gap-2 text-blue-400">
+                          <Headphones className="w-5 h-5" />
+                          <span className="font-semibold">24/7 Emergency Support Available</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span className="font-medium">Saturday:</span>
-                <span className="font-semibold text-gray-900">Closed</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="font-medium">Sunday:</span>
-                <span className="font-semibold text-gray-900">Closed</span>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
-        <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 rounded-3xl p-12 lg:p-16 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
-              backgroundSize: '40px 40px'
-            }}></div>
-          </div>
-
-          <div className="relative z-10 text-center">
-            <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Need immediate assistance?
+        <div className="relative bg-slate-900/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-slate-800/50">
+          <div className="text-center">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Need Immediate Assistance?
             </h3>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
               For urgent matters or account-related emergencies, our priority support team is available 24/7.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <button className="inline-flex items-center space-x-2 px-14 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-xl hover:bg-white/20 transition-all font-semibold">
+              <button className="inline-flex items-center gap-2 px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-blue-600/30">
                 <MessageCircle className="w-5 h-5" />
-                <span>Live Chat</span>
+                <span>Start Live Chat</span>
+              </button>
+              <button className="inline-flex items-center gap-2 px-10 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-semibold transition-all border border-slate-700/50">
+                <Phone className="w-5 h-5" />
+                <span>Emergency Line</span>
               </button>
             </div>
           </div>
