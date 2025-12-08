@@ -1,141 +1,133 @@
-import { Trophy, Medal, Award, TrendingUp, Users } from 'lucide-react';
+import { Trophy, Star, TrendingUp, Users, ArrowRight } from 'lucide-react';
 import {useNavigate} from "react-router-dom";
-
-const traders = [
-  { rank: 1, name: 'Thomas Parry Jones', handle: '@thomaspj', copiers: '28,869', return: '+64.2%', winRate: '92%' },
-  { rank: 2, name: 'Jay Smith', handle: '@jaynemesis', copiers: '10,305', return: '+58.7%', winRate: '89%' },
-  { rank: 3, name: 'Jeppe Kirk Bonde', handle: '@JeppeKirkBonde', copiers: '29,903', return: '+71.5%', winRate: '94%' },
-  { rank: 4, name: 'Zechariah Bin Zheng', handle: '@FundManagerZech', copiers: '9,391', return: '+53.4%', winRate: '87%' },
-  { rank: 5, name: 'Blue Screen Media ApS', handle: '@CPHequities', copiers: '13,563', return: '+49.8%', winRate: '85%' },
-  { rank: 6, name: 'Amit Kupfer', handle: '@AmitKup', copiers: '8,725', return: '+47.2%', winRate: '83%' },
-];
-
-const traderImages = [
-  'https://images.pexels.com/photos/7709266/pexels-photo-7709266.jpeg?_gl=1*npsu5y*_ga*NTI4NDg1NjA3LjE3NjIxNjE5Nzg.*_ga_8JE65Q40S6*czE3NjIxNjE5NzckbzEkZzEkdDE3NjIxNjI0OTkkajQwJGwwJGgw',
-  'https://images.pexels.com/photos/3966786/pexels-photo-3966786.jpeg?_gl=1*npsu5y*_ga*NTI4NDg1NjA3LjE3NjIxNjE5Nzg.*_ga_8JE65Q40S6*czE3NjIxNjE5NzckbzEkZzEkdDE3NjIxNjI0OTkkajQwJGwwJGgw',
-  'https://images.pexels.com/photos/25985695/pexels-photo-25985695.jpeg?_gl=1*4zrjqx*_ga*NTI4NDg1NjA3LjE3NjIxNjE5Nzg.*_ga_8JE65Q40S6*czE3NjIxNjE5NzckbzEkZzEkdDE3NjIxNjI2MjQkajU5JGwwJGgw',
-  'https://images.pexels.com/photos/17767534/pexels-photo-17767534.jpeg?_gl=1*npsu5y*_ga*NTI4NDg1NjA3LjE3NjIxNjE5Nzg.*_ga_8JE65Q40S6*czE3NjIxNjE5NzckbzEkZzEkdDE3NjIxNjI0OTkkajQwJGwwJGgw',
-  'https://images.pexels.com/photos/15029211/pexels-photo-15029211.jpeg?_gl=1*nmzggw*_ga*NTI4NDg1NjA3LjE3NjIxNjE5Nzg.*_ga_8JE65Q40S6*czE3NjIxNjE5NzckbzEkZzEkdDE3NjIxNjI0OTkkajQwJGwwJGgw',
-  'https://images.pexels.com/photos/6930579/pexels-photo-6930579.jpeg?_gl=1*4zrjqx*_ga*NTI4NDg1NjA3LjE3NjIxNjE5Nzg.*_ga_8JE65Q40S6*czE3NjIxNjE5NzckbzEkZzEkdDE3NjIxNjI2MjQkajU5JGwwJGgw',
-];
-
-const getRankIcon = (rank: number) => {
-  if (rank === 1) return Trophy;
-  if (rank === 2) return Medal;
-  if (rank === 3) return Award;
-  return null;
-};
-
-const getRankColor = (rank: number) => {
-  if (rank === 1) return 'from-blue-500 to-cyan-500';
-  if (rank === 2) return 'from-cyan-500 to-blue-600';
-  if (rank === 3) return 'from-indigo-500 to-blue-500';
-  return 'from-blue-600 to-cyan-600';
-};
 
 export default function TopTraders() {
   const navigate = useNavigate();
   const handleBack = () => {
     navigate('/register');
   };
+
+  const traders = [
+    { rank: 1, name: 'Thomas P. Jones', handle: '@thomaspj', copiers: '28,869', return: '+64.2%', winRate: '92%', badge: 'Elite' },
+    { rank: 2, name: 'Jay Smith', handle: '@jaynemesis', copiers: '10,305', return: '+58.7%', winRate: '89%', badge: 'Pro' },
+    { rank: 3, name: 'Jeppe K. Bonde', handle: '@JeppeKirkBonde', copiers: '29,903', return: '+71.5%', winRate: '94%', badge: 'Elite' },
+    { rank: 4, name: 'Zechariah Zheng', handle: '@FundManagerZech', copiers: '9,391', return: '+53.4%', winRate: '87%', badge: 'Pro' },
+    { rank: 5, name: 'Blue Screen Media', handle: '@CPHequities', copiers: '13,563', return: '+49.8%', winRate: '85%', badge: 'Pro' },
+    { rank: 6, name: 'Amit Kupfer', handle: '@AmitKup', copiers: '8,725', return: '+47.2%', winRate: '83%', badge: 'Verified' },
+  ];
+
   return (
-    <section className="py-32 px-6 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
-      </div>
+    <section className="relative py-32 px-6 bg-[#0a0e27] overflow-hidden">
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a08_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+
+      {/* Gentle Glow Effects */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-blue-600/8 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-blue-800/6 rounded-full blur-[100px]"></div>
 
       <div className="max-w-7xl mx-auto relative">
-        <div className="text-center mb-20">
-          <div className="inline-block px-6 py-2.5 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-full mb-6">
-            <span className="text-blue-400 font-bold text-sm flex items-center space-x-2">
-              <Trophy className="w-4 h-4" />
-              <span>TOP PERFORMERS</span>
-            </span>
+        {/* Section Badge */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-950/40 backdrop-blur-sm border border-blue-800/30 rounded-full">
+            <Trophy className="w-4 h-4 text-blue-400" />
+            <span className="text-blue-300 text-sm font-medium">Top Performers</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-            Most Copied Traders
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              Over The Last Year
+        </div>
+
+        {/* Heading */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            Most Successful
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">
+              Trading Experts
             </span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of successful investors who are copying these verified top performers
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">
+            Follow and copy strategies from our highest-performing traders with verified track records
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {traders.map((trader, idx) => {
-            const RankIcon = getRankIcon(trader.rank);
-            const rankColor = getRankColor(trader.rank);
+        {/* Traders Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {traders.map((trader) => (
+            <div
+              key={trader.rank}
+              className="group relative bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-2xl p-6 hover:border-blue-800/50 transition-all duration-300"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
 
-            return (
-              <div
-                key={trader.rank}
-                className="group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-3xl p-8 border-2 border-white/10 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 hover:-translate-y-2"
-              >
-                {trader.rank <= 3 && (
-                  <div className="absolute -top-4 -right-4">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${rankColor} rounded-2xl flex items-center justify-center shadow-2xl rotate-12 group-hover:rotate-0 transition-all duration-500`}>
-                      {RankIcon && <RankIcon className="w-8 h-8 text-white" />}
+              <div className="relative">
+                {/* Rank Badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                      <span className="text-blue-400 font-bold">#{trader.rank}</span>
                     </div>
+                    {trader.rank <= 3 && (
+                      <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                    )}
                   </div>
-                )}
-
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="relative">
-                    <img
-                      src={traderImages[idx]}
-                      alt={trader.name}
-                      className="w-20 h-20 rounded-2xl object-cover ring-4 ring-white/20 group-hover:ring-blue-400/50 transition-all"
-                    />
-                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl border-2 border-gray-900 flex items-center justify-center">
-                      <TrendingUp className="w-4 h-4 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-2 mb-1">
-                      <span className={`text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r ${rankColor}`}>
-                        #{trader.rank}
-                      </span>
-                    </div>
-                    <h4 className="font-bold text-white text-lg leading-tight">{trader.name}</h4>
-                    <p className="text-gray-400 text-sm">{trader.handle}</p>
+                  <div className="px-3 py-1 bg-blue-600/20 rounded-full">
+                    <span className="text-blue-300 text-xs font-medium">{trader.badge}</span>
                   </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-3 border border-white/10">
-                      <div className="text-xs text-gray-400 mb-1">Annual Return</div>
-                      <div className="text-2xl font-black text-green-400">{trader.return}</div>
-                    </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-3 border border-white/10">
-                      <div className="text-xs text-gray-400 mb-1">Win Rate</div>
-                      <div className="text-2xl font-black text-cyan-400">{trader.winRate}</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl border border-blue-400/30">
-                    <div className="flex items-center space-x-2">
-                      <Users className="w-5 h-5 text-blue-400" />
-                      <span className="text-white font-semibold">Copiers</span>
-                    </div>
-                    <span className="text-2xl font-black text-white">
-                      {parseInt(trader.copiers).toLocaleString()}
-                    </span>
-                  </div>
-
-                  <button
-                      onClick={handleBack}
-                      className="w-full py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl hover:shadow-2xl hover:shadow-blue-400/50 transition-all font-bold text-base group-hover:scale-105">
-                    Copy This Trader
-                  </button>
+                {/* Trader Info */}
+                <div className="mb-4">
+                  <h3 className="text-white font-semibold text-lg mb-1">{trader.name}</h3>
+                  <p className="text-slate-400 text-sm">{trader.handle}</p>
                 </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="bg-green-500/10 rounded-lg p-3 border border-green-500/20">
+                    <div className="text-xs text-slate-400 mb-1">Total Return</div>
+                    <div className="text-green-400 font-bold text-lg flex items-center gap-1">
+                      <TrendingUp className="w-4 h-4" />
+                      {trader.return}
+                    </div>
+                  </div>
+                  <div className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
+                    <div className="text-xs text-slate-400 mb-1">Win Rate</div>
+                    <div className="text-blue-400 font-bold text-lg">{trader.winRate}</div>
+                  </div>
+                </div>
+
+                {/* Copiers */}
+                <div className="flex items-center justify-between p-3 bg-slate-800/40 rounded-lg border border-slate-700/30 mb-4">
+                  <div className="flex items-center gap-2">
+                    <Users className="w-4 h-4 text-slate-400" />
+                    <span className="text-slate-400 text-sm">Copiers</span>
+                  </div>
+                  <span className="text-white font-semibold">{parseInt(trader.copiers).toLocaleString()}</span>
+                </div>
+
+                {/* CTA Button */}
+                <button
+                  onClick={handleBack}
+                  className="group/btn w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/30"
+                >
+                  Copy Trader
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </button>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center">
+          <p className="text-slate-400 text-lg mb-6">
+            Want to see more top performers?
+          </p>
+          <button
+            onClick={handleBack}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 text-white rounded-lg font-semibold hover:border-blue-800/50 transition-all"
+          >
+            View All Traders
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
     </section>
   );
