@@ -1,4 +1,4 @@
-import {Check, Star, Zap, Crown, Sparkles, TrendingUp, Gem, Rocket} from 'lucide-react';
+import {Check, Star, Zap, Crown, Sparkles, TrendingUp} from 'lucide-react';
 import {useNavigate} from "react-router-dom";
 
 const plans = [
@@ -11,17 +11,15 @@ const plans = [
     daily: '1.2',
     minDeposit: '$5,000',
     popular: false,
-    rotation: 'rotate-2',
     features: [
-      'Military-grade encryption',
+      'Enhanced security protocols',
       '1.2% daily returns',
       'Guaranteed ROI',
       '24/7 priority support',
       '30-day maturity term',
       'Instant capital release',
-      'Advanced portfolio dashboard',
-      'Weekly market insights',
-      'Email & chat support'
+      'Portfolio dashboard access',
+      'Market insights & reports'
     ]
   },
   {
@@ -33,42 +31,38 @@ const plans = [
     daily: '1.4',
     minDeposit: '$25,000',
     popular: true,
-    rotation: '-rotate-1',
     features: [
-      'Maximum security protocols',
+      'Enhanced security protocols',
       '1.4% daily returns',
       'Guaranteed ROI',
-      '24/7 VIP concierge support',
+      '24/7 VIP support',
       '30-day maturity term',
-      'Priority capital release',
-      'Premium portfolio suite',
+      'Instant capital release',
+      'Advanced portfolio tools',
       'Dedicated account manager',
-      'Bi-weekly strategy sessions',
-      'Exclusive market analysis'
+      'Quarterly strategy calls'
     ]
   },
   {
     name: 'Diamond',
-    icon: Gem,
+    icon: Sparkles,
     tagline: 'For serious investors',
     percentage: '15',
     duration: '12 Months',
     daily: '1.6',
     minDeposit: '$100,000',
     popular: false,
-    rotation: 'rotate-1',
     features: [
-      'Enterprise-grade security',
+      'Maximum security protocols',
       '1.6% daily returns',
       'Guaranteed ROI',
-      '24/7 executive support',
+      '24/7 VIP support',
       '30-day maturity term',
-      'VIP capital release',
-      'Elite portfolio management',
-      'Senior wealth advisor',
-      'Weekly strategy calls',
-      'Private market intelligence',
-      'Tax optimization guidance'
+      'Priority capital release',
+      'Premium portfolio suite',
+      'Senior account manager',
+      'Monthly strategy sessions',
+      'Exclusive market analysis'
     ]
   },
   {
@@ -80,20 +74,18 @@ const plans = [
     daily: '1.8',
     minDeposit: '$250,000',
     popular: false,
-    rotation: '-rotate-2',
     features: [
-      'Ultra-secure vault protection',
+      'Military-grade security',
       '1.8% daily returns',
       'Guaranteed ROI',
-      '24/7 white-glove service',
+      '24/7 concierge support',
       '30-day maturity term',
-      'Immediate priority release',
-      'Bespoke portfolio architecture',
-      'Executive wealth strategist',
-      'Daily market briefings',
-      'Exclusive investment opportunities',
-      'Custom wealth strategies',
-      'Concierge financial planning'
+      'Priority capital release',
+      'Enterprise portfolio suite',
+      'Executive account manager',
+      'Weekly strategy sessions',
+      'Private market intelligence',
+      'Custom investment strategies'
     ]
   }
 ];
@@ -107,134 +99,98 @@ export default function InvestmentPlansGrid() {
     navigate('/contact');
   };
   return (
-    <section className="py-28 px-6 bg-gradient-to-b from-slate-950 via-blue-950/60 to-slate-950 overflow-hidden">
+    <section className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header with Overlapping Glass */}
-        <div className="text-center mb-20 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] bg-[#0066ff]/20 rounded-full blur-[100px]"></div>
-
-          <div className="relative inline-block mb-10">
-            <div className="absolute inset-0 glass-strong rounded-full blur-md scale-110"></div>
-            <div className="relative inline-flex items-center px-8 py-4 glass-card border-2 border-[#0080ff]/50 rounded-full shadow-xl shadow-[#0066ff]/30 animate-glow backdrop-blur-3xl">
-              <TrendingUp className="w-5 h-5 text-[#00ccff] mr-3 animate-pulse"/>
-              <span className="text-[#00ccff] font-bold text-base tracking-wide">Premium Investment Plans</span>
-              <Sparkles className="w-5 h-5 text-[#0080ff] ml-3 animate-pulse"/>
-            </div>
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-6 py-3 bg-blue-50 border border-blue-200 rounded-full mb-8">
+            <TrendingUp className="w-4 h-4 text-blue-600 mr-2"/>
+            <span className="text-blue-600 font-semibold text-sm tracking-wide">Investment Plans</span>
           </div>
 
-          <h2 className="text-5xl lg:text-6xl font-black text-white mb-8 leading-tight tracking-tight">
-            Investment strategies that
+          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            Plans that scale
             <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066ff] via-[#0080ff] to-[#00ccff]">amplify your wealth</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600">with your ambitions</span>
           </h2>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto font-medium">
-            From beginner-friendly tiers to elite platinum access, discover premium plans engineered for exponential financial growth.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            From beginner-friendly options to elite investment tiers, find the perfect plan to match your financial
+            goals.
           </p>
         </div>
 
-        {/* Pricing Cards - Unique 3D Stacked & Tilted Layout */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-20 relative perspective-1000">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {plans.map((plan, index) => {
             const IconComponent = plan.icon;
             return (
                 <div
                     key={index}
-                    className="group relative transform hover:scale-105 transition-all duration-700 preserve-3d"
+                    className={`group relative bg-white rounded-3xl p-8 border-2 transition-all duration-500 hover:-translate-y-2 ${
+                        plan.popular
+                            ? 'border-blue-500 shadow-2xl shadow-blue-500/20'
+                            : 'border-gray-200 hover:border-blue-300 hover:shadow-xl'
+                    }`}
                 >
-                  {/* 3D Stacked Background Layers */}
-                  <div className={`absolute inset-0 glass-strong rounded-3xl opacity-20 blur-lg ${plan.rotation} scale-95 translate-y-3`}></div>
-                  <div className={`absolute inset-0 glass-strong rounded-3xl opacity-40 blur-md ${plan.rotation} scale-97 translate-y-1.5`}></div>
-
-                  {/* Main Card with Featured Plan Special Treatment */}
-                  <div
-                      className={`relative glass-card backdrop-blur-3xl rounded-3xl p-8 border-2 transition-all duration-700 hover:-translate-y-3 ${
-                          plan.popular
-                              ? 'border-[#00ccff]/70 shadow-2xl shadow-[#00ccff]/40 scale-105 z-10 hover:scale-110 -rotate-1 hover:rotate-0'
-                              : `border-[#0066ff]/40 hover:border-[#0080ff]/60 hover:shadow-2xl hover:shadow-[#0066ff]/30 ${plan.rotation} hover:rotate-0`
-                      }`}
-                  >
-                    {/* Featured Plan Floating Badge */}
-                    {plan.popular && (
-                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20">
-                          <div className="relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#0066ff] via-[#00ccff] to-[#0080ff] rounded-full blur-xl opacity-70 animate-pulse"></div>
-                            <div className="relative px-8 py-3 bg-gradient-to-r from-[#0066ff] via-[#00ccff] to-[#0080ff] text-white text-xs font-black rounded-full shadow-2xl border-2 border-white/30">
-                              <Sparkles className="w-3 h-3 inline mr-2 animate-pulse"/>
-                              MOST POPULAR
-                              <Sparkles className="w-3 h-3 inline ml-2 animate-pulse"/>
-                            </div>
-                          </div>
-                        </div>
-                    )}
-
-                    {/* Overlapping Glass Header */}
-                    <div className="relative mb-8">
-                      <div className="absolute -top-4 -left-4 w-24 h-24 glass-strong rounded-full blur-xl opacity-50"></div>
-                      <div className={`relative w-20 h-20 bg-gradient-to-br from-[#0066ff] via-[#0080ff] to-[#00ccff] rounded-3xl flex items-center justify-center mb-6 shadow-2xl ${plan.popular ? 'shadow-[#00ccff]/60 scale-110' : 'shadow-[#0066ff]/40'} group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500`}>
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded-3xl blur-2xl opacity-60"></div>
-                        <IconComponent className="w-10 h-10 text-white relative z-10"/>
+                  {plan.popular && (
+                      <div
+                          className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white text-xs font-bold rounded-full shadow-lg animate-pulse">
+                        MOST POPULAR
                       </div>
-                      <h3 className="text-4xl font-black text-white mb-2">{plan.name}</h3>
-                      <p className="text-sm text-[#00ccff] font-bold uppercase tracking-wider">{plan.tagline}</p>
+                  )}
+
+                  <div className="relative">
+                    <div className="mb-8">
+                      <div
+                          className={`w-14 h-14 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg ${plan.popular ? 'shadow-blue-500/30' : 'shadow-blue-500/20'} group-hover:scale-110 transition-transform`}>
+                        <IconComponent className="w-7 h-7 text-white"/>
+                      </div>
+                      <h3 className="text-3xl font-black text-gray-900 mb-2">{plan.name}</h3>
+                      <p className="text-sm text-gray-500 font-medium">{plan.tagline}</p>
                     </div>
 
-                    {/* Pricing Display with Glass Effect */}
-                    <div className="relative mb-8 pb-8 border-b-2 border-[#0066ff]/30">
-                      <div className="absolute inset-0 glass-strong rounded-2xl -z-10"></div>
-                      <div className="flex items-baseline mb-6 justify-center">
+                    <div className="mb-8 pb-8 border-b border-gray-200">
+                      <div className="flex items-baseline mb-4">
                         <span
-                            className={`text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0066ff] to-[#00ccff] ${plan.popular ? 'text-7xl' : ''}`}>{plan.percentage}</span>
-                        <span className="text-3xl text-[#0080ff] ml-2 font-black">%</span>
+                            className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">{plan.percentage}</span>
+                        <span className="text-2xl text-gray-600 ml-1">%</span>
                       </div>
-                      <div className="space-y-3 text-sm glass-strong rounded-xl p-4 backdrop-blur-2xl border border-[#0066ff]/20">
-                        <div className="flex justify-between items-center">
-                          <span className="text-blue-300 font-semibold">Duration:</span>
-                          <span className="font-black text-white text-base">{plan.duration}</span>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Duration:</span>
+                          <span className="font-bold text-gray-900">{plan.duration}</span>
                         </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-blue-300 font-semibold">Daily returns:</span>
-                          <span className="font-black text-[#00ccff] text-base">{plan.daily}%</span>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Daily returns:</span>
+                          <span className="font-bold text-cyan-600">{plan.daily}%</span>
                         </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-blue-300 font-semibold">Minimum:</span>
-                          <span className="font-black text-white text-base">{plan.minDeposit}</span>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Minimum:</span>
+                          <span className="font-bold text-gray-900">{plan.minDeposit}</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* CTA Button with Unique Featured Style */}
                     <button
                         onClick={handleBack}
-                        className={`w-full py-5 rounded-2xl font-black text-base mb-8 transition-all duration-500 relative overflow-hidden group/btn ${
+                        className={`w-full py-4 rounded-xl font-bold mb-8 transition-all duration-300 ${
                         plan.popular
-                            ? 'bg-gradient-to-r from-[#0066ff] via-[#00ccff] to-[#0080ff] text-white shadow-xl shadow-[#00ccff]/50 hover:shadow-2xl hover:shadow-[#00ccff]/70 hover:scale-105 border-2 border-white/20'
-                            : 'glass-card text-white hover:bg-[#0066ff]/30 border-2 border-[#0066ff]/40 hover:border-[#00ccff]/60'
+                            ? 'bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-blue-500/30 hover:scale-105'
+                            : 'bg-gray-900 text-white hover:bg-gray-800'
                     }`}>
-                      <span className="relative z-10 flex items-center justify-center">
-                        Start Investing
-                        <Rocket className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform"/>
-                      </span>
-                      {plan.popular && (
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#00ccff] via-[#0066ff] to-[#0080ff] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
-                      )}
+                      Start Investing
                     </button>
 
-                    {/* Features List with Glass Items */}
                     <div className="space-y-4">
-                      <div className="text-xs font-black text-[#00ccff] uppercase tracking-widest mb-5 flex items-center">
-                        <div className="h-px flex-grow bg-gradient-to-r from-transparent via-[#0066ff]/50 to-transparent mr-3"></div>
-                        What's Included
-                        <div className="h-px flex-grow bg-gradient-to-r from-transparent via-[#0066ff]/50 to-transparent ml-3"></div>
+                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">What's Included
                       </div>
                       {plan.features.map((feature, featureIndex) => (
                           <div
                               key={featureIndex}
-                              className="flex items-start space-x-3 glass-strong rounded-lg p-3 backdrop-blur-xl border border-[#0066ff]/20 hover:border-[#00ccff]/40 transition-all duration-300"
+                              className="flex items-start space-x-3"
                           >
-                            <div className="mt-0.5 w-6 h-6 rounded-full bg-gradient-to-br from-[#0066ff] to-[#00ccff] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#0066ff]/30">
-                              <Check className="w-4 h-4 text-white font-bold"/>
+                            <div className="mt-0.5">
+                              <Check className="w-5 h-5 text-green-500 flex-shrink-0"/>
                             </div>
-                            <span className="text-sm text-blue-100 leading-relaxed font-medium">
+                            <span className="text-sm text-gray-600 leading-relaxed">
                           {feature}
                         </span>
                           </div>
@@ -247,51 +203,27 @@ export default function InvestmentPlansGrid() {
         </div>
 
 
-        {/* Custom Solutions CTA with Heavy Glassmorphism */}
-        <div className="mt-32 relative">
-          {/* Multi-layer Glow Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0066ff] via-[#00ccff] to-[#0080ff] rounded-[3rem] blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0080ff] via-[#0066ff] to-[#00ccff] rounded-[3rem] blur-2xl opacity-15"></div>
-
-          {/* Stacked Glass Backgrounds */}
-          <div className="absolute inset-0 glass-strong rounded-[3rem] rotate-1 scale-98 opacity-30 blur-sm"></div>
-          <div className="absolute inset-0 glass-strong rounded-[3rem] -rotate-1 scale-99 opacity-50"></div>
-
-          <div className="relative glass-card backdrop-blur-3xl rounded-[3rem] p-12 lg:p-20 shadow-2xl overflow-hidden border-2 border-[#00ccff]/40">
-            {/* Animated Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#0066ff15_1px,transparent_1px),linear-gradient(to_bottom,#0066ff15_1px,transparent_1px)] bg-[size:32px_32px] opacity-30"></div>
-
-            {/* Floating Orbs */}
-            <div className="absolute top-10 right-10 w-40 h-40 bg-[#00ccff]/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 left-10 w-40 h-40 bg-[#0066ff]/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="mt-24 relative">
+          <div
+              className="absolute inset-0 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-3xl blur-2xl opacity-20"></div>
+          <div
+              className="relative bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 rounded-3xl p-12 lg:p-16 shadow-2xl overflow-hidden">
+            <div
+                className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-20"></div>
 
             <div className="relative text-center">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded-3xl shadow-2xl shadow-[#00ccff]/50 mb-8 animate-pulse">
-                <Crown className="w-12 h-12 text-white"/>
-              </div>
-
-              <h3 className="text-4xl lg:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
-                Need a bespoke solution?
+              <h3 className="text-3xl lg:text-4xl font-black text-white mb-6 tracking-tight">
+                Need a custom solution?
               </h3>
-              <p className="text-xl text-blue-200 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-                For investments exceeding <span className="text-[#00ccff] font-black">$500,000</span> or institutional requirements, our elite team crafts personalized investment architectures designed exclusively for your wealth objectives.
+              <p className="text-l text-slate-300 mb-6 max-w-xl mx-auto">
+                For investments over $500,000 or institutional requirements, our team can create a tailored investment strategy designed specifically for your needs.
               </p>
-
-              <div className="flex flex-wrap gap-6 justify-center">
+              <div className="flex flex-wrap gap-4 justify-center">
                 <button
                     onClick={handleBack2}
-                    className="group/cta relative px-10 py-5 bg-gradient-to-r from-[#0066ff] via-[#00ccff] to-[#0080ff] text-white rounded-2xl hover:shadow-2xl hover:shadow-[#00ccff]/60 transition-all font-black text-lg hover:scale-105 border-2 border-white/20 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#00ccff] via-[#0080ff] to-[#0066ff] opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500"></div>
-                  <span className="relative flex items-center space-x-3">
-                    <span>Contact Elite Advisors</span>
-                    <TrendingUp className="w-6 h-6 group-hover/cta:translate-x-2 transition-transform"/>
-                  </span>
-                </button>
-
-                <button
-                    onClick={handleBack}
-                    className="px-10 py-5 glass-strong text-white rounded-2xl hover:bg-[#0066ff]/30 transition-all font-black text-lg border-2 border-[#0066ff]/50 hover:border-[#00ccff]/70 hover:shadow-xl hover:shadow-[#0066ff]/30 backdrop-blur-2xl">
-                  View All Plans
+                    className="group px-8 py-4 bg-white text-slate-900 rounded-xl hover:bg-blue-50 transition-all font-bold text-l shadow-xl hover:scale-105 flex items-center space-x-2">
+                  <span>Contact Enterprise Sales</span>
+                  <TrendingUp className="w-5 h-5 group-hover:translate-x-1 transition-transform"/>
                 </button>
               </div>
             </div>

@@ -27,35 +27,31 @@ export default function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled
-        ? 'glass-strong backdrop-blur-xl border-b border-blue-500/10'
-        : 'glass-card backdrop-blur-md border-b border-white/5'
+        ? 'bg-slate-900/80 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl shadow-cyan-500/5'
+        : 'bg-slate-900/60 backdrop-blur-md border-b border-white/5'
     }`}>
       <TickerTapeWidget />
-
-      {/* Desktop Layout - Traditional Horizontal */}
-      <div className="hidden lg:block max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative w-10 h-10 glass-card border border-blue-400/20 rounded-xl flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-cyan-300" strokeWidth={2.5} />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
+              <div className="relative w-11 h-11 bg-gradient-to-br from-cyan-500 via-blue-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
+                <TrendingUp className="w-6 h-6 text-white" />
               </div>
             </div>
-            <span className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 tracking-tight">
+            <span className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400">
               Globalmarketacess
             </span>
           </Link>
 
-          {/* Navigation */}
-          <nav className="flex items-center gap-1">
+          <nav className="hidden lg:flex items-center space-x-1">
             <Link
               to="/about"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/about')
-                  ? 'text-cyan-300 glass-card'
-                  : 'text-slate-300 hover:text-cyan-300 hover:glass'
+                  ? 'text-cyan-400 bg-cyan-500/10'
+                  : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
               }`}
             >
               About
@@ -64,8 +60,8 @@ export default function Header() {
               to="/testimonials"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/testimonials')
-                  ? 'text-cyan-300 glass-card'
-                  : 'text-slate-300 hover:text-cyan-300 hover:glass'
+                  ? 'text-cyan-400 bg-cyan-500/10'
+                  : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
               }`}
             >
               Testimonials
@@ -74,8 +70,8 @@ export default function Header() {
               to="/pricing"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/pricing')
-                  ? 'text-cyan-300 glass-card'
-                  : 'text-slate-300 hover:text-cyan-300 hover:glass'
+                  ? 'text-cyan-400 bg-cyan-500/10'
+                  : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
               }`}
             >
               Pricing
@@ -84,8 +80,8 @@ export default function Header() {
               to="/contact"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/contact')
-                  ? 'text-cyan-300 glass-card'
-                  : 'text-slate-300 hover:text-cyan-300 hover:glass'
+                  ? 'text-cyan-400 bg-cyan-500/10'
+                  : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
               }`}
             >
               Contact
@@ -94,77 +90,52 @@ export default function Header() {
               to="/faq"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/faq')
-                  ? 'text-cyan-300 glass-card'
-                  : 'text-slate-300 hover:text-cyan-300 hover:glass'
+                  ? 'text-cyan-400 bg-cyan-500/10'
+                  : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
               }`}
             >
               FAQ
             </Link>
           </nav>
 
-          {/* Action Buttons */}
-          <div className="flex items-center gap-3">
-            <Link
-              to="/login"
-              className="px-5 py-2 text-slate-300 hover:text-cyan-300 transition-all font-medium glass rounded-lg hover:glass-card"
-            >
+          <div className="flex items-center space-x-3">
+            <Link to="/login" className="hidden lg:block px-5 py-2.5 text-slate-300 hover:text-cyan-400 transition-all font-medium hover:bg-white/5 rounded-lg">
               Sign In
             </Link>
-            <Link
-              to="/register"
-              className="relative group px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-semibold overflow-hidden transition-all hover:scale-105"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <Link to="/register" className="hidden lg:block relative group px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold overflow-hidden transition-all hover:shadow-lg hover:shadow-cyan-500/50 hover:scale-105">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <span className="relative">Get Started</span>
             </Link>
+
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 text-slate-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-all"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Layout */}
-      <div className="lg:hidden max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2.5 group">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative w-10 h-10 glass-card border border-blue-400/20 rounded-xl flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-cyan-300" strokeWidth={2.5} />
-              </div>
-            </div>
-            <span className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-              Globalmarketacess
-            </span>
-          </Link>
-
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="glass-card p-2.5 text-slate-300 hover:text-cyan-300 rounded-lg transition-all"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
       <div
-        className={`fixed left-0 right-0 glass-strong backdrop-blur-xl border-b border-blue-500/10 transform transition-all duration-300 ease-in-out lg:hidden overflow-hidden ${
+        className={`fixed left-0 right-0 bg-slate-900/95 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl transform transition-all duration-300 ease-in-out lg:hidden overflow-hidden ${
           isMobileMenuOpen ? 'top-[120px] max-h-screen opacity-100' : 'top-[120px] max-h-0 opacity-0'
         }`}
         style={{ zIndex: 45 }}
       >
         <nav className="py-4">
-          <div className="flex flex-col space-y-2 px-4">
+          <div className="flex flex-col space-y-1 px-4">
             <Link
               to="/about"
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive('/about')
-                  ? 'glass-card text-cyan-300'
-                  : 'glass text-slate-300 hover:text-cyan-300 hover:glass-card'
+                  ? 'bg-cyan-500/10 text-cyan-400'
+                  : 'text-slate-300 hover:bg-white/5 hover:text-cyan-400'
               }`}
             >
               About
@@ -173,8 +144,8 @@ export default function Header() {
               to="/testimonials"
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive('/testimonials')
-                  ? 'glass-card text-cyan-300'
-                  : 'glass text-slate-300 hover:text-cyan-300 hover:glass-card'
+                  ? 'bg-cyan-500/10 text-cyan-400'
+                  : 'text-slate-300 hover:bg-white/5 hover:text-cyan-400'
               }`}
             >
               Testimonials
@@ -183,8 +154,8 @@ export default function Header() {
               to="/pricing"
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive('/pricing')
-                  ? 'glass-card text-cyan-300'
-                  : 'glass text-slate-300 hover:text-cyan-300 hover:glass-card'
+                  ? 'bg-cyan-500/10 text-cyan-400'
+                  : 'text-slate-300 hover:bg-white/5 hover:text-cyan-400'
               }`}
             >
               Pricing
@@ -193,8 +164,8 @@ export default function Header() {
               to="/contact"
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive('/contact')
-                  ? 'glass-card text-cyan-300'
-                  : 'glass text-slate-300 hover:text-cyan-300 hover:glass-card'
+                  ? 'bg-cyan-500/10 text-cyan-400'
+                  : 'text-slate-300 hover:bg-white/5 hover:text-cyan-400'
               }`}
             >
               Contact
@@ -203,24 +174,24 @@ export default function Header() {
               to="/faq"
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive('/faq')
-                  ? 'glass-card text-cyan-300'
-                  : 'glass text-slate-300 hover:text-cyan-300 hover:glass-card'
+                  ? 'bg-cyan-500/10 text-cyan-400'
+                  : 'text-slate-300 hover:bg-white/5 hover:text-cyan-400'
               }`}
             >
               FAQ
             </Link>
           </div>
 
-          <div className="px-4 pt-4 pb-2 space-y-3 border-t border-white/5 mt-4">
+          <div className="px-4 pt-4 pb-2 space-y-3 border-t border-white/10 mt-4">
             <Link
               to="/login"
-              className="block w-full px-6 py-3 text-center text-slate-300 hover:text-cyan-300 transition-all font-medium glass rounded-lg hover:glass-card"
+              className="block w-full px-6 py-3 text-center text-slate-300 hover:text-cyan-400 transition-all font-medium border border-slate-700 rounded-lg hover:border-cyan-500/50 hover:bg-white/5"
             >
               Sign In
             </Link>
             <Link
               to="/register"
-              className="block w-full px-6 py-3 text-center bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg transition-all font-semibold hover:scale-105"
+              className="block w-full px-6 py-3 text-center bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all font-semibold"
             >
               Get Started
             </Link>
