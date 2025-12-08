@@ -4,7 +4,10 @@
 
 @layer base {
   body {
-    @apply antialiased bg-slate-950;
+    @apply antialiased;
+    background: linear-gradient(135deg, #000a1a 0%, #001433 50%, #0a1c3e 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   html {
@@ -15,6 +18,27 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-hover {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-card {
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 58, 153, 0.05) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 102, 255, 0.2);
   }
 }
 
@@ -30,20 +54,21 @@ html {
 
 /* Custom scrollbar for dark theme */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #000a1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 6px;
+  background: linear-gradient(180deg, #0066ff 0%, #003d99 100%);
+  border-radius: 10px;
+  border: 2px solid #000a1a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: linear-gradient(180deg, #3385ff 0%, #0066ff 100%);
 }
 
 /* Chrome, Safari, Edge, Opera */
