@@ -27,31 +27,28 @@ export default function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled
-        ? 'bg-slate-900/80 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl shadow-cyan-500/5'
-        : 'bg-slate-900/60 backdrop-blur-md border-b border-white/5'
+        ? 'bg-[#0a0e27]/95 backdrop-blur-xl border-b border-blue-900/30 shadow-2xl shadow-blue-900/10'
+        : 'bg-[#0a0e27]/80 backdrop-blur-md border-b border-blue-900/20'
     }`}>
       <TickerTapeWidget />
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
-              <div className="relative w-11 h-11 bg-gradient-to-br from-cyan-500 via-blue-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
-                <TrendingUp className="w-6 h-6 text-white" />
-              </div>
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-11 h-11 bg-blue-600/20 rounded-lg flex items-center justify-center group-hover:bg-blue-600/30 transition-all">
+              <TrendingUp className="w-6 h-6 text-blue-400" />
             </div>
-            <span className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400">
+            <span className="text-xl font-bold text-white">
               Globalmarketacess
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center gap-1">
             <Link
               to="/about"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/about')
-                  ? 'text-cyan-400 bg-cyan-500/10'
-                  : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
+                  ? 'text-blue-400 bg-blue-600/20'
+                  : 'text-slate-300 hover:text-blue-400 hover:bg-blue-600/10'
               }`}
             >
               About
@@ -60,8 +57,8 @@ export default function Header() {
               to="/testimonials"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/testimonials')
-                  ? 'text-cyan-400 bg-cyan-500/10'
-                  : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
+                  ? 'text-blue-400 bg-blue-600/20'
+                  : 'text-slate-300 hover:text-blue-400 hover:bg-blue-600/10'
               }`}
             >
               Testimonials
@@ -70,8 +67,8 @@ export default function Header() {
               to="/pricing"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/pricing')
-                  ? 'text-cyan-400 bg-cyan-500/10'
-                  : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
+                  ? 'text-blue-400 bg-blue-600/20'
+                  : 'text-slate-300 hover:text-blue-400 hover:bg-blue-600/10'
               }`}
             >
               Pricing
@@ -80,8 +77,8 @@ export default function Header() {
               to="/contact"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/contact')
-                  ? 'text-cyan-400 bg-cyan-500/10'
-                  : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
+                  ? 'text-blue-400 bg-blue-600/20'
+                  : 'text-slate-300 hover:text-blue-400 hover:bg-blue-600/10'
               }`}
             >
               Contact
@@ -90,26 +87,25 @@ export default function Header() {
               to="/faq"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/faq')
-                  ? 'text-cyan-400 bg-cyan-500/10'
-                  : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
+                  ? 'text-blue-400 bg-blue-600/20'
+                  : 'text-slate-300 hover:text-blue-400 hover:bg-blue-600/10'
               }`}
             >
               FAQ
             </Link>
           </nav>
 
-          <div className="flex items-center space-x-3">
-            <Link to="/login" className="hidden lg:block px-5 py-2.5 text-slate-300 hover:text-cyan-400 transition-all font-medium hover:bg-white/5 rounded-lg">
+          <div className="flex items-center gap-3">
+            <Link to="/login" className="hidden lg:block px-5 py-2.5 text-slate-300 hover:text-blue-400 transition-all font-medium hover:bg-blue-600/10 rounded-lg">
               Sign In
             </Link>
-            <Link to="/register" className="hidden lg:block relative group px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold overflow-hidden transition-all hover:shadow-lg hover:shadow-cyan-500/50 hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <span className="relative">Get Started</span>
+            <Link to="/register" className="hidden lg:block px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-blue-600/30">
+              Get Started
             </Link>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-slate-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-all"
+              className="lg:hidden p-2 text-slate-300 hover:text-blue-400 hover:bg-blue-600/10 rounded-lg transition-all"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -123,7 +119,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed left-0 right-0 bg-slate-900/95 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl transform transition-all duration-300 ease-in-out lg:hidden overflow-hidden ${
+        className={`fixed left-0 right-0 bg-[#0a0e27]/95 backdrop-blur-xl border-b border-blue-900/30 shadow-2xl transform transition-all duration-300 ease-in-out lg:hidden overflow-hidden ${
           isMobileMenuOpen ? 'top-[120px] max-h-screen opacity-100' : 'top-[120px] max-h-0 opacity-0'
         }`}
         style={{ zIndex: 45 }}
@@ -134,8 +130,8 @@ export default function Header() {
               to="/about"
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive('/about')
-                  ? 'bg-cyan-500/10 text-cyan-400'
-                  : 'text-slate-300 hover:bg-white/5 hover:text-cyan-400'
+                  ? 'bg-blue-600/20 text-blue-400'
+                  : 'text-slate-300 hover:bg-blue-600/10 hover:text-blue-400'
               }`}
             >
               About
@@ -144,8 +140,8 @@ export default function Header() {
               to="/testimonials"
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive('/testimonials')
-                  ? 'bg-cyan-500/10 text-cyan-400'
-                  : 'text-slate-300 hover:bg-white/5 hover:text-cyan-400'
+                  ? 'bg-blue-600/20 text-blue-400'
+                  : 'text-slate-300 hover:bg-blue-600/10 hover:text-blue-400'
               }`}
             >
               Testimonials
@@ -154,8 +150,8 @@ export default function Header() {
               to="/pricing"
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive('/pricing')
-                  ? 'bg-cyan-500/10 text-cyan-400'
-                  : 'text-slate-300 hover:bg-white/5 hover:text-cyan-400'
+                  ? 'bg-blue-600/20 text-blue-400'
+                  : 'text-slate-300 hover:bg-blue-600/10 hover:text-blue-400'
               }`}
             >
               Pricing
@@ -164,8 +160,8 @@ export default function Header() {
               to="/contact"
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive('/contact')
-                  ? 'bg-cyan-500/10 text-cyan-400'
-                  : 'text-slate-300 hover:bg-white/5 hover:text-cyan-400'
+                  ? 'bg-blue-600/20 text-blue-400'
+                  : 'text-slate-300 hover:bg-blue-600/10 hover:text-blue-400'
               }`}
             >
               Contact
@@ -174,24 +170,24 @@ export default function Header() {
               to="/faq"
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive('/faq')
-                  ? 'bg-cyan-500/10 text-cyan-400'
-                  : 'text-slate-300 hover:bg-white/5 hover:text-cyan-400'
+                  ? 'bg-blue-600/20 text-blue-400'
+                  : 'text-slate-300 hover:bg-blue-600/10 hover:text-blue-400'
               }`}
             >
               FAQ
             </Link>
           </div>
 
-          <div className="px-4 pt-4 pb-2 space-y-3 border-t border-white/10 mt-4">
+          <div className="px-4 pt-4 pb-2 space-y-3 border-t border-blue-900/30 mt-4">
             <Link
               to="/login"
-              className="block w-full px-6 py-3 text-center text-slate-300 hover:text-cyan-400 transition-all font-medium border border-slate-700 rounded-lg hover:border-cyan-500/50 hover:bg-white/5"
+              className="block w-full px-6 py-3 text-center text-slate-300 hover:text-blue-400 transition-all font-medium border border-slate-700/50 rounded-lg hover:border-blue-600/50 hover:bg-blue-600/10"
             >
               Sign In
             </Link>
             <Link
               to="/register"
-              className="block w-full px-6 py-3 text-center bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all font-semibold"
+              className="block w-full px-6 py-3 text-center bg-blue-600 hover:bg-blue-500 text-white rounded-lg hover:shadow-lg hover:shadow-blue-600/30 transition-all font-semibold"
             >
               Get Started
             </Link>

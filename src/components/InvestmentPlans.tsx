@@ -1,4 +1,4 @@
-import { Check, Sparkles, Crown, Gem, Star, ArrowRight } from 'lucide-react';
+import { Check, Sparkles, Crown, Gem, Star, ArrowRight, Building2 } from 'lucide-react';
 import {useNavigate} from "react-router-dom";
 
 const plans = [
@@ -51,6 +51,24 @@ const plans = [
       'Exclusive Research Reports',
     ],
   },
+  {
+    name: 'Institutional',
+    icon: Building2,
+    percentage: '20',
+    duration: '18 Months',
+    minimum: '$500,000',
+    daily: '2.0%',
+    features: [
+      'Enterprise-Grade Security',
+      '2.0% Daily Returns',
+      'White-Glove Service',
+      'Direct Market Access',
+      'Custom Trading Solutions',
+      'Dedicated Trading Team',
+      'Private Research & Analysis',
+      'Exclusive Investment Opportunities',
+    ],
+  },
 ];
 
 export default function InvestmentPlans() {
@@ -91,7 +109,7 @@ export default function InvestmentPlans() {
         </div>
 
         {/* Plans Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {plans.map((plan) => {
             const Icon = plan.icon;
             return (
