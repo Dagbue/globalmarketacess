@@ -1,28 +1,52 @@
-import { ArrowRight } from 'lucide-react';
-import {useNavigate} from "react-router-dom";
+import { ArrowRight, BarChart2 } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 export default function IndexMarket() {
   const navigate = useNavigate();
   const handleBack = () => {
     navigate('/register');
   };
+
+  const indices = ['S&P 500', 'NASDAQ', 'FTSE 100', 'DAX 30', 'Nikkei 225'];
+
   return (
-    <section className="py-32 px-6 bg-gradient-to-b from-slate-950 to-slate-900">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-gradient-to-r from-slate-900/50 to-blue-900/50 backdrop-blur-sm rounded-3xl p-12 lg:p-16 border border-slate-800 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-20"></div>
-          <div className="relative text-center">
-            <h2 className="text-4xl lg:text-4xl font-black text-white mb-6">
+    <section className="relative py-32 px-6 bg-[#0a0e27] overflow-hidden">
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a08_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+
+      {/* Gentle Glow Effects */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/8 rounded-full blur-[120px]"></div>
+
+      <div className="max-w-7xl mx-auto relative">
+        <div className="relative bg-slate-900/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-slate-800/50">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-950/40 backdrop-blur-sm border border-blue-800/30 rounded-full mb-8">
+              <BarChart2 className="w-4 h-4 text-blue-400" />
+              <span className="text-blue-300 text-sm font-medium">Global Indices</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Trade Global Indices with Confidence
             </h2>
-            <p className="text-l text-slate-300 mb-10 max-w-3xl mx-auto">
-              Access major market indices including S&P 500, NASDAQ, FTSE 100, and more with competitive spreads
+
+            <p className="text-lg text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Access major market indices with competitive spreads and instant execution.
             </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+              {indices.map((index, i) => (
+                <div key={i} className="px-4 py-2 bg-slate-800/40 border border-slate-700/50 rounded-lg text-slate-300 text-sm font-medium">
+                  {index}
+                </div>
+              ))}
+            </div>
+
             <button
-                onClick={handleBack}
-                className="group px-10 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-bold text-l hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] transition-all duration-300 inline-flex items-center space-x-3">
-              <span>Explore Markets</span>
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+              onClick={handleBack}
+              className="group inline-flex items-center gap-2 px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold text-lg transition-all hover:shadow-lg hover:shadow-blue-600/30"
+            >
+              Explore Markets
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
