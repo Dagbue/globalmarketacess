@@ -103,41 +103,44 @@ export default function FAQAccordion() {
   };
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-white via-gray-50 to-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative py-24 px-6 bg-[#0a0e27]">
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a08_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+
+      <div className="max-w-6xl mx-auto relative">
         {faqData.map((section, sectionIndex) => (
-          <div key={sectionIndex} className="mb-16">
-            <h2 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4 ">
+          <div key={sectionIndex} className="mb-16 last:mb-0">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
               {section.category}
             </h2>
 
             <div className="space-y-4">
               {section.questions.map((item, itemIndex) => (
-                <div
-                  key={itemIndex}
-                  className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-blue-300 transition-all"
-                >
-                  <button
-                    onClick={() => toggleItem(section.category, itemIndex)}
-                    className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-                  >
-                    <span className="text-lg font-bold text-gray-900 pr-8">
-                      {item.question}
-                    </span>
-                    <ChevronDown
-                      className={`w-6 h-6 text-gray-600 flex-shrink-0 transition-transform ${
-                        openItems[section.category] === itemIndex ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
+                <div key={itemIndex} className="relative group">
+                  <div className="absolute inset-0 bg-blue-600/5 rounded-xl blur-xl"></div>
+                  <div className="relative bg-slate-900/40 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-800/50 group-hover:border-blue-800/50 transition-all">
+                    <button
+                      onClick={() => toggleItem(section.category, itemIndex)}
+                      className="w-full px-6 md:px-8 py-6 flex items-center justify-between text-left hover:bg-slate-800/30 transition-colors"
+                    >
+                      <span className="text-base md:text-lg font-bold text-white pr-8">
+                        {item.question}
+                      </span>
+                      <ChevronDown
+                        className={`w-6 h-6 text-slate-400 flex-shrink-0 transition-transform ${
+                          openItems[section.category] === itemIndex ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
 
-                  {openItems[section.category] === itemIndex && (
-                    <div className="px-8 pb-6 pt-2">
-                      <p className="text-gray-600 leading-relaxed">
-                        {item.answer}
-                      </p>
-                    </div>
-                  )}
+                    {openItems[section.category] === itemIndex && (
+                      <div className="px-6 md:px-8 pb-6 pt-2">
+                        <p className="text-slate-400 leading-relaxed">
+                          {item.answer}
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
