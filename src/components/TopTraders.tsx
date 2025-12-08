@@ -27,10 +27,10 @@ const getRankIcon = (rank: number) => {
 };
 
 const getRankColor = (rank: number) => {
-  if (rank === 1) return 'from-blue-500 to-cyan-500';
-  if (rank === 2) return 'from-cyan-500 to-blue-600';
-  if (rank === 3) return 'from-indigo-500 to-blue-500';
-  return 'from-blue-600 to-cyan-600';
+  if (rank === 1) return 'from-purple-500 to-fuchsia-500';
+  if (rank === 2) return 'from-fuchsia-500 to-pink-600';
+  if (rank === 3) return 'from-pink-500 to-purple-500';
+  return 'from-purple-600 to-fuchsia-600';
 };
 
 export default function TopTraders() {
@@ -39,22 +39,22 @@ export default function TopTraders() {
     navigate('/register');
   };
   return (
-    <section className="py-32 px-6 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 relative overflow-hidden">
+    <section className="py-32 px-6 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-20">
-          <div className="inline-block px-6 py-2.5 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-full mb-6">
-            <span className="text-blue-400 font-bold text-sm flex items-center space-x-2">
+          <div className="inline-block px-6 py-2.5 bg-gradient-to-r from-purple-500/20 to-fuchsia-500/20 border border-purple-500/30 rounded-full mb-6 animate-glow">
+            <span className="text-purple-400 font-bold text-sm flex items-center space-x-2">
               <Trophy className="w-4 h-4" />
               <span>TOP PERFORMERS</span>
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
             Most Copied Traders
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400 animate-glow">
               Over The Last Year
             </span>
           </h2>
@@ -71,11 +71,12 @@ export default function TopTraders() {
             return (
               <div
                 key={trader.rank}
-                className="group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-3xl p-8 border-2 border-white/10 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 hover:-translate-y-2"
+                className="group relative glass-purple rounded-3xl p-8 border-2 border-white/10 hover:border-purple-400/50 hover:shadow-2xl hover:shadow-purple-400/20 transition-all duration-500 hover:-translate-y-2 animate-float"
+                style={{ animationDelay: `${idx * 0.15}s` }}
               >
                 {trader.rank <= 3 && (
                   <div className="absolute -top-4 -right-4">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${rankColor} rounded-2xl flex items-center justify-center shadow-2xl rotate-12 group-hover:rotate-0 transition-all duration-500`}>
+                    <div className={`w-16 h-16 bg-gradient-to-br ${rankColor} rounded-2xl flex items-center justify-center shadow-2xl rotate-12 group-hover:rotate-0 transition-all duration-500 animate-glow`}>
                       {RankIcon && <RankIcon className="w-8 h-8 text-white" />}
                     </div>
                   </div>
@@ -86,7 +87,7 @@ export default function TopTraders() {
                     <img
                       src={traderImages[idx]}
                       alt={trader.name}
-                      className="w-20 h-20 rounded-2xl object-cover ring-4 ring-white/20 group-hover:ring-blue-400/50 transition-all"
+                      className="w-20 h-20 rounded-2xl object-cover ring-4 ring-white/20 group-hover:ring-purple-400/50 transition-all"
                     />
                     <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl border-2 border-gray-900 flex items-center justify-center">
                       <TrendingUp className="w-4 h-4 text-white" />
@@ -105,19 +106,19 @@ export default function TopTraders() {
 
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-3 border border-white/10">
+                    <div className="glass-purple rounded-xl p-3 border border-white/10">
                       <div className="text-xs text-gray-400 mb-1">Annual Return</div>
                       <div className="text-2xl font-black text-green-400">{trader.return}</div>
                     </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-3 border border-white/10">
+                    <div className="glass-purple rounded-xl p-3 border border-white/10">
                       <div className="text-xs text-gray-400 mb-1">Win Rate</div>
-                      <div className="text-2xl font-black text-cyan-400">{trader.winRate}</div>
+                      <div className="text-2xl font-black text-purple-400">{trader.winRate}</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl border border-blue-400/30">
+                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-500/20 to-fuchsia-500/20 rounded-xl border border-purple-400/30">
                     <div className="flex items-center space-x-2">
-                      <Users className="w-5 h-5 text-blue-400" />
+                      <Users className="w-5 h-5 text-purple-400" />
                       <span className="text-white font-semibold">Copiers</span>
                     </div>
                     <span className="text-2xl font-black text-white">
@@ -127,7 +128,7 @@ export default function TopTraders() {
 
                   <button
                       onClick={handleBack}
-                      className="w-full py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl hover:shadow-2xl hover:shadow-blue-400/50 transition-all font-bold text-base group-hover:scale-105">
+                      className="w-full py-4 bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white rounded-xl hover:shadow-2xl hover:shadow-purple-400/50 transition-all font-bold text-base group-hover:scale-105 animate-glow">
                     Copy This Trader
                   </button>
                 </div>

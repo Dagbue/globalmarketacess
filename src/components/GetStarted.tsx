@@ -30,14 +30,14 @@ export default function GetStarted() {
   return (
     <section className="py-32 px-6 bg-slate-950 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/10 rounded-full blur-[120px] animate-glow"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b08_1px,transparent_1px),linear-gradient(to_bottom,#1e293b08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-6xl font-black text-white mb-6 leading-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 animate-glow">
               Three Simple Steps
             </span>
             <span className="block mt-2">To Start Trading</span>
@@ -51,18 +51,18 @@ export default function GetStarted() {
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <div key={index} className="text-center group">
+              <div key={index} className="text-center group animate-float" style={{ animationDelay: `${index * 0.3}s` }}>
                 <div className="relative inline-block mb-8">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-                  <div className="relative w-28 h-28 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-cyan-500/30 group-hover:scale-110 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity animate-glow"></div>
+                  <div className="relative w-28 h-28 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-purple-500/30 group-hover:scale-110 transition-all duration-300">
                     <span className="text-5xl font-black text-white">{step.number}</span>
                   </div>
-                  <div className="absolute -bottom-3 -right-3 w-14 h-14 bg-slate-900 backdrop-blur-xl rounded-2xl shadow-lg flex items-center justify-center border-2 border-cyan-500/30">
-                    <Icon className="w-7 h-7 text-cyan-400" />
+                  <div className="absolute -bottom-3 -right-3 w-14 h-14 glass-purple rounded-2xl shadow-lg flex items-center justify-center border-2 border-purple-500/30">
+                    <Icon className="w-7 h-7 text-purple-400" />
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
                   {step.title}
                 </h3>
 
@@ -77,7 +77,7 @@ export default function GetStarted() {
         <div className="text-center">
           <button
               onClick={handleBack}
-              className="px-12 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:shadow-2xl hover:shadow-cyan-500/50 transition-all font-bold text-lg hover:scale-105">
+              className="px-12 py-5 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all font-bold text-lg hover:scale-105 animate-glow">
             Create Account
           </button>
         </div>

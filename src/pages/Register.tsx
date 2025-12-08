@@ -322,10 +322,10 @@ export default function Register() {
 
   return (
       <div className="min-h-screen flex">
-        <div className="hidden lg:flex lg:w-1/2 relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+        <div className="hidden lg:flex lg:w-1/2 relative bg-gradient-to-br from-purple-950 via-fuchsia-950 to-purple-950 overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[120px] animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-500/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-[120px] animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-fuchsia-500/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }}></div>
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
           </div>
 
@@ -338,15 +338,15 @@ export default function Register() {
 
             <div className="space-y-6 mb-12">
               <div
-                  className="inline-flex items-center px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-blue-500/30 rounded-full">
-                <Sparkles className="w-4 h-4 text-blue-400 mr-2 animate-pulse"/>
-                <span className="text-blue-300 font-semibold text-sm">Join 50,000+ Traders Worldwide</span>
+                  className="inline-flex items-center px-4 py-2 bg-purple-900/50 backdrop-blur-sm border border-purple-500/30 rounded-full">
+                <Sparkles className="w-4 h-4 text-fuchsia-400 mr-2 animate-pulse"/>
+                <span className="text-purple-300 font-semibold text-sm">Join 50,000+ Traders Worldwide</span>
               </div>
 
               <h1 className="text-5xl font-black text-white leading-tight">
                 Start Your
                 <span
-                    className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500">
+                    className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-500">
                 Trading Journey Today
               </span>
               </h1>
@@ -359,8 +359,8 @@ export default function Register() {
             <div className="space-y-6">
               <div className="flex items-start space-x-4 group">
                 <div
-                    className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-slate-700 group-hover:border-blue-500/50 transition-all">
-                  <Users className="w-6 h-6 text-blue-400"/>
+                    className="w-12 h-12 bg-purple-900/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-purple-700 group-hover:border-fuchsia-500/50 transition-all">
+                  <Users className="w-6 h-6 text-purple-400"/>
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-lg mb-1">Community of Traders</h3>
@@ -370,8 +370,8 @@ export default function Register() {
 
               <div className="flex items-start space-x-4 group">
                 <div
-                    className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-slate-700 group-hover:border-cyan-500/50 transition-all">
-                  <Globe className="w-6 h-6 text-cyan-400"/>
+                    className="w-12 h-12 bg-purple-900/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-purple-700 group-hover:border-fuchsia-500/50 transition-all">
+                  <Globe className="w-6 h-6 text-fuchsia-400"/>
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-lg mb-1">Global Market Access</h3>
@@ -381,8 +381,8 @@ export default function Register() {
 
               <div className="flex items-start space-x-4 group">
                 <div
-                    className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-slate-700 group-hover:border-blue-500/50 transition-all">
-                  <Award className="w-6 h-6 text-blue-400"/>
+                    className="w-12 h-12 bg-purple-900/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-purple-700 group-hover:border-fuchsia-500/50 transition-all">
+                  <Award className="w-6 h-6 text-purple-400"/>
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-lg mb-1">Award-Winning Platform</h3>
@@ -422,7 +422,7 @@ export default function Register() {
                       placeholder="John"
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-400"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-gray-900 placeholder:text-gray-400"
                       required
                   />
                 </div>
@@ -436,7 +436,7 @@ export default function Register() {
                       placeholder="Doe"
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-400"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-gray-900 placeholder:text-gray-400"
                       required
                   />
                 </div>
@@ -453,7 +453,7 @@ export default function Register() {
                       placeholder="you@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-400"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-gray-900 placeholder:text-gray-400"
                       required
                   />
                 </div>
@@ -467,7 +467,7 @@ export default function Register() {
                       placeholder="+1 234 567 8900"
                       value={formData.phoneNumber}
                       onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-400"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-gray-900 placeholder:text-gray-400"
                       required
                   />
                 </div>
@@ -484,7 +484,7 @@ export default function Register() {
                       placeholder="Create a strong password"
                       value={formData.password}
                       onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-400 pr-12"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-gray-900 placeholder:text-gray-400 pr-12"
                       required
                   />
                   <button
@@ -508,7 +508,7 @@ export default function Register() {
                       placeholder="Confirm your password"
                       value={formData.confirmPassword}
                       onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-400 pr-12"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-gray-900 placeholder:text-gray-400 pr-12"
                       required
                   />
                   <button
@@ -529,7 +529,7 @@ export default function Register() {
                     id="country"
                     value={formData.country}
                     onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-900"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-gray-900"
                     required
                 >
                   <option value="">Select your country</option>
@@ -551,7 +551,7 @@ export default function Register() {
                     placeholder="123 Main Street"
                     value={formData.address}
                     onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-400"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-gray-900 placeholder:text-gray-400"
                     required
                 />
               </div>
@@ -561,12 +561,12 @@ export default function Register() {
                     type="checkbox"
                     checked={formData.agreeToTerms}
                     onChange={(e) => setFormData({ ...formData, agreeToTerms: e.target.checked })}
-                    className="w-5 h-5 mt-0.5 border-2 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-blue-600 transition-all flex-shrink-0"
+                    className="w-5 h-5 mt-0.5 border-2 border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 text-purple-600 transition-all flex-shrink-0"
                     required
                 />
                 <span className="text-sm text-gray-700 leading-relaxed">
                 I agree to Market Movers Trade{' '}
-                  <Link to="/terms" className="font-bold text-blue-600 hover:text-blue-700 underline">
+                  <Link to="/terms" className="font-bold text-purple-600 hover:text-purple-700 underline">
                   Terms and Conditions
                 </Link>
               </span>
@@ -575,7 +575,7 @@ export default function Register() {
               <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none"
+                  className="w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none"
               >
                 {isSubmitting ? (
                     <div className="flex items-center justify-center">
@@ -596,7 +596,7 @@ export default function Register() {
 
               <p className="text-center text-gray-600">
                 Already have an account?{' '}
-                <Link to="/login" className="font-bold text-blue-600 hover:text-blue-700 transition-colors">
+                <Link to="/login" className="font-bold text-purple-600 hover:text-purple-700 transition-colors">
                   Sign in here
                 </Link>
               </p>

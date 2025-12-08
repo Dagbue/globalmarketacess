@@ -44,16 +44,16 @@ export default function CopyTrading() {
   return (
     <section className="py-32 px-6 bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 right-1/3 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/3 right-1/3 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[120px] animate-float"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-[600px] h-[600px] bg-fuchsia-500/10 rounded-full blur-[120px] animate-float" style={{ animationDelay: '3s' }}></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b08_1px,transparent_1px),linear-gradient(to_bottom,#1e293b08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <div className="inline-block px-6 py-3 bg-slate-800/40 backdrop-blur-xl border border-cyan-500/20 rounded-full shadow-lg shadow-cyan-500/10">
-              <span className="text-cyan-400 font-bold text-sm flex items-center space-x-2">
+            <div className="inline-block px-6 py-3 glass-purple border border-purple-500/20 rounded-full shadow-lg shadow-purple-500/10 animate-glow">
+              <span className="text-purple-400 font-bold text-sm flex items-center space-x-2">
                 <Copy className="w-4 h-4" />
                 <span>SOCIAL TRADING PLATFORM</span>
               </span>
@@ -61,19 +61,19 @@ export default function CopyTrading() {
 
             <h2 className="text-4xl lg:text-6xl font-black text-white leading-[1.1]">
               Replicate Success
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 animate-glow">
                 Automatically
               </span>
             </h2>
 
             <p className="text-xl text-slate-400 leading-relaxed">
               Connect with elite traders and mirror their strategies in real-time. Our sophisticated copy trading system
-              executes trades proportionally to your portfolio size with <span className="text-cyan-400 font-semibold">complete transparency</span> and verified performance metrics.
+              executes trades proportionally to your portfolio size with <span className="text-purple-400 font-semibold">complete transparency</span> and verified performance metrics.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
-              <div className="bg-slate-900/40 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/10 hover:border-cyan-500/30 hover:shadow-[0_10px_40px_-10px_rgba(6,182,212,0.3)] transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/20">
+              <div className="glass-purple rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 hover:shadow-[0_10px_40px_-10px_rgba(168,85,247,0.3)] transition-all animate-float">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/20 animate-glow">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">
@@ -84,8 +84,8 @@ export default function CopyTrading() {
                 </p>
               </div>
 
-              <div className="bg-slate-900/40 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/10 hover:border-cyan-500/30 hover:shadow-[0_10px_40px_-10px_rgba(6,182,212,0.3)] transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-blue-500/20">
+              <div className="glass-purple rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 hover:shadow-[0_10px_40px_-10px_rgba(168,85,247,0.3)] transition-all animate-float" style={{ animationDelay: '0.2s' }}>
+                <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-fuchsia-500/20 animate-glow">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">
@@ -96,8 +96,8 @@ export default function CopyTrading() {
                 </p>
               </div>
 
-              <div className="bg-slate-900/40 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/10 hover:border-cyan-500/30 hover:shadow-[0_10px_40px_-10px_rgba(6,182,212,0.3)] transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-teal-500/20">
+              <div className="glass-purple rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 hover:shadow-[0_10px_40px_-10px_rgba(168,85,247,0.3)] transition-all animate-float" style={{ animationDelay: '0.4s' }}>
+                <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-pink-500/20 animate-glow">
                   <BarChart2 className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">
@@ -108,8 +108,8 @@ export default function CopyTrading() {
                 </p>
               </div>
 
-              <div className="bg-slate-900/40 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/10 hover:border-cyan-500/30 hover:shadow-[0_10px_40px_-10px_rgba(6,182,212,0.3)] transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-green-500/20">
+              <div className="glass-purple rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 hover:shadow-[0_10px_40px_-10px_rgba(168,85,247,0.3)] transition-all animate-float" style={{ animationDelay: '0.6s' }}>
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/20 animate-glow">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">
@@ -123,17 +123,17 @@ export default function CopyTrading() {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl blur-3xl"></div>
+            <div className="absolute -inset-4 bg-gradient-to-br from-purple-500/20 to-fuchsia-500/20 rounded-3xl blur-3xl animate-glow"></div>
 
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-5">
               {topTraders.map((trader, i) => (
-                <div key={i} className="bg-slate-900/60 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-cyan-500/20 hover:border-cyan-500/40 hover:shadow-[0_20px_70px_-15px_rgba(6,182,212,0.4)] transition-all duration-500 group hover:-translate-y-2">
+                <div key={i} className="glass-magenta rounded-3xl p-6 shadow-2xl border border-purple-500/20 hover:border-purple-500/40 hover:shadow-[0_20px_70px_-15px_rgba(168,85,247,0.4)] transition-all duration-500 group hover:-translate-y-2 animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
                   <div className="flex items-center space-x-4 mb-5">
                     <div className="relative">
                       <img
                         src={trader.image}
                         alt={trader.name}
-                        className="w-16 h-16 rounded-2xl object-cover ring-4 ring-cyan-500/20 group-hover:ring-cyan-500/40 transition-all"
+                        className="w-16 h-16 rounded-2xl object-cover ring-4 ring-purple-500/20 group-hover:ring-purple-500/40 transition-all"
                       />
                       <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full border-2 border-slate-900 flex items-center justify-center">
                         <TrendingUp className="w-3 h-3 text-white" />
@@ -152,11 +152,11 @@ export default function CopyTrading() {
                     </div>
 
                     <div className="grid grid-cols-2 gap-2">
-                      <div className="p-3 bg-slate-800/60 backdrop-blur-xl rounded-lg border border-cyan-500/10">
+                      <div className="p-3 glass-purple rounded-lg border border-purple-500/10">
                         <div className="text-xs text-slate-400 mb-1">Win Rate</div>
                         <div className="font-bold text-white">{trader.winRate}</div>
                       </div>
-                      <div className="p-3 bg-slate-800/60 backdrop-blur-xl rounded-lg border border-cyan-500/10">
+                      <div className="p-3 glass-purple rounded-lg border border-purple-500/10">
                         <div className="text-xs text-slate-400 mb-1">Trades</div>
                         <div className="font-bold text-white">{trader.trades}</div>
                       </div>
@@ -164,7 +164,7 @@ export default function CopyTrading() {
 
                     <button
                         onClick={handleBack}
-                        className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:shadow-lg hover:shadow-cyan-500/50 transition-all font-bold text-sm group-hover:scale-105">
+                        className="w-full py-3 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white rounded-xl hover:shadow-lg hover:shadow-purple-500/50 transition-all font-bold text-sm group-hover:scale-105 animate-glow">
                       Copy Trader
                     </button>
                   </div>

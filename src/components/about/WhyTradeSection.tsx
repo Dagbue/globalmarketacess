@@ -3,43 +3,44 @@ import { Server, UserCheck, Sliders, Wallet } from 'lucide-react';
 const reasons = [
   {
     icon: Server,
-    title: 'London-based server',
-    description: 'Our London based server and industry reputation helps us provide a tier-one liquidity solution, so we can consistently deliver lightning-quick execution speeds.',
+    title: 'Lightning-Fast Execution',
+    description: 'Our London-based servers and tier-one liquidity infrastructure deliver institutional-grade execution speeds, ensuring your trades are executed in milliseconds with minimal slippage.',
   },
   {
     icon: UserCheck,
-    title: 'Unrestricted Trading',
-    description: 'Our platform have no restrictions on minimum stop-loss or take-profit distances and limits, especially useful for high-volume traders.',
+    title: 'Unrestricted Trading Freedom',
+    description: 'Trade without limitations. No minimum stop-loss or take-profit restrictions, perfect for high-volume traders and automated strategies using Expert Advisors (EAs).',
   },
   {
     icon: Sliders,
-    title: 'Hedge your positions',
-    description: 'Go long and short at the same time on a specific instrument, with no interruption for traders using Expert Advisors (EAs).',
+    title: 'Advanced Hedging Strategies',
+    description: 'Execute sophisticated hedging strategies by going long and short simultaneously on the same instrument, with seamless integration for algorithmic trading systems.',
   },
   {
     icon: Wallet,
-    title: 'Straightforward funding',
-    description: 'Deposit and withdraw funds easily, and whenever you want to.',
+    title: 'Seamless Fund Management',
+    description: 'Deposit and withdraw funds instantly with multiple payment methods. Your capital is always accessible when you need it, with no hidden fees or restrictions.',
   },
 ];
 
 export default function WhyTradeSection() {
   return (
-    <section className="relative py-32 px-6 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+    <section className="relative py-32 px-6 bg-gradient-to-b from-slate-950 via-purple-950/20 to-slate-950 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[120px] animate-pulse animate-float"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-fuchsia-500/10 rounded-full blur-[120px] animate-pulse animate-glow"></div>
+        <div className="absolute top-1/2 left-1/2 w-[450px] h-[450px] bg-pink-500/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }}></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-6 py-3 bg-slate-800/50 backdrop-blur-sm border border-blue-500/30 rounded-full mb-6 shadow-lg">
-            <span className="text-blue-300 font-bold text-sm tracking-wide">WHY CHOOSE US</span>
+          <div className="inline-flex items-center px-6 py-3 glass-purple border border-purple-500/30 rounded-full mb-6 shadow-lg shadow-purple-500/20 animate-glow">
+            <span className="text-purple-300 font-bold text-sm tracking-wide">WHY CHOOSE US</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-black leading-tight">
-            <span className="text-white">Why trade with</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="text-white">Why Trade with</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-500 animate-glow">
               Market Signal Trades?
             </span>
           </h2>
@@ -51,20 +52,20 @@ export default function WhyTradeSection() {
             return (
               <div
                 key={index}
-                className="group relative bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-800 hover:border-blue-500/50 hover:shadow-[0_0_60px_rgba(59,130,246,0.2)] transition-all duration-500 hover:-translate-y-2"
+                className="group relative glass-purple backdrop-blur-sm rounded-3xl p-8 border border-purple-500/20 hover:border-fuchsia-400/50 hover:shadow-[0_0_60px_rgba(168,85,247,0.3)] transition-all duration-500 hover:-translate-y-2 animate-glow"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-fuchsia-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 via-fuchsia-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500 animate-glow">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
 
-                  <h3 className="text-2xl font-black text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all">
+                  <h3 className="text-2xl font-black text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-fuchsia-400 transition-all">
                     {reason.title}
                   </h3>
 
-                  <p className="text-slate-400 leading-relaxed text-lg">
+                  <p className="text-slate-300 leading-relaxed text-lg">
                     {reason.description}
                   </p>
                 </div>

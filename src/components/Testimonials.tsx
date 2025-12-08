@@ -53,7 +53,7 @@ const testimonials = [
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 mb-4">
+    <div className="glass-magenta rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-500/20 mb-4 hover:border-purple-500/40 animate-float">
       {testimonial.featured && testimonial.featuredImage && (
         <div className="mb-4">
           <img
@@ -64,20 +64,20 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
         </div>
       )}
 
-      <p className="text-gray-700 text-sm leading-relaxed mb-4">
+      <p className="text-slate-300 text-sm leading-relaxed mb-4">
         {testimonial.quote}
       </p>
 
-      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+      <div className="flex items-center justify-between pt-4 border-t border-purple-500/20">
         <div className="flex items-center space-x-3">
           <img
             src={testimonial.image}
             alt={testimonial.author}
-            className="w-10 h-10 rounded-full object-cover"
+            className="w-10 h-10 rounded-full object-cover ring-2 ring-purple-500/30"
           />
           <div>
-            <div className="font-semibold text-gray-900 text-sm">{testimonial.author}</div>
-            <div className="text-gray-600 text-xs">{testimonial.role}</div>
+            <div className="font-semibold text-white text-sm">{testimonial.author}</div>
+            <div className="text-slate-400 text-xs">{testimonial.role}</div>
           </div>
         </div>
 
@@ -128,7 +128,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section className="py-24 px-6 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative overflow-hidden">
       <style>
         {`
           @keyframes scroll-up {
@@ -143,8 +143,8 @@ export default function Testimonials() {
       </style>
 
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-blue-200 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-cyan-200 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-fuchsia-500/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative">
@@ -154,7 +154,8 @@ export default function Testimonials() {
               {userImages.map((img, index) => (
                 <div
                   key={index}
-                  className="w-12 h-12 rounded-full border-4 border-white overflow-hidden shadow-lg"
+                  className="w-12 h-12 rounded-full border-4 border-slate-950 overflow-hidden shadow-lg ring-2 ring-purple-500/30 animate-float"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <img
                     src={img}
@@ -167,25 +168,24 @@ export default function Testimonials() {
 
 
 
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
               Testimonials from
               <br />
-              Our Partners
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 animate-glow">
+                Our Partners
+              </span>
             </h2>
 
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-slate-400 mb-8 leading-relaxed">
               See how we are helping people scale faster with <br/> Market Signal Trades.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <button
                   onClick={handleBack}
-                  className="group px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all font-semibold text-sm shadow-xl hover:scale-105 flex items-center space-x-2">
+                  className="group px-6 py-3 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all font-semibold text-sm hover:scale-105 flex items-center space-x-2 animate-glow">
                 <span>Start Trading</span>
               </button>
-              {/*<button className="px-6 py-3 bg-white text-gray-900 rounded-xl hover:bg-gray-50 transition-all font-semibold text-sm border-2 border-gray-200 flex items-center space-x-2">*/}
-              {/*  <span>Book a Call</span>*/}
-              {/*</button>*/}
             </div>
           </div>
 
@@ -195,8 +195,8 @@ export default function Testimonials() {
         </div>
 
         <div className="mt-24 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-3xl blur-2xl opacity-20"></div>
-          <div className="relative bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 rounded-3xl p-12 lg:p-16 shadow-2xl overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-fuchsia-500 to-pink-600 rounded-3xl blur-2xl opacity-20 animate-glow"></div>
+          <div className="relative glass-magenta rounded-3xl p-12 lg:p-16 shadow-2xl overflow-hidden border border-purple-500/20">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-20"></div>
 
             <div className="flex items-center justify-center space-x-1 mb-6">
@@ -215,7 +215,7 @@ export default function Testimonials() {
               <div className="flex flex-wrap gap-4 justify-center">
                 <button
                     onClick={handleBack}
-                    className="group px-8 py-4 bg-white text-slate-900 rounded-xl hover:bg-blue-50 transition-all font-bold text-lg shadow-xl hover:scale-105 flex items-center space-x-2">
+                    className="group px-8 py-4 bg-white text-purple-600 rounded-xl hover:bg-purple-50 transition-all font-bold text-lg shadow-xl hover:scale-105 flex items-center space-x-2">
                   <span>Create Free Account</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform"/>
                 </button>
