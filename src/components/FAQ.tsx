@@ -1,4 +1,4 @@
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import {useNavigate} from "react-router-dom";
 
@@ -48,54 +48,54 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-32 px-6 bg-gradient-to-br from-gray-50 via-blue-50 to-cyan-50 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-40 left-40 w-96 h-96 bg-blue-300 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 right-40 w-96 h-96 bg-cyan-300 rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative py-32 px-6 bg-[#0a0e27] overflow-hidden">
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a08_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
 
-      <div className="max-w-5xl mx-auto relative">
-        <div className="text-center mb-16">
-          <div className="inline-block px-6 py-2.5 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full mb-6">
-            <span className="text-blue-700 font-bold text-sm flex items-center space-x-2">
-              <HelpCircle className="w-4 h-4" />
-              <span>HELP CENTER</span>
-            </span>
+      {/* Gentle Glow Effects */}
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-600/8 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-800/6 rounded-full blur-[100px]"></div>
+
+      <div className="max-w-4xl mx-auto relative">
+        {/* Section Badge */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-950/40 backdrop-blur-sm border border-blue-800/30 rounded-full">
+            <HelpCircle className="w-4 h-4 text-blue-400" />
+            <span className="text-blue-300 text-sm font-medium">Help Center</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+        </div>
+
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Frequently Asked
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">
               Questions
             </span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
             Find answers to common questions about our platform, security, and trading services
           </p>
         </div>
 
+        {/* FAQ Accordion */}
         <div className="space-y-4 mb-16">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl border-2 border-gray-100 overflow-hidden transition-all duration-300 hover:border-blue-300 hover:shadow-xl"
+              className="group bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-2xl overflow-hidden hover:border-blue-800/50 transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors group"
+                className="w-full px-6 py-5 flex items-center justify-between text-left transition-colors"
               >
-                <span className="font-bold text-gray-900 text-base lg:text-lg pr-8 group-hover:text-blue-600 transition-colors">
+                <span className="font-semibold text-white text-base lg:text-lg pr-8">
                   {faq.question}
                 </span>
-                <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                  openIndex === index
-                    ? 'bg-gradient-to-br from-blue-600 to-cyan-400 rotate-180'
-                    : 'bg-gray-100 group-hover:bg-blue-100'
+                <div className={`flex-shrink-0 w-8 h-8 bg-blue-600/20 rounded-lg flex items-center justify-center transition-transform duration-300 ${
+                  openIndex === index ? 'rotate-180' : ''
                 }`}>
-                  {openIndex === index ? (
-                    <Minus className="w-5 h-5 text-white" />
-                  ) : (
-                    <Plus className="w-5 h-5 text-gray-600 group-hover:text-blue-600" />
-                  )}
+                  <ChevronDown className="w-5 h-5 text-blue-400" />
                 </div>
               </button>
 
@@ -104,9 +104,9 @@ export default function FAQ() {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="px-8 pb-6">
-                  <div className="pt-4 border-t border-gray-100">
-                    <p className="text-gray-600 leading-relaxed text-base">{faq.answer}</p>
+                <div className="px-6 pb-5">
+                  <div className="pt-4 border-t border-slate-800/50">
+                    <p className="text-slate-400 leading-relaxed">{faq.answer}</p>
                   </div>
                 </div>
               </div>
@@ -114,27 +114,29 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-gray-900 via-blue-900 to-blue-900 rounded-3xl p-12 lg:p-16 text-center shadow-2xl relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
-          </div>
+        {/* CTA Section */}
+        <div className="relative">
+          <div className="absolute -inset-1 bg-gradient-to-br from-blue-600/20 to-blue-800/10 rounded-2xl blur-xl"></div>
 
-          <div className="relative">
-            <HelpCircle className="w-16 h-16 text-blue-400 mx-auto mb-6" />
-            <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+          <div className="relative bg-slate-900/60 backdrop-blur-xl rounded-2xl border border-slate-800/50 p-12 text-center">
+            <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <HelpCircle className="w-8 h-8 text-blue-400" />
+            </div>
+
+            <h3 className="text-3xl font-bold text-white mb-4">
               Still Have Questions?
             </h3>
-            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
               Our support team is available 24/7 to help answer any questions you may have
             </p>
-            <div
-                onSubmit={handleBack}
-                className="flex flex-wrap gap-4 justify-center">
-              <button className="px-10 py-5 bg-white text-gray-900 rounded-xl hover:bg-gray-100 transition-all font-bold text-base shadow-xl hover:scale-105">
-                Contact Support
-              </button>
 
-            </div>
+            <button
+              onClick={handleBack}
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/30"
+            >
+              Contact Support
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
       </div>
