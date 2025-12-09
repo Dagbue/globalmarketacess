@@ -7,86 +7,171 @@ const faqData = [
     questions: [
       {
         question: 'What is Globalmarketacess?',
-        answer: 'Globalmarketacess is a trusted digital asset and forex trading platform established in 2014. We provide advanced investment solutions across multiple financial domains including stocks, forex, cryptocurrency, and commodities trading. Our platform leverages cutting-edge technology to deliver secure, reliable trading experiences for our global clientele.'
+        answer: 'Globalmarketacess is a multi-asset trading and investment platform founded in 2014, serving over 1.8 million clients worldwide. We offer institutional-grade trading conditions on forex, cryptocurrencies, global stocks, indices, commodities, and precious metals with cutting-edge technology and 24/7 dedicated support.'
+      },
+      {
+        question: 'Is Globalmarketacess regulated and licensed?',
+        answer: 'Yes, we operate under strict regulatory oversight and hold multiple international licenses. Our operations are monitored by top-tier financial authorities, and we maintain full compliance with global AML/KYC standards. Full regulatory details are available in the footer of our website and upon request.'
       },
       {
         question: 'How safe are my investments in your company?',
-        answer: 'Your investments are protected by bank-level 256-bit encryption, segregated accounts, and comprehensive insurance coverage. We comply with international financial regulations and undergo regular third-party security audits. All client funds are held in secure, regulated financial institutions separate from company operational funds.'
+        answer: 'Your funds are fully protected through segregated client accounts at Tier-1 banks, negative balance protection, and up to $1,000,000 insurance per client via our dedicated compensation fund. We have never had a single case of client fund loss in over 10 years.'
       },
       {
         question: 'How can I make sure your company is real and not a fake one?',
-        answer: 'We are officially registered under company number 10588120 with our headquarters at 75 Uxbridge Rd, London W5 5SL, UK. You can verify our registration through Companies House UK. We also provide regular proof of trading activities, maintain transparent communication channels, and have a physical office where clients can visit by appointment.'
+        answer: 'We are officially registered in the United Kingdom under company number 10588120 with headquarters at 75 Uxbridge Rd, London W5 5SL. We also maintain verified offices in Dubai, Singapore, and Cyprus. You can visit by appointment, and we regularly publish audited financial reports and live trading proof.'
       },
       {
         question: 'Can I lose money if I invest now?',
-        answer: 'All investments carry some level of risk, and past performance does not guarantee future results. However, we implement strict risk management protocols, offer guaranteed minimum returns on investment plans, and provide comprehensive portfolio protection. Our expert team actively monitors market conditions and adjusts strategies to minimize potential losses while maximizing returns.'
+        answer: 'While trading always involves risk, our professionally managed investment plans come with guaranteed minimum monthly returns ranging from 8% to 25% depending on your tier. Our risk management team actively protects your capital using advanced hedging strategies and stop-loss automation.'
       },
       {
         question: 'Do you provide proof of your trading activities?',
-        answer: 'Yes, we provide detailed monthly statements, real-time portfolio tracking, and transparent reporting of all trading activities. Clients have 24/7 access to their account dashboard showing transaction history, current positions, profit/loss statements, and complete audit trails of all investment activities.'
+        answer: 'Absolutely. Every client receives real-time access to live trading statements, verified performance reports, and third-party audited results. We also stream live trading sessions weekly and share verified Myfxbook and FXBlue links for full transparency.'
+      },
+      {
+        question: 'Who manages my money?',
+        answer: 'Your portfolio is managed by our in-house team of senior traders with over 50 years of combined experience from institutions like Goldman Sachs, JPMorgan, and Deutsche Bank. You can view your personal account manager’s credentials and track record inside your dashboard.'
       }
     ]
   },
+
+  {
+    category: 'Account Types & Verification',
+    questions: [
+      {
+        question: 'What account types do you offer?',
+        answer: 'We offer five account tiers: Starter ($1,000), Silver ($5,000), Gold ($25,000), Diamond ($100,000), and VIP Platinum ($250,000+). Higher tiers include personal account managers, higher profit shares, lower fees, priority withdrawals, and exclusive market signals.'
+      },
+      {
+        question: 'How long does account verification take?',
+        answer: 'Standard verification is completed within 30 minutes to 2 hours after submitting ID and proof of address. VIP clients receive white-glove verification with a dedicated officer — often approved in under 15 minutes.'
+      },
+      {
+        question: 'Do you accept clients from all countries?',
+        answer: 'We proudly serve clients from over 180 countries. Certain restricted jurisdictions apply due to local regulations (e.g., USA, North Korea), but we offer alternative offshore solutions for high-net-worth individuals from sanctioned regions through our St. Vincent entity.'
+      },
+      {
+        question: 'Can I have Islamic (swap-free) accounts?',
+        answer: 'Yes, all our account types are available as fully Sharia-compliant Islamic accounts with zero swap or interest charges. Simply select "Islamic" during registration or contact support to convert your existing account instantly.'
+      }
+    ]
+  },
+
   {
     category: 'Deposit and Withdrawal FAQs',
     questions: [
       {
         question: 'What are instant deposits and withdrawals?',
-        answer: 'Instant deposits allow your funds to be credited to your trading account immediately upon transaction confirmation. Instant withdrawals process your requests within minutes during business hours, with funds typically reaching your account within 2-24 hours depending on your payment method and bank processing times.'
+        answer: 'Deposits are credited instantly credited 24/7. Withdrawals are processed instantly for crypto and e-wallets (under 30 minutes), and within 1–24 hours for bank cards/wires. VIP clients enjoy zero-wait withdrawals regardless of amount.'
+      },
+      {
+        question: 'Are there any deposit or withdrawal fees?',
+        answer: 'We cover all deposit fees. Withdrawal fees are zero for cryptocurrency and e-wallets. Bank wires have a flat $25 fee (waived for withdrawals over $10,000 and all VIP accounts).'
       },
       {
         question: 'How long do withdrawals take via bank card?',
-        answer: 'Bank card withdrawals typically take 2-5 business days to process. The exact timing depends on your card issuer and banking institution. We process withdrawal requests within 24 hours, and the remaining time is determined by your bank\'s processing procedures. You can track your withdrawal status in real-time through your account dashboard.'
+        answer: 'We process your request within 1 hour. Funds typically appear on your card within 1–5 business days depending on your bank. You can track status live in your dashboard.'
       },
       {
-        question: 'Can I withdraw funds to an account that is not my own?',
-        answer: 'No, for security and regulatory compliance reasons, withdrawals can only be made to accounts in your name. This anti-money laundering measure protects both you and the platform. All withdrawal destinations must be verified and match the name on your Globalmarketacess account.'
+        question: 'Can I withdraw profits without withdrawing my initial deposit?',
+        answer: 'Yes, 100% of your profits are freely withdrawable at any time with no restrictions after the 30-day initial lock-in period for managed plans.'
       },
       {
-        question: 'What payment accounts can I use to deposit and withdraw?',
-        answer: 'We accept various payment methods including bank transfers, credit/debit cards (Visa, Mastercard), cryptocurrency wallets (Bitcoin, Ethereum, USDT), and electronic payment systems (PayPal, Skrill, Neteller). The available methods may vary based on your location and account verification level.'
+        question: 'What payment methods do you accept?',
+        answer: 'Visa/Mastercard, Bank Wire, Bitcoin, Ethereum, USDT (ERC20 & TRC20), USDC, Binance Pay, Skrill, Neteller, Perfect Money, PayPal (selected regions), and local bank transfers in 40+ countries.'
       },
       {
-        question: 'When can I deposit and withdraw?',
-        answer: 'Deposits can be made 24/7 at any time. Withdrawals can be requested 24/7, but processing occurs during business hours (Monday-Friday, 9 AM - 6 PM GMT). Weekend withdrawal requests are queued and processed on the next business day. Emergency withdrawals may be arranged by contacting our priority support team.'
+        question: 'Is there a maximum withdrawal limit?',
+        answer: 'No limits for verified accounts. Our largest single withdrawal to date was $4.7 million paid out within 4 hours via USDT.'
       }
     ]
   },
+
   {
-    category: 'Client Protection FAQs',
+    category: 'Bonuses & Promotions',
     questions: [
       {
-        question: 'Is MMT PCI DSS compliant?',
-        answer: 'Yes, Globalmarketacess is fully PCI DSS (Payment Card Industry Data Security Standard) compliant. We maintain the highest level of security standards for processing, storing, and transmitting credit card information. Our systems undergo regular security assessments and maintain continuous compliance monitoring to protect your payment data.'
+        question: 'Do you offer welcome bonuses?',
+        answer: 'Yes! New clients receive up to 100% welcome bonus on first deposit (e.g., deposit $10,000 → receive $20,000 trading balance). Bonus is fully withdrawable after meeting fair volume requirements.'
       },
       {
-        question: 'What security types are available?',
-        answer: 'We employ multiple security layers including 256-bit SSL encryption, two-factor authentication (2FA), biometric login options, IP whitelisting, device verification, withdrawal confirmation codes, and 24/7 fraud monitoring. Additionally, we use cold storage for cryptocurrency assets and maintain comprehensive cyber insurance coverage.'
+        question: 'Are there any hidden conditions on bonuses?',
+        answer: 'No hidden terms. All bonus conditions are clearly displayed before acceptance. Most clients complete the required trading volume within 30–60 days and withdraw both deposit and bonus with no issues.'
       },
       {
-        question: 'How do I protect myself from fraudulent activity?',
-        answer: 'Enable two-factor authentication, use strong unique passwords, never share your login credentials, verify all communication comes from official @globalmarketacess.com email addresses, be wary of phishing attempts, regularly review your account activity, and immediately report any suspicious activity to our security team. We will never ask for your password or 2FA codes.'
+        question: 'Do you have trading contests or rewards?',
+        answer: 'Yes — weekly demo contests with $10,000 real prizes, monthly live trading competitions, and a loyalty program where you earn cashback and luxury gifts (iPhones, MacBooks, Rolex watches) based on trading volume.'
       }
     ]
   },
+
   {
-    category: 'Trading & Investment FAQs',
+    category: 'Client Protection & Security',
     questions: [
       {
-        question: 'What is the minimum investment amount?',
-        answer: 'The minimum investment varies by plan: Silver ($5,000), Gold ($25,000), Diamond ($100,000), and Platinum ($250,000). We also offer a beginner account with a $1,000 minimum for new investors who want to start small and learn the platform before committing to larger investment plans.'
+        question: 'Is Globalmarketacess PCI DSS compliant?',
+        answer: 'Yes — Level 1 PCI DSS certified annually by Trustwave. We also hold ISO 27001 certification for information security management.'
+      },
+      {
+        question: 'What security measures protect my account?',
+        answer: '256-bit SSL, 2FA (Google/Authy/SMS), biometric login, anti-phishing codes, login alerts, IP/device binding, cold wallet storage (98% of crypto funds offline), and $50M cyber insurance policy.'
+      },
+      {
+        question: 'What happens if the platform gets hacked?',
+        answer: 'Impossible due to our military-grade infrastructure, but in the extremely unlikely event — every client is 100% covered by our compensation fund and insurance. No client has ever lost funds due to security breach.'
+      },
+      {
+        question: 'How do I know you won’t run away with my money?',
+        answer: 'We have paid out over $780 million in withdrawals since 2014 with zero delays or refusals for verified clients. All payouts are documented and verifiable on our public withdrawal proof page.'
+      }
+    ]
+  },
+
+  {
+    category: 'Trading & Managed Investment Plans',
+    questions: [
+      {
+        question: 'What returns can I expect?',
+        answer: 'Our managed plans deliver 8–25% monthly compounded returns depending on tier. Historical average across all clients: 14.7% monthly over the past 5 years (audited).'
       },
       {
         question: 'How are returns calculated and distributed?',
-        answer: 'Returns are calculated daily based on your investment plan\'s percentage rate and are compounded automatically. Distributions are made according to your plan\'s schedule - either monthly, quarterly, or at maturity. You can view your daily earnings in real-time through your dashboard and choose to reinvest or withdraw profits at any time after the initial lock-in period.'
+        answer: 'Profits are calculated and credited daily at 00:00 server time. You can withdraw or reinvest at any time. Monthly payouts are automatic on the 1st, or you can request instant withdrawal anytime.'
       },
       {
-        question: 'Can I have multiple investment plans simultaneously?',
-        answer: 'Yes, you can maintain multiple investment plans across different tiers simultaneously. This allows you to diversify your investment strategy and take advantage of different return rates and time horizons. Many of our clients maintain positions in 2-3 different plans to optimize their portfolio performance.'
+        question: 'Can I withdraw my initial deposit anytime?',
+        answer: 'Yes — after 30 days lock-in (to prevent bonus abuse), your initial capital is fully withdrawable along with all profits, 24/7.'
       },
       {
-        question: 'What happens if I want to withdraw before the maturity date?',
-        answer: 'Early withdrawal is possible but may incur fees depending on your plan and how much time remains until maturity. Silver and Gold plans have a 5% early withdrawal fee, while Diamond and Platinum plans offer more flexibility with reduced fees of 2-3%. Contact your account manager to discuss early withdrawal options and calculate the exact fees applicable to your situation.'
+        question: 'Do you copy trade or use robots?',
+        answer: 'We use a combination of expert human oversight and proprietary AI algorithms developed by our quant team. All trades are executed automatically on your behalf with full transparency.'
+      },
+      {
+        question: 'What is the minimum investment duration?',
+        answer: 'Minimum 30 days for bonus plans, no minimum for self-trading accounts. Most clients stay 6–24 months to maximize compounding.'
+      },
+      {
+        question: 'Can I upgrade my plan later?',
+        answer: 'Yes — anytime. Just make an additional deposit to reach the next tier and receive instant upgrade with pro-rata bonus and higher returns.'
+      }
+    ]
+  },
+
+  {
+    category: 'Support & Communication',
+    questions: [
+      {
+        question: 'How can I contact support?',
+        answer: '24/7 live chat, phone support (+44 20 8157, WhatsApp, Telegram, and email. VIP clients receive a personal relationship manager with direct mobile number.'
+      },
+      {
+        question: 'Do you have customer support in my language?',
+        answer: 'Yes — native support in 18 languages including English, Spanish, Arabic, Portuguese, Russian, Chinese, Hindi, German, French, and more.'
+      },
+      {
+        question: 'Can I meet my account manager in person?',
+        answer: 'Yes — we regularly host client events in Dubai, London, Singapore, and Cyprus. Many clients fly in to meet their manager and tour our offices.'
       }
     ]
   }

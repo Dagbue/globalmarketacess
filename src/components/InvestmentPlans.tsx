@@ -1,10 +1,10 @@
-import { Check, Sparkles, Crown, Gem, Star, ArrowRight, Building2 } from 'lucide-react';
+import {Check, Sparkles, Crown, Star, ArrowRight, Zap} from 'lucide-react';
 import {useNavigate} from "react-router-dom";
 
 const plans = [
   {
-    name: 'Starter',
-    icon: Sparkles,
+    name: 'Silver',
+    icon: Star,
     percentage: '5',
     duration: '4 Months',
     minimum: '$5,000',
@@ -18,8 +18,8 @@ const plans = [
     ],
   },
   {
-    name: 'Professional',
-    icon: Crown,
+    name: 'Gold',
+    icon: Zap,
     percentage: '10',
     duration: '8 Months',
     minimum: '$25,000',
@@ -35,8 +35,8 @@ const plans = [
     popular: true,
   },
   {
-    name: 'Elite',
-    icon: Gem,
+    name: 'Diamond',
+    icon: Sparkles,
     percentage: '15',
     duration: '12 Months',
     minimum: '$100,000',
@@ -52,8 +52,8 @@ const plans = [
     ],
   },
   {
-    name: 'Institutional',
-    icon: Building2,
+    name: 'Platinum',
+    icon: Crown,
     percentage: '20',
     duration: '18 Months',
     minimum: '$500,000',
@@ -97,7 +97,7 @@ export default function InvestmentPlans() {
 
         {/* Heading */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6">
             Choose Your
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">
               Investment Tier

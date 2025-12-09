@@ -15,7 +15,7 @@ import {
   Menu,
   X, TrendingUp
 } from 'lucide-react';
-import {companyLogo2} from "../../assets";
+// import {companyLogo2} from "../../assets";
 // import {companyLogo} from "../../assets";
 
 interface AdminLayoutProps {
@@ -64,7 +64,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
         {/* Logo */}
         <div className="p-2 border-b border-gray-800 lg:mt-0 -mt-16">
           <div className="flex items-center justify-center">
-            <img className="h-16" src={companyLogo2} alt="logo"/>
+            {/*<img className="h-16" src={companyLogo2} alt="logo"/>*/}
           </div>
         </div>
 

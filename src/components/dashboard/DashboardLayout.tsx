@@ -15,7 +15,7 @@ import {
   Menu,
   X,
 } from 'lucide-react';
-import {companyLogo2} from "../../assets";
+// import {companyLogo2} from "../../assets";
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -103,7 +103,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         <aside className="hidden lg:flex flex-col w-64 bg-slate-900 border-r border-slate-800 fixed left-0 top-0 bottom-0 z-30">
           {/* Logo */}
           <div className="p-6 border-b border-slate-800">
-            <img className="h-24" src={companyLogo2} alt="logo"/>
+            {/*<img className="h-24" src={companyLogo2} alt="logo"/>*/}
           </div>
 
           {/* Navigation */}
@@ -137,7 +137,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               ></div>
               <aside className="fixed left-0 top-0 bottom-0 w-64 bg-slate-900 z-50 flex flex-col lg:hidden">
                 <div className="p-6 border-b border-slate-800 flex items-center justify-between">
-                  <img className="h-20" src={companyLogo2} alt="logo"/>
+                  {/*<img className="h-20" src={companyLogo2} alt="logo"/>*/}
                   <button
                       onClick={() => setSidebarOpen(false)}
                       className="text-gray-400 hover:text-white transition-colors"
@@ -186,7 +186,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               </div>
 
               <div className="flex items-center space-x-4">
-                <button className="relative p-2 text-gray-400 hover:text-white hover:bg-slate-800 rounded-xl transition-all">
+                <button className=" relative p-2 text-gray-400 hover:text-white hover:bg-slate-800 rounded-xl transition-all">
                   <Bell size={20} />
                   <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                 </button>
@@ -218,9 +218,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                     >
                       <User size={18} className="text-white" />
                     </div>
+
                   </div>
                   {/* User Name */}
-                  <span className="hidden md:block text-white font-bold">
+                  <span className=" md:block text-white font-bold">
                   {userFullName}
                 </span>
                 </button>

@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-800/8 rounded-full blur-[100px]"></div>
 
-      <div className="relative max-w-7xl mx-auto pt-32 pb-20">
+      <div className="relative max-w-7xl mx-auto pt-48 pb-20">
         {/* Badge */}
         <div className="flex justify-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-950/40 backdrop-blur-sm border border-blue-800/30 rounded-full">
@@ -34,7 +34,7 @@ export default function Hero() {
 
         {/* Main Heading */}
         <div className="text-center space-y-6 mb-16">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
             <span className="block text-white mb-2">Trade Smarter.</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-blue-500">
               Grow Faster.
@@ -53,13 +53,10 @@ export default function Hero() {
             >
               <span className="flex items-center gap-2">
                 Start Trading Now
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-7 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
 
-            <button className="px-8 py-4 bg-slate-800/40 backdrop-blur-sm hover:bg-slate-800/60 text-white rounded-lg font-semibold border border-slate-700/50 transition-all duration-300">
-              View Live Demo
-            </button>
           </div>
         </div>
 

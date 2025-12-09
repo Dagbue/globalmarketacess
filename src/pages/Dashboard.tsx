@@ -126,7 +126,7 @@ export default function Dashboard() {
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <div className="text-gray-400 text-sm font-medium mb-2">Account Balance</div>
-                  <div className="text-4xl font-black text-green-400">{formatUserCurrencyAmount(userData?.realizedProfit || 0)}</div>
+                  <div className="text-3xl md:text-4xl lg:text-4xl font-black text-green-400">{formatUserCurrencyAmount(userData?.realizedProfit || 0)}</div>
                 </div>
                 <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
                   <DollarSign className="w-7 h-7 text-white" strokeWidth={2.5} />
@@ -139,7 +139,7 @@ export default function Dashboard() {
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <div className="text-gray-400 text-sm font-medium mb-2">Invested Amount</div>
-                  <div className="text-4xl font-black text-green-400">{formatUserCurrencyAmount(userData?.totalDepositedAmount || 0)}</div>
+                  <div className="text-3xl md:text-4xl lg:text-4xl font-black text-green-400">{formatUserCurrencyAmount(userData?.totalDepositedAmount || 0)}</div>
                 </div>
                 <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
                   <Activity className="w-7 h-7 text-white" strokeWidth={2.5} />

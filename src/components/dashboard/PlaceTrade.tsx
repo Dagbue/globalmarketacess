@@ -196,7 +196,7 @@ export default function PlaceTrade() {
       return;
     }
 
-    if ((userEmail === 'johndoe@yopmail.com' || userEmail === 'angelghostmv@gmail.com') && amount === 25000) {
+    if ((userEmail === 'johndoe@yopmail.com') && amount === 25000) {
       setShowMomentumWarning(true);
       return;
     }

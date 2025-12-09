@@ -21,7 +21,7 @@ export default function FocusOnTrading() {
           <span className="text-blue-300 text-sm font-medium">Simplified Trading</span>
         </div>
 
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6">
           Focus on
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600"> Trading</span>,
           <br />

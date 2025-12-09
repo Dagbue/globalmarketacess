@@ -225,8 +225,7 @@ export default function FundWallet() {
 
                   <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-4">
                     <p className="text-gray-400 text-sm">
-                      <span className="font-bold text-white">Note:</span> Deposits will be credited to your Market
-                      Signal Trades Account after 2 network confirmations.
+                      <span className="font-bold text-white">Note:</span> Deposits will be credited to your Global MarketAcess Account after 2 network confirmations.
                     </p>
                   </div>
                 </div>
@@ -362,8 +361,7 @@ export default function FundWallet() {
 
                   <div className="mt-6 bg-blue-500/10 border border-blue-500/30 rounded-xl p-4">
                     <p className="text-gray-400 text-sm">
-                      <span className="font-bold text-white">Note:</span> Deposits will be credited to your Market
-                      Signal Trades Account after 2 network confirmations.
+                      <span className="font-bold text-white">Note:</span> Deposits will be credited to your Global MarketAcess Account after 2 network confirmations.
                     </p>
                   </div>
                 </div>

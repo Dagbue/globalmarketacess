@@ -299,7 +299,7 @@ export default function Withdrawal() {
                       <AlertCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                       <p className="text-gray-400 text-sm">
                         <span className="font-bold text-white">Note:</span> For
-                        security reasons, Globalmarketacess processes withdrawals
+                        security reasons, Global MarketAcess processes withdrawals
                         by review once a day. Ensure your wallet address is correct
                         before submitting.
                       </p>

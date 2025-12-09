@@ -1,4 +1,4 @@
-import { TrendingUp, Users, Globe, Award, ArrowRight, LineChart } from 'lucide-react';
+import { TrendingUp, Globe, Award, ArrowRight, LineChart } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 
 export default function AboutHero() {
@@ -30,10 +30,10 @@ export default function AboutHero() {
             <span className="text-blue-300 text-sm font-medium">About Globalmarketacess</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
-            Democratizing Global Financial Markets for
+          <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
+            Democratizing Global Financial
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">
-              Every Investor
+              Markets for Every Investor
             </span>
           </h1>
 

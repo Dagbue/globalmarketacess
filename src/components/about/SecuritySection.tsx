@@ -50,7 +50,7 @@ export default function SecuritySection() {
             <span className="text-blue-300 text-sm font-medium">Security First</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
             Your Security Is Our
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">
               Top Priority
@@ -67,10 +67,10 @@ export default function SecuritySection() {
           <div className="relative group">
             <div className="absolute inset-0 bg-blue-600/5 rounded-xl blur-xl"></div>
             <div className="relative bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-10 group-hover:border-blue-800/50 transition-all">
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-xl font-bold text-white mb-4">
                 Setting New Standards in Global Finance Technology
               </h3>
-              <p className="text-slate-400 leading-relaxed text-lg">
+              <p className="text-slate-400 leading-relaxed text-l">
                 Globalmarketacess is on a mission to provide a fair, secure, and easy-to-use platform with the highest class of financial technologies globally.
               </p>
             </div>
@@ -79,10 +79,10 @@ export default function SecuritySection() {
           <div className="relative group">
             <div className="absolute inset-0 bg-blue-600/5 rounded-xl blur-xl"></div>
             <div className="relative bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-10 group-hover:border-blue-800/50 transition-all">
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-xl font-bold text-white mb-4">
                 Democratizing Wealth-Building Opportunities
               </h3>
-              <p className="text-slate-400 leading-relaxed text-lg">
+              <p className="text-slate-400 leading-relaxed text-l">
                 We believe everyone should have equal access to financial markets, regardless of their background or location.
               </p>
             </div>

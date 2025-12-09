@@ -23,7 +23,7 @@ export default function CommoditiesTrading() {
             <span className="text-blue-300 text-sm font-medium">Diverse Markets</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
             Trade
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600"> Commodities </span>
             & More

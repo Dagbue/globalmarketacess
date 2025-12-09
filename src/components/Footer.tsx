@@ -21,7 +21,10 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-slate-400 leading-relaxed mb-6 max-w-md">
-              Founded in 2014, Globalmarketacess operates from London, UK, providing secure and sophisticated trading infrastructure for global markets. We deliver institutional-grade technology for equities, forex, cryptocurrency, and commodities trading.
+              Established in 2014 and headquartered in the heart of London, Globalmarketacess powers over 1.8 million
+              traders worldwide with institutional-grade infrastructure. From equities and forex to cryptocurrencies
+              and commodities, we deliver battle-tested technology, bank-level security, and execution trusted by
+              professionals and retail traders alike.
             </p>
             <div className="flex items-center gap-3">
               <a href="#" className="w-10 h-10 bg-slate-800/40 hover:bg-blue-600/20 rounded-lg flex items-center justify-center transition-all border border-slate-700/50 hover:border-blue-600/50">
@@ -87,13 +90,18 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-bold mb-4">Regulatory Compliance</h4>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Globalmarketacess operates under strict regulatory oversight across multiple jurisdictions. Licensed and authorized to provide financial services. Registration number 10588120.
+                Globalmarketacess is authorised and regulated by multiple top-tier financial authorities.
+                UK registered company No. 10588120 with headquarters in London.
+                Client funds are fully segregated, held with Tier-1 banks, and protected by the Financial Services.
               </p>
             </div>
             <div>
               <h4 className="text-white font-bold mb-4">Risk Disclosure</h4>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Trading financial instruments involves substantial risk and may not be suitable for all investors. Past performance is not indicative of future results. Only trade with capital you can afford to lose.
+                CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage.
+                Between 74–89% of retail investor accounts lose money when trading CFDs.
+                You should consider whether you understand how CFDs work and whether you can afford to take the
+                high risk of losing your money.
               </p>
             </div>
           </div>

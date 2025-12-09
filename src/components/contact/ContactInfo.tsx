@@ -1,4 +1,4 @@
-import { Mail, MapPin, Clock, MessageCircle, Phone, Headphones } from 'lucide-react';
+import { Mail, MapPin, Clock, MessageCircle, Headphones } from 'lucide-react';
 
 export default function ContactInfo() {
   const contactMethods = [
@@ -121,10 +121,6 @@ export default function ContactInfo() {
               <button className="inline-flex items-center gap-2 px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-blue-600/30">
                 <MessageCircle className="w-5 h-5" />
                 <span>Start Live Chat</span>
-              </button>
-              <button className="inline-flex items-center gap-2 px-10 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-semibold transition-all border border-slate-700/50">
-                <Phone className="w-5 h-5" />
-                <span>Emergency Line</span>
               </button>
             </div>
           </div>

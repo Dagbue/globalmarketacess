@@ -21,7 +21,7 @@ export default function TestimonialHero() {
             <span className="text-blue-300 text-sm font-medium">Rated 4.9/5 by 10,000+ traders</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Trusted by Traders
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">
               Worldwide

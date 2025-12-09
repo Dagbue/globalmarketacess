@@ -51,7 +51,7 @@ export default function Features() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Left Content */}
           <div className="space-y-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
               Trusted Platform for
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">
                 Smart Trading

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Check, ArrowRight, Shield, TrendingUp, Users } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import useReadUserById from "../hooks/auth/useReadUserById.ts";
@@ -65,43 +65,43 @@ export default function AuthSuccess() {
 
             {/* Heading */}
             <div className="mb-12 space-y-4">
-              <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-                Account Created
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">
-                  Successfully
-                </span>
-              </h1>
+              {/*<h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">*/}
+              {/*  Account Created*/}
+              {/*  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mt-2">*/}
+              {/*    Successfully*/}
+              {/*  </span>*/}
+              {/*</h1>*/}
               <p className="text-xl text-slate-400 max-w-2xl mx-auto">
                 Welcome to Globalmarketacess! Your account is now active and ready to start trading.
               </p>
             </div>
 
             {/* Features Grid */}
-            <div className="grid md:grid-cols-3 gap-4 mb-12 max-w-2xl mx-auto">
-              <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 hover:border-blue-800/50 transition-all">
-                <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-white font-semibold mb-2">Secure</h3>
-                <p className="text-slate-400 text-sm">Bank-level encryption protects your account</p>
-              </div>
+            {/*<div className="grid md:grid-cols-3 gap-4 mb-12 max-w-2xl mx-auto">*/}
+            {/*  <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 hover:border-blue-800/50 transition-all">*/}
+            {/*    <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mx-auto mb-4">*/}
+            {/*      <Shield className="w-6 h-6 text-blue-400" />*/}
+            {/*    </div>*/}
+            {/*    <h3 className="text-white font-semibold mb-2">Secure</h3>*/}
+            {/*    <p className="text-slate-400 text-sm">Bank-level encryption protects your account</p>*/}
+            {/*  </div>*/}
 
-              <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 hover:border-blue-800/50 transition-all">
-                <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-white font-semibold mb-2">Real-Time</h3>
-                <p className="text-slate-400 text-sm">Access live market data instantly</p>
-              </div>
+            {/*  <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 hover:border-blue-800/50 transition-all">*/}
+            {/*    <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mx-auto mb-4">*/}
+            {/*      <TrendingUp className="w-6 h-6 text-blue-400" />*/}
+            {/*    </div>*/}
+            {/*    <h3 className="text-white font-semibold mb-2">Real-Time</h3>*/}
+            {/*    <p className="text-slate-400 text-sm">Access live market data instantly</p>*/}
+            {/*  </div>*/}
 
-              <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 hover:border-blue-800/50 transition-all">
-                <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-white font-semibold mb-2">24/7 Support</h3>
-                <p className="text-slate-400 text-sm">Expert help whenever you need it</p>
-              </div>
-            </div>
+            {/*  <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 hover:border-blue-800/50 transition-all">*/}
+            {/*    <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mx-auto mb-4">*/}
+            {/*      <Users className="w-6 h-6 text-blue-400" />*/}
+            {/*    </div>*/}
+            {/*    <h3 className="text-white font-semibold mb-2">24/7 Support</h3>*/}
+            {/*    <p className="text-slate-400 text-sm">Expert help whenever you need it</p>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
 
             {/* CTA Button */}
             <button
@@ -113,15 +113,15 @@ export default function AuthSuccess() {
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
               ) : (
                   <>
-                    <span>Enter Dashboard</span>
+                    <span>Dashboard</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </>
               )}
             </button>
 
             {/* Additional Info */}
-            <p className="mt-8 text-slate-500 text-sm">
-              Your account setup is complete. Start exploring global markets now.
+            <p className="mt-8 text-slate-500 text-m">
+              Start exploring global markets now.
             </p>
           </div>
         </div>

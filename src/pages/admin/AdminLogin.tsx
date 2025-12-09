@@ -41,7 +41,7 @@ const AdminLogin = () => {
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-white mb-2">Admin Login</h1>
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto"></div>
+            <div className="w-16 h-1 bg-blue-600 mx-auto"></div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -87,7 +87,7 @@ const AdminLogin = () => {
             <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-4 rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all font-bold text-base hover:scale-105 flex items-center justify-center"
+                className="w-full bg-blue-600 text-white py-4 rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all font-bold text-base hover:scale-105 flex items-center justify-center"
             >
               {isLoading ? (
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>

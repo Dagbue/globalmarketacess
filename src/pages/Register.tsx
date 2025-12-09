@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Shield, DollarSign, Zap, GraduationCap } from 'lucide-react';
+import {Eye, EyeOff, Shield, DollarSign, Zap, GraduationCap, TrendingUp} from 'lucide-react';
 import useCreateAccount from "../hooks/auth/useCreateAccount.ts";
-import {companyLogo3} from "../assets";
+// import {companyLogo3} from "../assets";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -329,8 +329,17 @@ export default function Register() {
           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-800/6 rounded-full blur-[100px]"></div>
 
           <div className="relative z-10 flex flex-col justify-center px-16 py-20">
-            <Link to="/" className="mb-12">
-              <img className="h-14" src={companyLogo3} alt="logo"/>
+            {/*<Link to="/" className="mb-12">*/}
+            {/*  <img className="h-14" src={companyLogo3} alt="logo"/>*/}
+            {/*</Link>*/}
+
+            <Link to="/" className="flex items-center gap-3 group mb-10">
+              <div className="w-11 h-11 bg-blue-600/20 rounded-lg flex items-center justify-center group-hover:bg-blue-600/30 transition-all">
+                <TrendingUp className="w-6 h-6 text-blue-400" />
+              </div>
+              <span className="text-xl font-bold text-white">
+              Globalmarketacess
+            </span>
             </Link>
 
             <div className="space-y-6 mb-12">
@@ -389,9 +398,9 @@ export default function Register() {
           <div className="w-full max-w-md py-8">
             <div className="mb-10">
               <div className="flex items-center lg:hidden space-x-3 mb-8">
-                <Link to="/" className="flex items-center space-x-2">
-                  <img className="h-24" src={companyLogo3} alt="logo" />
-                </Link>
+                {/*<Link to="/" className="flex items-center space-x-2">*/}
+                {/*  <img className="h-24" src={companyLogo3} alt="logo" />*/}
+                {/*</Link>*/}
               </div>
 
               <h2 className="text-4xl font-black text-gray-900 mb-3">
@@ -567,7 +576,8 @@ export default function Register() {
               <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#0a0e27] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#0d1230] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                  // className="w-full bg-[#0a0e27] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#0d1230] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-800 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                     <div className="flex items-center justify-center">

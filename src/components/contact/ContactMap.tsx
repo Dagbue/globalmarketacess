@@ -1,4 +1,4 @@
-import { MapPin, ExternalLink, Navigation, Building2 } from 'lucide-react';
+import { MapPin, ExternalLink, Building2 } from 'lucide-react';
 
 export default function ContactMap() {
   const locationDetails = [
@@ -72,26 +72,7 @@ export default function ContactMap() {
               </div>
             </div>
 
-            <div className="relative group">
-              <div className="absolute inset-0 bg-blue-600/5 rounded-xl blur-xl"></div>
-              <div className="relative bg-slate-900/40 backdrop-blur-sm rounded-xl p-8 border border-slate-800/50 group-hover:border-blue-800/50 transition-all">
-                <div className="w-14 h-14 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6">
-                  <Navigation className="w-7 h-7 text-blue-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">Getting Here</h3>
-                <div className="space-y-3 text-slate-400">
-                  <p className="text-sm">
-                    <span className="font-semibold text-white">By Tube:</span> Ealing Broadway Station (5 min walk)
-                  </p>
-                  <p className="text-sm">
-                    <span className="font-semibold text-white">By Bus:</span> Routes 207, 427, 483
-                  </p>
-                  <p className="text-sm">
-                    <span className="font-semibold text-white">Parking:</span> Street parking available nearby
-                  </p>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

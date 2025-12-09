@@ -25,11 +25,11 @@ export default function IndexMarket() {
               <span className="text-blue-300 text-sm font-medium">Global Indices</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-4xl font-bold text-white mb-6">
               Trade Global Indices with Confidence
             </h2>
 
-            <p className="text-lg text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-l text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
               Access major market indices with competitive spreads and instant execution.
             </p>
 
