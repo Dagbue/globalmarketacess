@@ -4,9 +4,9 @@ import {useNavigate} from "react-router-dom";
 
 const faqs = [
   {
-    question: 'What is Market Signal Trades?',
+    question: 'What is Globalmarketacess?',
     answer:
-      'Market Signal Trades is a comprehensive digital trading platform that provides access to global financial markets including stocks, forex, cryptocurrencies, and indices. We offer institutional-grade tools with retail accessibility, enabling traders of all levels to participate in markets across 20+ exchanges worldwide.',
+      'Globalmarketacess is a comprehensive digital trading platform that provides access to global financial markets including stocks, forex, cryptocurrencies, and indices. We offer institutional-grade tools with retail accessibility, enabling traders of all levels to participate in markets across 20+ exchanges worldwide.',
   },
   {
     question: 'How safe are my investments in your company?',

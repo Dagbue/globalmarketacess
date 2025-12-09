@@ -6,7 +6,7 @@ export default function ContactInfo() {
       icon: Mail,
       title: 'Email Us',
       description: 'Send us a detailed message and we\'ll respond within 2 hours during business hours.',
-      action: { type: 'link', text: 'support@marketsignaltrades.com', href: 'mailto:support@marketsignaltrades.com' }
+      action: { type: 'link', text: 'support@globalmarketacess.com', href: 'mailto:support@globalmarketacess.com' }
     },
     {
       icon: MessageCircle,

@@ -557,7 +557,7 @@ export default function Register() {
                     required
                 />
                 <span className="text-sm text-gray-700 leading-relaxed">
-                I agree to Market Movers Trade{' '}
+                I agree to Globalmarketacess{' '}
                   <Link to="/terms" className="font-bold text-blue-600 hover:text-blue-700 underline">
                   Terms and Conditions
                 </Link>

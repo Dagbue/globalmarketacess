@@ -2,7 +2,7 @@ import { MapPin, ExternalLink, Navigation, Building2 } from 'lucide-react';
 
 export default function ContactMap() {
   const locationDetails = [
-    { label: 'Company', value: 'Market Signal Trades' },
+    { label: 'Company', value: 'Globalmarketacess' },
     { label: 'Address', value: '75 Uxbridge Rd' },
     { label: 'City', value: 'London W5 5SL' },
     { label: 'Country', value: 'England, United Kingdom' },

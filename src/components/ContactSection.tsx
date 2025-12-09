@@ -53,10 +53,10 @@ export default function ContactSection() {
                   Send us an email and we'll respond within 24 hours
                 </p>
                 <a
-                  href="mailto:support@marketsignaltrades.com"
+                  href="mailto:support@globalmarketacess.com"
                   className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center group/link"
                 >
-                  support@marketsignaltrades.com
+                  support@globalmarketacess.com
                   <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -125,7 +125,7 @@ export default function ContactSection() {
               Start Trading with Confidence
             </h3>
             <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
-              Join thousands of traders who trust Market Signal Trades for secure and profitable trading
+              Join thousands of traders who trust Globalmarketacess for secure and profitable trading
             </p>
 
             <button

@@ -6,8 +6,8 @@ const faqData = [
     category: 'General FAQs',
     questions: [
       {
-        question: 'What is Market Signal Trades?',
-        answer: 'Market Signal Trades is a trusted digital asset and forex trading platform established in 2014. We provide advanced investment solutions across multiple financial domains including stocks, forex, cryptocurrency, and commodities trading. Our platform leverages cutting-edge technology to deliver secure, reliable trading experiences for our global clientele.'
+        question: 'What is Globalmarketacess?',
+        answer: 'Globalmarketacess is a trusted digital asset and forex trading platform established in 2014. We provide advanced investment solutions across multiple financial domains including stocks, forex, cryptocurrency, and commodities trading. Our platform leverages cutting-edge technology to deliver secure, reliable trading experiences for our global clientele.'
       },
       {
         question: 'How safe are my investments in your company?',
@@ -40,7 +40,7 @@ const faqData = [
       },
       {
         question: 'Can I withdraw funds to an account that is not my own?',
-        answer: 'No, for security and regulatory compliance reasons, withdrawals can only be made to accounts in your name. This anti-money laundering measure protects both you and the platform. All withdrawal destinations must be verified and match the name on your Market Signal Trades account.'
+        answer: 'No, for security and regulatory compliance reasons, withdrawals can only be made to accounts in your name. This anti-money laundering measure protects both you and the platform. All withdrawal destinations must be verified and match the name on your Globalmarketacess account.'
       },
       {
         question: 'What payment accounts can I use to deposit and withdraw?',
@@ -57,7 +57,7 @@ const faqData = [
     questions: [
       {
         question: 'Is MMT PCI DSS compliant?',
-        answer: 'Yes, Market Signal Trades is fully PCI DSS (Payment Card Industry Data Security Standard) compliant. We maintain the highest level of security standards for processing, storing, and transmitting credit card information. Our systems undergo regular security assessments and maintain continuous compliance monitoring to protect your payment data.'
+        answer: 'Yes, Globalmarketacess is fully PCI DSS (Payment Card Industry Data Security Standard) compliant. We maintain the highest level of security standards for processing, storing, and transmitting credit card information. Our systems undergo regular security assessments and maintain continuous compliance monitoring to protect your payment data.'
       },
       {
         question: 'What security types are available?',
@@ -65,7 +65,7 @@ const faqData = [
       },
       {
         question: 'How do I protect myself from fraudulent activity?',
-        answer: 'Enable two-factor authentication, use strong unique passwords, never share your login credentials, verify all communication comes from official @marketmoverstrade.com email addresses, be wary of phishing attempts, regularly review your account activity, and immediately report any suspicious activity to our security team. We will never ask for your password or 2FA codes.'
+        answer: 'Enable two-factor authentication, use strong unique passwords, never share your login credentials, verify all communication comes from official @globalmarketacess.com email addresses, be wary of phishing attempts, regularly review your account activity, and immediately report any suspicious activity to our security team. We will never ask for your password or 2FA codes.'
       }
     ]
   },

@@ -16,14 +16,14 @@ export default function Terms() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-700 leading-relaxed">
-              By accessing and using Market Signal Trades platform, you accept and agree to be bound by the terms and provision of this agreement.
+              By accessing and using Globalmarketacess platform, you accept and agree to be bound by the terms and provision of this agreement.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Use License</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Permission is granted to temporarily use the Market Signal Trades platform for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+              Permission is granted to temporarily use the Globalmarketacess platform for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2">
               <li>Modify or copy the materials</li>
@@ -57,14 +57,14 @@ export default function Terms() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Limitation of Liability</h2>
             <p className="text-gray-700 leading-relaxed">
-              In no event shall Market Signal Trades or its suppliers be liable for any damages arising out of the use or inability to use the materials on the platform, even if authorized representative has been notified of the possibility of such damage.
+              In no event shall Globalmarketacess or its suppliers be liable for any damages arising out of the use or inability to use the materials on the platform, even if authorized representative has been notified of the possibility of such damage.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Contact Information</h2>
             <p className="text-gray-700 leading-relaxed">
-              If you have any questions about these Terms and Conditions, please contact us at support@marketmoverstrade.com
+              If you have any questions about these Terms and Conditions, please contact us at support@globalmarketacess.com
             </p>
           </section>
         </div>

@@ -345,8 +345,8 @@ export default function FundWallet() {
                     <p className="text-gray-400 text-sm">
                       <span className="font-bold text-white">Note:</span> After making your deposit, kindly send a
                       screenshot/proof of deposit to{' '}
-                      <a href="mailto:support@marketsignaltrades.com" className="text-red-500 font-medium">
-                        support@marketsignaltrades.com
+                      <a href="mailto:support@globalmarketacess.com" className="text-red-500 font-medium">
+                        support@globalmarketacess.com
                       </a>{' '}
                       for documentation and to boost the funding process
                     </p>
@@ -417,10 +417,10 @@ export default function FundWallet() {
                     <p className="text-gray-600 text-sm">
                       <span className="font-bold text-gray-800">Note:</span> Your deposit will be credited after 2 network confirmations. For faster processing, send proof to{' '}
                       <a
-                          href="mailto:support@marketsignaltrades.com"
+                          href="mailto:support@globalmarketacess.com"
                           className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
                       >
-                        support@marketsignaltrades.com
+                        support@globalmarketacess.com
                       </a>
                     </p>
                   </div>

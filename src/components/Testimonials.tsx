@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 const testimonials = [
   {
     quote:
-      'Market Signal Trades helped us turn every trading campaign into a high-converting success story. The performance speaks volumes: 2.8x lift in conversions in just 3 weeks.',
+      'Globalmarketacess helped us turn every trading campaign into a high-converting success story. The performance speaks volumes: 2.8x lift in conversions in just 3 weeks.',
     author: 'Sam Robins',
     role: 'Founder of Woonspooing',
     rating: 5,
@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     quote:
-      'Lightning-fast execution and reliable data feeds. Market Signal Trades delivers on both fronts with zero latency and comprehensive market analysis tools.',
+      'Lightning-fast execution and reliable data feeds. Globalmarketacess delivers on both fronts with zero latency and comprehensive market analysis tools.',
     author: 'Michael Chang',
     role: 'Day Trader',
     rating: 5,

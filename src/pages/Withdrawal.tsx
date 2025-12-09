@@ -299,7 +299,7 @@ export default function Withdrawal() {
                       <AlertCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                       <p className="text-gray-400 text-sm">
                         <span className="font-bold text-white">Note:</span> For
-                        security reasons, Market Signal Trades processes withdrawals
+                        security reasons, Globalmarketacess processes withdrawals
                         by review once a day. Ensure your wallet address is correct
                         before submitting.
                       </p>
@@ -453,10 +453,10 @@ export default function Withdrawal() {
                         <p className="text-gray-400 text-sm">
                           For faster processing, contact support at{' '}
                           <a
-                              href="mailto:support@marketsignaltrades.com"
+                              href="mailto:support@globalmarketacess.com"
                               className="text-red-400 font-medium hover:text-red-300 transition-colors"
                           >
-                            support@marketsignaltrades.com
+                            support@globalmarketacess.com
                           </a>
                         </p>
                       </div>
@@ -553,10 +553,10 @@ export default function Withdrawal() {
                         <span className="font-bold text-gray-800">Note:</span> For
                         faster processing, you can contact support at{' '}
                         <a
-                            href="mailto:support@marketsignaltrades.com"
+                            href="mailto:support@globalmarketacess.com"
                             className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
                         >
-                          support@marketsignaltrades.com
+                          support@globalmarketacess.com
                         </a>
                       </p>
                     </div>

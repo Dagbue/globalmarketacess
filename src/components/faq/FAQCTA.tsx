@@ -48,7 +48,7 @@ export default function FAQCTA() {
                   Send us a message and we'll respond within 2 hours.
                 </p>
                 <a
-                  href="mailto:support@marketsignaltrades.com"
+                  href="mailto:support@globalmarketacess.com"
                   className="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-blue-600/30"
                 >
                   Send Email
@@ -69,7 +69,7 @@ export default function FAQCTA() {
               Explore More Resources
             </h3>
             <p className="text-slate-400 mb-8">
-              Learn more about investing with Market Signal Trades
+              Learn more about investing with Globalmarketacess
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

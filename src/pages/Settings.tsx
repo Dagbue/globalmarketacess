@@ -88,7 +88,7 @@ export default function Settings() {
   const { uploadBase64, isUploading } = useUploadBase64();
   const { resetPassword, isPasswordSubmitting } = useResetPassword();
 
-  const referralLink = 'https://marketsignaltrades.com/register';
+  const referralLink = 'https://globalmarketacess.com/register';
 
   // === Load user data from localStorage on mount ===
   useEffect(() => {

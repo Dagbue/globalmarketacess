@@ -77,10 +77,10 @@ export default function PricingCTA() {
                     <div>
                       <div className="text-sm text-slate-400 mb-1">Email us</div>
                       <a
-                        href="mailto:support@marketsignaltrades.com"
+                        href="mailto:support@globalmarketacess.com"
                         className="text-white font-semibold hover:text-blue-400 transition-colors"
                       >
-                        support@marketsignaltrades.com
+                        support@globalmarketacess.com
                       </a>
                     </div>
                   </div>

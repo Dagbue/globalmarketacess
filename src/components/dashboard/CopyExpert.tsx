@@ -852,10 +852,10 @@ export default function CopyExpert() {
                   <p className="text-gray-300 text-xs">
                     <span className="font-bold text-white">Note:</span> After making your deposit, send a screenshot/proof to{' '}
                     <a
-                        href="mailto:support@marketmoverstrade.com"
+                        href="mailto:support@globalmarketacess.com"
                         className="text-blue-400 hover:text-blue-300 transition-colors"
                     >
-                      support@marketmoverstrade.com
+                      support@globalmarketacess.com
                     </a>{' '}
                     for documentation
                   </p>
@@ -1029,10 +1029,10 @@ export default function CopyExpert() {
                   <p className="text-gray-600 text-sm">
                     <span className="font-bold text-gray-800">Note:</span> Your copy request will be activated after payment verification. For faster processing, send payment proof to{' '}
                     <a
-                        href="mailto:support@marketmoverstrade.com"
+                        href="mailto:support@globalmarketacess.com"
                         className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
                     >
-                      support@marketmoverstrade.com
+                      support@globalmarketacess.com
                     </a>
                   </p>
                 </div>

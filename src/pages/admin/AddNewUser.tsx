@@ -300,7 +300,7 @@ const AddNewUser = () => {
                       className="w-5 h-5 mt-0.5 border-2 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-blue-600 transition-all flex-shrink-0"
                   />
                   <span className="text-sm text-gray-300 leading-relaxed">
-                  I agree to Market Movers Trade{' '}
+                  I agree to Globalmarketacess{' '}
                     <a href="/terms" className="font-bold text-blue-400 hover:text-blue-300 underline">
                     Terms and Conditions
                   </a>

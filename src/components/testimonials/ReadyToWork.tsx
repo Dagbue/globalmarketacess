@@ -80,10 +80,10 @@ export default function ReadyToWork() {
                   <div>
                     <div className="text-sm text-slate-400 mb-1 font-medium">Email us at</div>
                     <a
-                      href="mailto:support@marketsignaltrades.com"
+                      href="mailto:support@globalmarketacess.com"
                       className="text-white font-semibold hover:text-blue-400 transition-colors"
                     >
-                      support@marketsignaltrades.com
+                      support@globalmarketacess.com
                     </a>
                   </div>
                 </div>

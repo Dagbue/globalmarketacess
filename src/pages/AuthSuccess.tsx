@@ -64,7 +64,7 @@ export default function AuthSuccess() {
                 Success!
               </h1>
               <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400">
-                Welcome to Market Signal Trades
+                Welcome to Globalmarketacess
               </p>
             </div>
 

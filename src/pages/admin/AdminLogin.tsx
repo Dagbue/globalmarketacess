@@ -16,7 +16,7 @@ const AdminLogin = () => {
     setError('');
 
     // Simulate login with credential check
-    const validEmail = "admin@marketsignaltrades.com";
+    const validEmail = "admin@globalmarketacess.com";
     const validPassword = "12Prince$";
 
     if (formData.email === validEmail && formData.password === validPassword) {
