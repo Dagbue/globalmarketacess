@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Check, ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import useReadUserById from "../hooks/auth/useReadUserById.ts";
+import useReadUserById from "../../hooks/auth/useReadUserById.ts";
 
 
 export default function AuthSuccess() {

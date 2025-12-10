@@ -1,7 +1,8 @@
-import { Menu, X, TrendingUp } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import TickerTapeWidget from "./widgets/TickerTapeWidget.tsx";
+import {companyLogo3} from "../assets";
 
 export default function Header() {
   const location = useLocation();
@@ -34,16 +35,18 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 bg-blue-600/20 rounded-lg flex items-center justify-center group-hover:bg-blue-600/30 transition-all">
-              <TrendingUp className="w-6 h-6 text-blue-400" />
-            </div>
-            <span className="text-xl font-bold text-white">
-              Globalmarketacess
-            </span>
+            {/*<div*/}
+            {/*    className="w-11 h-11 bg-blue-600/20 rounded-lg flex items-center justify-center group-hover:bg-blue-600/30 transition-all">*/}
+            {/*  <TrendingUp className="w-6 h-6 text-blue-400"/>*/}
+            {/*</div>*/}
+            {/*<span className="text-xl font-bold text-white">*/}
+            {/*  Globalmarketacess*/}
+            {/*</span>*/}
+            <img className="h-16" src={companyLogo3} alt="logo"/>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
-            <Link
+          <Link
               to="/about"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isActive('/about')

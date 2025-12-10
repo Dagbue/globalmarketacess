@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Shield, TrendingUp, BarChart3 } from 'lucide-react';
-import useLogin from "../hooks/auth/useLogin.ts";
-// import {companyLogo3} from "../assets";
+import useLogin from "../../hooks/auth/useLogin.ts";
+import {companyLogo3} from "../../assets";
 
 
 export default function Login() {
@@ -35,18 +35,10 @@ export default function Login() {
           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-800/6 rounded-full blur-[100px]"></div>
 
           <div className="relative z-10 flex flex-col justify-center px-16 py-20">
-            {/*<Link to="/" className="mb-12">*/}
-            {/*  <img className="h-14" src={companyLogo3} alt="logo" />*/}
-            {/*</Link>*/}
-
-            <Link to="/" className="flex items-center gap-3 group mb-10">
-              <div className="w-11 h-11 bg-blue-600/20 rounded-lg flex items-center justify-center group-hover:bg-blue-600/30 transition-all">
-                <TrendingUp className="w-6 h-6 text-blue-400" />
-              </div>
-              <span className="text-xl font-bold text-white">
-              Globalmarketacess
-            </span>
+            <Link to="/" className="mb-12">
+              <img className="h-16" src={companyLogo3} alt="logo" />
             </Link>
+
 
             <div className="space-y-6 mb-12">
               <div className="inline-flex items-center px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full">

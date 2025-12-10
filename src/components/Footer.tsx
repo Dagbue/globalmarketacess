@@ -13,10 +13,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-6 h-6 text-blue-400" />
+              <div className="w-9 h-9 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-blue-400" />
               </div>
-              <span className="text-2xl font-bold text-white">
+              <span className="text-xl font-bold text-white">
                 Globalmarketacess
               </span>
             </div>
@@ -49,11 +49,11 @@ export default function Footer() {
                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 Home
               </a></li>
-              <li><a href="/login" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center group">
+              <li><a href="/auth/Login" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center group">
                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 Sign In
               </a></li>
-              <li><a href="/register" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center group">
+              <li><a href="/auth/Register" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center group">
                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 Register
               </a></li>
