@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 import { ChevronRight, Copy, Check, Wallet, ArrowLeft, DollarSign, X } from 'lucide-react';
 import DashboardLayout from '../components/dashboard/DashboardLayout';
 import useCreateDeposit from "../hooks/deposit/useCreateDeposit.ts";
@@ -36,6 +38,8 @@ export default function FundWallet() {
   const [address, setAddress] = useState('');
   const [copied, setCopied] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const { createDeposit, isSubmitting: isCreating } = useCreateDeposit();
   const { readPaymentWalletById, isSubmitting: isFetching } = useReadPaymentWalletById();
@@ -97,7 +101,7 @@ export default function FundWallet() {
 
   useEffect(() => {
     const fetchWallet = async () => {
-      const response = await readPaymentWalletById({ walletId: '2' });
+      const response = await readPaymentWalletById({ walletId: '1' });
       if (response?.paymentWallet) {
         setWalletData(response.paymentWallet);
       } else {
@@ -161,6 +165,9 @@ export default function FundWallet() {
 
       const success = await createDeposit(depositData);
       if (success) {
+        const queryKeyData = { userId };  // Match the dataToServer object structure
+        await queryClient.invalidateQueries({queryKey: ['userDeposit', queryKeyData]});
+        await queryClient.refetchQueries({queryKey: ['userDeposit', queryKeyData]});
         setShowSuccessModal(true);
       }
     }
@@ -177,6 +184,7 @@ export default function FundWallet() {
   const handleCloseModal = () => {
     setShowSuccessModal(false);
     handleBack();
+    navigate('/dashboard/transactions'); // ← Redirect here (adjust path if your route is different)
   };
 
   return (

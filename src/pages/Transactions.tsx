@@ -355,16 +355,16 @@ export default function Transactions() {
                             }`}
                         >
                           {transaction.type === 'deposit' ? (
-                              <ArrowDownRight size={14} />
+                              <ArrowDownRight size={14}/>
                           ) : (
-                              <ArrowUpRight size={14} />
+                              <ArrowUpRight size={14}/>
                           )}
                           {transaction.type}
                         </span>
                           </td>
                           <td className="px-6 py-4 text-gray-400 text-sm">{transaction.method}</td>
-                          <td className="px-6 py-4 text-white font-mono text-sm">
-                            {truncateWithEllipsis(transaction.reference, 10)}
+                          <td className="px-6 py-4 text-white font-mono text-sm break-all">
+                            {transaction.reference}
                           </td>
                           <td className="px-6 py-4">
                             <div className="text-white text-sm font-medium">{transaction.date}</div>

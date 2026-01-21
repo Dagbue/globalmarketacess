@@ -17,7 +17,7 @@ const useReadUserTrade = (dataToServer: readUserTradeRequest | undefined) => {
                     // toast.success("User trades retrieved successfully!");
                     return tradeData;
                 } else {
-                    toast.error(tradeData.responseMessage || "Failed to retrieve trades.");
+                    // toast.error(tradeData.responseMessage || "Failed to retrieve trades.");
                     return null;
                 }
             } else {

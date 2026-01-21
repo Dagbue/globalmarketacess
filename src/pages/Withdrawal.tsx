@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 import {
   ChevronRight,
   ArrowLeft,
@@ -54,6 +56,8 @@ export default function Withdrawal() {
   const [walletAddress, setWalletAddress] = useState('');
   const [additionalComment, setAdditionalComment] = useState('');
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   // State for user data
   // @ts-ignore
@@ -199,6 +203,9 @@ export default function Withdrawal() {
 
     const success = await createWithdrawal(payload);
     if (success) {
+      const queryKeyData = { userId };  // Match the dataToServer object structure
+      await queryClient.invalidateQueries({queryKey: ['userWithdrawal', queryKeyData]});
+      await queryClient.refetchQueries({queryKey: ['userWithdrawal', queryKeyData]});
       setShowSuccessModal(true);
     }
   };
@@ -214,6 +221,7 @@ export default function Withdrawal() {
   const handleCloseModal = () => {
     setShowSuccessModal(false);
     handleBack();
+    navigate('/dashboard/transactions');
   };
 
   const receiveAmount = amount

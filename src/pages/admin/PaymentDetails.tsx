@@ -24,7 +24,7 @@ const PaymentDetails = () => {
   });
 
   const [hasWallet, setHasWallet] = useState(false);
-  const [walletId] = useState(2); // Fixed wallet ID
+  const [walletId] = useState(1); // Fixed wallet ID
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

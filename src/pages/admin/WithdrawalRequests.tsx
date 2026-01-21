@@ -307,8 +307,9 @@ const WithdrawalRequests = () => {
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{withdrawal.amount}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{withdrawal.paymentMode}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{withdrawal.dateApplied}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 max-w-xs truncate">{withdrawal.walletAddress}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 max-w-xs truncate">{withdrawal.transactionReference}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 break-all">{withdrawal.walletAddress}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 break-all">{withdrawal.transactionReference}</td>
+
                           <td className="px-6 py-4 whitespace-nowrap">
                         <span
                             className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(withdrawal.status)}`}>
@@ -323,7 +324,7 @@ const WithdrawalRequests = () => {
                 ) : (
                     <tr>
                       <td colSpan={7} className="px-6 py-4 text-center text-gray-500">
-                        {searchTerm ? 'No withdrawals match the search criteria.' : 'No withdrawals found.'}
+                      {searchTerm ? 'No withdrawals match the search criteria.' : 'No withdrawals found.'}
                       </td>
                     </tr>
                 )}

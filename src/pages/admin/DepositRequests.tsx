@@ -244,7 +244,7 @@ const DepositRequests: React.FC = () => {
                     <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Date
                       Applied
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Description</th>
+                    {/*<th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Description</th>*/}
                     {/*<th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Deposit Reason</th>*/}
                     <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Status</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Action</th>
@@ -258,7 +258,7 @@ const DepositRequests: React.FC = () => {
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${deposit.amount.toLocaleString()}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{deposit.paymentMode}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{deposit.dateApplied}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{deposit.description}</td>
+                            {/*<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{deposit.description}</td>*/}
                             {/*<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{deposit.depositReason}</td>*/}
                             <td className="px-6 py-4 whitespace-nowrap">
                         <span

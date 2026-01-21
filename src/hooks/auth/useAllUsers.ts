@@ -20,7 +20,7 @@ const useAllUsers = () => {
                     // toast.success("All users retrieved successfully!");
                     return userData;
                 } else {
-                    toast.error("No users found!");
+                    // toast.error("No users found!");
                     return [];
                 }
             } else {

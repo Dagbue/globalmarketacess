@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 import { X } from 'lucide-react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../redux/store';
@@ -130,6 +131,7 @@ export default function PlaceTrade() {
   const [userId, setUserId] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [totalDepositedAmount, setTotalDepositedAmount] = useState<number>(0);
+  const queryClient = useQueryClient();
 
   const [formData, setFormData] = useState({
     amount: '',
@@ -243,6 +245,9 @@ export default function PlaceTrade() {
 
       const success = await createTrade(tradeData);
       if (success) {
+        const queryKeyData = { userId };  // Create object to match dataToServer
+        await queryClient.invalidateQueries({ queryKey: ['userTrade', queryKeyData] });
+        await queryClient.refetchQueries({ queryKey: ['userTrade', queryKeyData] });
         setShowSuccessModal(true);
       }
     } catch (error) {
