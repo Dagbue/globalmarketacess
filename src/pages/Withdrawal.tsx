@@ -180,10 +180,16 @@ export default function Withdrawal() {
     }
 
     // BLOCK ALL USERS BY DEFAULT — AFTER zero balance
-    if (!ALLOWED_WITHDRAWAL_EMAILS) {
+    // if (!ALLOWED_WITHDRAWAL_EMAILS) {
+    //   toast.error('Funds are Unsettled due to trading account.');
+    //   return;
+    // }
+
+    if (!ALLOWED_WITHDRAWAL_EMAILS.includes(userEmail)) {
       toast.error('Funds are Unsettled due to trading account.');
       return;
     }
+
 
     if (!amount || !walletAddress || !selectedMethod) {
       toast.error('Please fill all required fields.');
