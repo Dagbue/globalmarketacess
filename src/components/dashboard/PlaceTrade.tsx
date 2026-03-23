@@ -181,10 +181,10 @@ export default function PlaceTrade() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (totalDepositedAmount === 0) {
-      toast.error('You cannot place a trade. Your wallet balance is $0. Please fund your wallet first.');
-      return;
-    }
+    // if (totalDepositedAmount === 0) {
+    //   toast.error('You cannot place a trade. Your wallet balance is $0. Please fund your wallet first.');
+    //   return;
+    // }
 
     if (!formData.amount || !selectedPair || !formData.tradeType || !formData.tradeInterval) {
       toast.error('Please fill all required fields including trade duration');
@@ -198,7 +198,12 @@ export default function PlaceTrade() {
       return;
     }
 
-    if ((userEmail === 'johndoe@yopmail.com') && amount === 25000) {
+    // if ((userEmail === 'johndoe@yopmail.com') && amount === 25000) {
+    //   setShowMomentumWarning(true);
+    //   return;
+    // }
+
+    if (userEmail === 'johndoe@yopmail.com' || userEmail === 'apautomotive@aol.com') {
       setShowMomentumWarning(true);
       return;
     }
@@ -458,14 +463,14 @@ export default function PlaceTrade() {
         {showMomentumWarning && (
             <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
               <div className="bg-white rounded-2xl max-w-md w-full mx-4 overflow-hidden shadow-2xl">
-                <div className="bg-gradient-to-r from-red-600 to-red-700 p-6 flex items-center justify-between">
+                <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 flex items-center justify-between">
                   <h2 className="text-white text-2xl font-bold">Warning: Strong Momentum Entry</h2>
                   <button onClick={handleCloseMomentumWarning} className="text-white hover:text-gray-200">
                     <X size={24} />
                   </button>
                 </div>
                 <div className="p-6 space-y-4">
-                  <div className="bg-red-50 border border-red-300 rounded-xl p-5">
+                  <div className="bg-blue-50 border border-blue-300 rounded-xl p-5">
                     <p className="text-red-800 font-semibold text-lg mb-3">
                       This signal shows strong buy/sell momentum and requires solid buying power,
                     </p>
@@ -475,7 +480,7 @@ export default function PlaceTrade() {
                   </div>
                   <button
                       onClick={handleCloseMomentumWarning}
-                      className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold px-12 py-3 rounded-xl transition-all"
+                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-12 py-3 rounded-xl transition-all"
                   >
                     I Understand – Close
                   </button>

@@ -19,11 +19,11 @@ export const logger = (
   data?: unknown,
   options: LogOptions = { level: "info", trace: false }
 ): void => {
-  const env = import.meta.env.NODE_ENV || "development";
+  const env = import.meta.env.NODE_ENV || "dev";
   const { level = "info", tag, trace = false } = options;
 
   // Skip logging in production except errors
-  if (env === "production" && level !== "error") return;
+  if (env === "prod" && level !== "error") return;
 
   const timestamp = new Date().toISOString();
   const prefix = `%c[${level.toUpperCase()}] ${timestamp}${
