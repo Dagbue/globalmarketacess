@@ -203,7 +203,7 @@ export default function PlaceTrade() {
     //   return;
     // }
 
-    if (userEmail === 'johndoe@yopmail.com' || userEmail === 'apautomotive@aol.com') {
+    if (userEmail === 'johndoe@yopmail.com') {
       setShowMomentumWarning(true);
       return;
     }
