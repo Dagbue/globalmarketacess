@@ -11,7 +11,7 @@ import {
 import DashboardLayout from '../components/dashboard/DashboardLayout';
 import useReadUserDeposit from '../hooks/deposit/useReadUserDeposit';
 import useReadUserWithdrawal from '../hooks/withdrawal/useReadUserWithdrawal';
-import {truncateWithEllipsis} from "../utils/helperFunctions.ts";
+
 
 type TransactionType = 'deposit' | 'withdrawal';
 
@@ -60,6 +60,7 @@ export default function Transactions() {
 
   const allTransactions: Transaction[] = [
     ...deposits.map((dep) => {
+      // @ts-ignore
       const { date, time } = formatTransactionDate(dep.depositDate || dep.createdAt);
       return {
         id: dep.depositId,
@@ -70,6 +71,7 @@ export default function Transactions() {
         time,
         status: dep.depositStatus.toLowerCase(),
         method: dep.transactionMethod,
+        // @ts-ignore
         originalDate: dep.depositDate || dep.createdAt,
       };
     }),
@@ -154,6 +156,8 @@ export default function Transactions() {
     link.click();
     document.body.removeChild(link);
   };
+
+
 
   return (
       <DashboardLayout>

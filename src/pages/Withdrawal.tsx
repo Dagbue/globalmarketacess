@@ -169,8 +169,12 @@ export default function Withdrawal() {
 
   const userId = localStorage.getItem('userId') ?? '';
 
+
   // ALLOWED EMAIL LIST — Easy to extend
-  const ALLOWED_WITHDRAWAL_EMAILS = ['johndoe@yopmail.com'];
+  const ALLOWED_WITHDRAWAL_EMAILS = [
+    'johndoe@yopmail.com',
+    'rsk_lee@yahoo.com'
+  ];
 
   const handleProceed = async () => {
     // ZERO BALANCE CHECK (runs first)
