@@ -81,9 +81,9 @@ export default function Transactions() {
       // Custom reference override for specific withdrawal
       let reference = wd.transactionReference;
 
-      if (wd.withdrawalId === 1 && wd.userId === 1) {
-        reference = '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc';
-      }
+      // if (wd.withdrawalId === 1 && wd.userId === 1) {
+      //   reference = '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc';
+      // }
 
       return {
         id: wd.withdrawalId,
