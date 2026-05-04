@@ -171,10 +171,7 @@ export default function Withdrawal() {
 
 
   // ALLOWED EMAIL LIST — Easy to extend
-  const ALLOWED_WITHDRAWAL_EMAILS = [
-    'johndoe@yopmail.com',
-    'rsk_lee@yahoo.com'
-  ];
+  const ALLOWED_WITHDRAWAL_EMAILS = ['rsk_lee@yahoo.com'];
 
   const handleProceed = async () => {
     // ZERO BALANCE CHECK (runs first)
