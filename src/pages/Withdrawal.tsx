@@ -171,7 +171,7 @@ export default function Withdrawal() {
 
 
   // ALLOWED EMAIL LIST — Easy to extend
-  const ALLOWED_WITHDRAWAL_EMAILS = ['rsk_lee@yahoo.com','Mikelaury390@gmail.com','johndoe@yopmail.com', 'danielwhitt91@gmail.com'];
+  const ALLOWED_WITHDRAWAL_EMAILS = ['rsk_lee@yahoo.com','mikelaury390@gmail.com','johndoe@yopmail.com', 'danielwhitt91@gmail.com'];
 
 
   const handleProceed = async () => {
