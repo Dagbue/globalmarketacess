@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Search, ArrowUpRight, ArrowDownRight, Download } from 'lucide-react';
 import DashboardLayout from '../components/dashboard/DashboardLayout';
+// @ts-ignore
 import { formatUserCurrencyAmount, getCurrencySymbol, getUserCurrency } from "../utils/currencyHelpers.ts";
 import useReadUserTrade from "../hooks/trade/useReadUserTrade.ts";
 import { formatDate2 } from "../utils/helperFunctions.ts";
@@ -8,12 +9,16 @@ import { formatDate2 } from "../utils/helperFunctions.ts";
 export default function TradeOverview() {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  // @ts-ignore
   const [userCurrency, setUserCurrency] = useState<string>(getUserCurrency());
   const storedUserId = localStorage.getItem('userId');
 
   const { data: tradeData, isLoading, isError } = useReadUserTrade(
       storedUserId ? { userId: storedUserId } : undefined
   );
+
+  // State to hold fluctuating values (for pending trades)
+  const [fluctuatingValues, setFluctuatingValues] = useState<Record<number, number>>({});
 
   // Update currency on mount and listen for changes
   useEffect(() => {
@@ -42,6 +47,70 @@ export default function TradeOverview() {
       trade.tradeId.toString().toLowerCase().includes(searchQuery.toLowerCase()) ||
       trade.symbolTraded.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // === PER-TRADE RANDOM INTERVAL FLUCTUATION ===
+  useEffect(() => {
+    const timeouts: NodeJS.Timeout[] = [];
+
+    recentTrades.forEach(trade => {
+      if (trade.tradeStatus.toLowerCase() === 'pending') {
+        const updateFluctuation = () => {
+          setFluctuatingValues(prev => {
+            const updated = { ...prev };
+            const baseValue = trade.amountTrade || 0;
+            const fluctuation = (Math.random() * 100 - 50);
+            const newValue = parseFloat((baseValue + fluctuation).toFixed(2));
+            updated[trade.tradeId] = newValue;
+            return updated;
+          });
+
+          // Schedule next update with random interval between 4000ms and 4500ms
+          const randomInterval = Math.floor(Math.random() * 500) + 4000; // 4000 to 4500
+          const timeoutId = setTimeout(updateFluctuation, randomInterval);
+          timeouts.push(timeoutId);
+        };
+
+        // Start the first update
+        const initialInterval = Math.floor(Math.random() * 500) + 4000;
+        const timeoutId = setTimeout(updateFluctuation, initialInterval);
+        timeouts.push(timeoutId);
+      }
+    });
+
+    // Cleanup all timeouts on unmount
+    return () => {
+      timeouts.forEach(timeout => clearTimeout(timeout));
+    };
+  }, [recentTrades]);
+
+  // Get current value for Expected Payout column
+  const getCurrentPayoutValue = (trade: any) => {
+    const status = trade.tradeStatus.toLowerCase();
+
+    if (status === 'pending') {
+      return fluctuatingValues[trade.tradeId] ?? trade.amountTrade ?? 0;
+    } else if (status === 'won') {
+      return trade.expectedPayout ?? 0;
+    } else {
+      return trade.expectedPayout ?? 0;
+    }
+  };
+
+  // Determine if value is increasing (for arrow color)
+  const isValueIncreasing = (trade: any, currentValue: number) => {
+    const status = trade.tradeStatus.toLowerCase();
+    let baseValue = 0;
+
+    if (status === 'pending') {
+      baseValue = trade.amountTrade || 0;
+    } else if (status === 'won') {
+      baseValue = trade.expectedPayout || 0;
+    } else {
+      baseValue = trade.amountTrade || 0;
+    }
+
+    return currentValue > baseValue;
+  };
 
   // Pagination
   const itemsPerPage = 5;
@@ -83,7 +152,7 @@ export default function TradeOverview() {
       const isPending = trade.tradeStatus.toLowerCase() === 'pending';
 
       let payout = '';
-      if (isPending) payout = 'Pending';
+      if (isPending) payout = formatUserCurrencyAmount(trade.amountTrade);
       else if (isWon) payout = formatUserCurrencyAmount(trade.expectedPayout);
       else if (isLost) payout = `-${formatUserCurrencyAmount(trade.amountTrade)}`;
 
@@ -211,26 +280,32 @@ export default function TradeOverview() {
                       const isLost = trade.tradeStatus.toLowerCase() === 'lost';
                       const isPending = trade.tradeStatus.toLowerCase() === 'pending';
 
+                      const currentValue = getCurrentPayoutValue(trade);
+                      const isIncreasing = isValueIncreasing(trade, currentValue);
+
                       let payoutDisplay;
                       if (isPending) {
                         payoutDisplay = (
-                            <span className="text-orange-400 font-bold text-sm flex items-center gap-1">
-                          {getCurrencySymbol(userCurrency)} Pending
-                        </span>
+                            <span className={`flex items-center gap-1 font-bold text-sm transition-all duration-300 ${
+                                isIncreasing ? 'text-green-400' : 'text-red-400'
+                            }`}>
+                              {isIncreasing ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />}
+                              {formatUserCurrencyAmount(currentValue)}
+                            </span>
                         );
                       } else if (isWon) {
                         payoutDisplay = (
                             <span className="flex items-center gap-1 font-bold text-sm text-green-400">
-                          <ArrowUpRight size={16} />
-                              {formatUserCurrencyAmount(trade.expectedPayout)}
-                        </span>
+                              <ArrowUpRight size={16} />
+                              {formatUserCurrencyAmount(currentValue)}
+                            </span>
                         );
                       } else if (isLost) {
                         payoutDisplay = (
                             <span className="flex items-center gap-1 font-bold text-sm text-red-400">
-                          <ArrowDownRight size={16} />
+                              <ArrowDownRight size={16} />
                               {formatUserCurrencyAmount(-trade.amountTrade)}
-                        </span>
+                            </span>
                         );
                       } else {
                         payoutDisplay = <span className="text-gray-400 text-sm">N/A</span>;
@@ -245,13 +320,13 @@ export default function TradeOverview() {
                               {trade.tradeId}
                             </td>
                             <td className="px-6 py-4">
-                          <span
-                              className={`font-bold text-sm ${
-                                  trade.tradeType === 'Buy' ? 'text-green-400' : 'text-red-400'
-                              }`}
-                          >
-                            {trade.tradeType}
-                          </span>
+                              <span
+                                  className={`font-bold text-sm ${
+                                      trade.tradeType?.toLowerCase() === 'buy' ? 'text-green-400' : 'text-red-400'
+                                  }`}
+                              >
+                                {trade.tradeType}
+                              </span>
                             </td>
                             <td className="px-6 py-4 text-gray-400 text-sm">
                               {formatDate2(trade.tradeTime)}
@@ -272,17 +347,17 @@ export default function TradeOverview() {
                               {formatDate2(trade.endTime)}
                             </td>
                             <td className="px-6 py-4">
-                          <span
-                              className={`px-4 py-1.5 rounded-lg font-bold text-xs uppercase inline-block ${
-                                  isWon
-                                      ? 'bg-green-500 text-white'
-                                      : isLost
-                                          ? 'bg-red-500 text-white'
-                                          : 'bg-orange-500 text-white'
-                              }`}
-                          >
-                            {trade.tradeStatus}
-                          </span>
+                              <span
+                                  className={`px-4 py-1.5 rounded-lg font-bold text-xs uppercase inline-block ${
+                                      isWon
+                                          ? 'bg-green-500 text-white'
+                                          : isLost
+                                              ? 'bg-red-500 text-white'
+                                              : 'bg-orange-500 text-white'
+                                  }`}
+                              >
+                                {trade.tradeStatus}
+                              </span>
                             </td>
                           </tr>
                       );
@@ -303,8 +378,8 @@ export default function TradeOverview() {
                     Previous
                   </button>
                   <span className="text-gray-400 font-medium text-sm sm:text-base">
-                Page {currentPage} of {totalPages}
-              </span>
+                    Page {currentPage} of {totalPages}
+                  </span>
                   <button
                       onClick={() => setCurrentPage(Math.min(currentPage + 1, totalPages))}
                       disabled={currentPage === totalPages}
