@@ -374,7 +374,9 @@ export default function PlaceTrade() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <label className="block text-gray-400 text-sm font-medium mb-2">Trade Interval </label>
-                    <select name="tradeInterval" value={formData.tradeInterval} onChange={handleChange} className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-blue-500 transition-all" required>
+                    <select name="tradeInterval" value={formData.tradeInterval} onChange={handleChange}
+                            className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-blue-500 transition-all"
+                            required>
                       <option value="">Select Duration</option>
                       <option value="1 Minute">1 Minute</option>
                       <option value="5 Minutes">5 Minutes</option>
@@ -386,13 +388,19 @@ export default function PlaceTrade() {
                       <option value="3 Days">3 Days</option>
                       <option value="4 Days">4 Days</option>
                       <option value="5 Days">5 Days</option>
+                      <option value="1 Days">6 Days</option>
+                      <option value="7 Days">7 Days</option>
+                      <option value="8 Days">8 Days</option>
+                      <option value="9 Days">9 Days</option>
+                      <option value="10 Days">10 Days</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-gray-400 text-sm font-medium mb-2">Trade Type</label>
-                  <select name="tradeType" value={formData.tradeType} onChange={handleChange} className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-blue-500 transition-all" required>
+                  <select name="tradeType" value={formData.tradeType} onChange={handleChange}
+                          className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-blue-500 transition-all" required>
                     <option value="">Trade Type</option>
                     <option value="buy">Buy</option>
                     <option value="sell">Sell</option>
