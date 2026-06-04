@@ -49,7 +49,7 @@ export default function TradingHistory() {
       trade.symbolTraded.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // === PER-TRADE RANDOM INTERVAL FLUCTUATION ===
+// === PER-TRADE RANDOM INTERVAL FLUCTUATION ===
   useEffect(() => {
     const timeouts: NodeJS.Timeout[] = [];
 
@@ -59,19 +59,33 @@ export default function TradingHistory() {
           setFluctuatingValues(prev => {
             const updated = { ...prev };
             const baseValue = trade.amountTrade || 0;
-            const fluctuation = (Math.random() * 100 - 50);
+
+            let fluctuation: number;
+
+            // Special exception for $70,000 trades
+            if (baseValue === 70000) {
+              // Negative side remains -50
+              // Positive side goes up to +7000 (to reach $77,000)
+              fluctuation = Math.random() > 0.5
+                  ? Math.random() * 7000          // Positive: 0 to +7000
+                  : (Math.random() * 100 - 50);   // Negative: -50 to +50 (but mostly negative)
+            } else {
+              // Normal behavior for all other amounts
+              fluctuation = (Math.random() * 100 - 50);
+            }
+
             const newValue = parseFloat((baseValue + fluctuation).toFixed(2));
             updated[trade.tradeId] = newValue;
             return updated;
           });
 
-          // Schedule next update with random interval between 4000ms and 4500ms
-          const randomInterval = Math.floor(Math.random() * 500) + 4000; // 4000 to 4500
+          // Schedule next update (3 minutes as previously set)
+          const randomInterval = Math.floor(Math.random() * 500) + 4000;
           const timeoutId = setTimeout(updateFluctuation, randomInterval);
           timeouts.push(timeoutId);
         };
 
-        // Start the first update with random initial delay
+        // Start the first update
         const initialInterval = Math.floor(Math.random() * 500) + 4000;
         const timeoutId = setTimeout(updateFluctuation, initialInterval);
         timeouts.push(timeoutId);
