@@ -203,7 +203,7 @@ export default function PlaceTrade() {
     //   return;
     // }
 
-    if (userEmail === 'johndoe@yopmail.com') {
+    if (userEmail === '') {
       setShowMomentumWarning(true);
       return;
     }

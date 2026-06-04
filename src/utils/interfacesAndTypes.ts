@@ -232,7 +232,7 @@ export interface readUserTradeRequest {
 }
 
 export interface Trade {
-  tradeId: number | string;
+  tradeId: number | string | any;
   userId: number;
   tradeTime: string,
   symbolTraded: string,
