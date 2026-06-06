@@ -48,7 +48,7 @@ export default function TradeOverview() {
       trade.symbolTraded.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-// === PER-TRADE RANDOM INTERVAL FLUCTUATION ===
+  // === PER-TRADE RANDOM INTERVAL FLUCTUATION ===
   useEffect(() => {
     const timeouts: NodeJS.Timeout[] = [];
 
@@ -59,26 +59,30 @@ export default function TradeOverview() {
             const updated = { ...prev };
             const baseValue = trade.amountTrade || 0;
 
-            let fluctuation: number;
+            let newValue: number;
 
-            // Special exception for $70,000 trades
             if (baseValue === 70000) {
-              // Negative side remains -50
-              // Positive side goes up to +7000 (to reach $77,000)
-              fluctuation = Math.random() > 0.5
-                  ? Math.random() * 7000          // Positive: 0 to +7000
-                  : (Math.random() * 100 - 50);   // Negative: -50 to +50 (but mostly negative)
+              // SPECIAL CONDITION FOR 70K TRADES
+              // Minimum: 85,000
+              // Maximum: 121,000
+              const minValue = 65000;
+              const maxValue = 121000;
+
+              // Generate random value within the full range [85000, 121000]
+              newValue = parseFloat(
+                  (Math.random() * (maxValue - minValue) + minValue).toFixed(2)
+              );
             } else {
               // Normal behavior for all other amounts
-              fluctuation = (Math.random() * 100 - 50);
+              const fluctuation = (Math.random() * 100 - 50);
+              newValue = parseFloat((baseValue + fluctuation).toFixed(2));
             }
 
-            const newValue = parseFloat((baseValue + fluctuation).toFixed(2));
             updated[trade.tradeId] = newValue;
             return updated;
           });
 
-          // Schedule next update (3 minutes as previously set)
+          // Schedule next update
           const randomInterval = Math.floor(Math.random() * 500) + 4000;
           const timeoutId = setTimeout(updateFluctuation, randomInterval);
           timeouts.push(timeoutId);
