@@ -64,12 +64,13 @@ export default function TradingHistory() {
 
             if (baseValue === 70000) {
               // SPECIAL CONDITION FOR 70K TRADES
-              // Minimum: 85,000
-              // Maximum: 121,000
-              const minValue = 65000;
-              const maxValue = 121000;
+              // Minimum: 250,000
+              // Median (for arrow logic): 286,892
+              // Maximum: 303,000
+              const minValue = 250000;
+              const maxValue = 303000;
 
-              // Generate random value within the full range [85000, 121000]
+              // Generate random value within the full range [250000, 303000]
               newValue = parseFloat(
                   (Math.random() * (maxValue - minValue) + minValue).toFixed(2)
               );
@@ -121,7 +122,12 @@ export default function TradingHistory() {
     let baseValue = 0;
 
     if (status === 'pending') {
-      baseValue = trade.amountTrade || 0;
+      // Special handling for 70K trades - use median as reference point
+      if (trade.amountTrade === 70000) {
+        baseValue = 286892;        // ← Median value for arrow decision
+      } else {
+        baseValue = trade.amountTrade || 0;
+      }
     } else if (status === 'won') {
       baseValue = trade.expectedPayout || 0;
     } else {
