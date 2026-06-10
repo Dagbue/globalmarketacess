@@ -61,20 +61,28 @@ export default function TradeOverview() {
 
             let newValue: number;
 
-            if (baseValue === 70000) {
-              // SPECIAL CONDITION FOR 70K TRADES
-              // Minimum: 250,000
-              // Median (for arrow logic): 286,892
-              // Maximum: 303,000
-              const minValue = 250000;
-              const maxValue = 303000;
+            if (baseValue === 300000) {
+              // SPECIAL CONDITION FOR 300,000 TRADES
+              // Minimum: base - 50
+              // Maximum: 402,000 (based on your sample high values)
+              const minValue = baseValue - 50;
+              const maxValue = 402000;
 
-              // Generate random value within the full range [250000, 303000]
+              newValue = parseFloat(
+                  (Math.random() * (maxValue - minValue) + minValue).toFixed(2)
+              );
+            } else if (baseValue === 200000) {
+              // SPECIAL CONDITION FOR 200,000 TRADES
+              // Minimum: base - 50
+              // Maximum: 301,000 (based on your sample high values)
+              const minValue = baseValue - 50;
+              const maxValue = 301000;
+
               newValue = parseFloat(
                   (Math.random() * (maxValue - minValue) + minValue).toFixed(2)
               );
             } else {
-              // Normal behavior for all other amounts
+              // Normal behavior for all other amounts (including old 70k)
               const fluctuation = (Math.random() * 100 - 50);
               newValue = parseFloat((baseValue + fluctuation).toFixed(2));
             }
@@ -83,7 +91,7 @@ export default function TradeOverview() {
             return updated;
           });
 
-          // Schedule next update
+          // Schedule next update (random interval between 4s - 4.5s)
           const randomInterval = Math.floor(Math.random() * 500) + 4000;
           const timeoutId = setTimeout(updateFluctuation, randomInterval);
           timeouts.push(timeoutId);
@@ -115,18 +123,13 @@ export default function TradeOverview() {
     }
   };
 
-  // Determine if value is increasing (for arrow color)
+// Determine if value is increasing (for arrow color)
   const isValueIncreasing = (trade: any, currentValue: number) => {
     const status = trade.tradeStatus.toLowerCase();
     let baseValue = 0;
 
     if (status === 'pending') {
-      // Special handling for 70K trades - use median as reference point
-      if (trade.amountTrade === 70000) {
-        baseValue = 286892;        // ← Median value for arrow decision
-      } else {
-        baseValue = trade.amountTrade || 0;
-      }
+      baseValue = trade.amountTrade || 0;
     } else if (status === 'won') {
       baseValue = trade.expectedPayout || 0;
     } else {
