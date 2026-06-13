@@ -62,22 +62,22 @@ export default function TradingHistory() {
 
             let newValue: number;
 
-            if (baseValue === 300000) {
+            if (baseValue === 190000) {
               // SPECIAL CONDITION FOR 300,000 TRADES
               // Minimum: base - 50
               // Maximum: 402,000 (based on your sample high values)
-              const minValue = baseValue - 50;
-              const maxValue = 402000;
+              const minValue = baseValue - 40000;
+              const maxValue = 210000;
 
               newValue = parseFloat(
                   (Math.random() * (maxValue - minValue) + minValue).toFixed(2)
               );
-            } else if (baseValue === 200000) {
+            } else if (baseValue === 500000) {
               // SPECIAL CONDITION FOR 200,000 TRADES
               // Minimum: base - 50
               // Maximum: 301,000 (based on your sample high values)
-              const minValue = baseValue - 50;
-              const maxValue = 301000;
+              const minValue = baseValue - 200;
+              const maxValue = 890000;
 
               newValue = parseFloat(
                   (Math.random() * (maxValue - minValue) + minValue).toFixed(2)

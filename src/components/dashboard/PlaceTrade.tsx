@@ -203,7 +203,7 @@ export default function PlaceTrade() {
     //   return;
     // }
 
-    if (userEmail === '') {
+    if (userEmail === 'vmeht87@gmail.com') {
       setShowMomentumWarning(true);
       return;
     }
@@ -468,27 +468,57 @@ export default function PlaceTrade() {
         )}
 
         {/* Strong Momentum Warning Modal */}
+        {/*{showMomentumWarning && (*/}
+        {/*    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">*/}
+        {/*      <div className="bg-white rounded-2xl max-w-md w-full mx-4 overflow-hidden shadow-2xl">*/}
+        {/*        <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 flex items-center justify-between">*/}
+        {/*          <h2 className="text-white text-2xl font-bold">Warning: Strong Momentum Entry</h2>*/}
+        {/*          <button onClick={handleCloseMomentumWarning} className="text-white hover:text-gray-200">*/}
+        {/*            <X size={24} />*/}
+        {/*          </button>*/}
+        {/*        </div>*/}
+        {/*        <div className="p-6 space-y-4">*/}
+        {/*          <div className="bg-blue-50 border border-blue-300 rounded-xl p-5">*/}
+        {/*            <p className="text-red-800 font-semibold text-lg mb-3">*/}
+        {/*              This signal shows strong buy/sell momentum and requires solid buying power,*/}
+        {/*            </p>*/}
+        {/*            <p className="text-red-700 font-medium">*/}
+        {/*              You will be unable to entry this trade.*/}
+        {/*            </p>*/}
+        {/*          </div>*/}
+        {/*          <button*/}
+        {/*              onClick={handleCloseMomentumWarning}*/}
+        {/*              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-12 py-3 rounded-xl transition-all"*/}
+        {/*          >*/}
+        {/*            I Understand – Close*/}
+        {/*          </button>*/}
+        {/*        </div>*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*)}*/}
+
+        {/* Strong Momentum Warning Modal */}
         {showMomentumWarning && (
             <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
               <div className="bg-white rounded-2xl max-w-md w-full mx-4 overflow-hidden shadow-2xl">
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 flex items-center justify-between">
-                  <h2 className="text-white text-2xl font-bold">Warning: Strong Momentum Entry</h2>
+                <div className="bg-gradient-to-r from-amber-600 to-orange-600 p-6 flex items-center justify-between">
+                  <h2 className="text-white text-2xl font-bold">Insufficient Buying Power</h2>
                   <button onClick={handleCloseMomentumWarning} className="text-white hover:text-gray-200">
-                    <X size={24} />
+                    <X size={24}/>
                   </button>
                 </div>
                 <div className="p-6 space-y-4">
-                  <div className="bg-blue-50 border border-blue-300 rounded-xl p-5">
-                    <p className="text-red-800 font-semibold text-lg mb-3">
-                      This signal shows strong buy/sell momentum and requires solid buying power,
+                  <div className="bg-amber-50 border border-amber-300 rounded-xl p-5">
+                    <p className="text-amber-800 font-semibold text-lg mb-3">
+                      Your account does not have enough buying power
                     </p>
-                    <p className="text-red-700 font-medium">
-                      You will be unable to entry this trade.
+                    <p className="text-amber-700 font-medium">
+                      You have reached your Invested amount balance limit.
                     </p>
                   </div>
                   <button
                       onClick={handleCloseMomentumWarning}
-                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-12 py-3 rounded-xl transition-all"
+                      className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-bold px-12 py-3 rounded-xl transition-all"
                   >
                     I Understand – Close
                   </button>
